@@ -1,0 +1,285 @@
+<div class="login">
+  <div class="login_top cfix">
+    <div class="fn-right">
+      <div class="login_tel"></div>
+    </div>
+
+    <div class="fn-left">
+      <a href="http://www.xkcits.com/"><div class="reg_logo"></div></a>
+    </div>
+  </div>
+
+
+  <h1 class="reg_title"></h1>
+
+  <div id="login_border" class="cfix">
+    <form action="http://www.xkcits.com/users/reg.php?dopost=regbase" method="post" id="formReg">
+      <ul id="login_l">
+        <li>
+          <span><em>*</em>手机号码:</span>
+          <input name="mobile" id="mobile" type="text" class="inputa" maxlength="11">
+          <img src="./深圳中国国旅_深圳旅行社_港澳旅游_香港旅游- 会员注册_files/no1.gif" width="16" height="16" id="moblieIco" style="display:none;">
+          <div id="mobileMsg">请填写有效手机号码，以便接收订单等通知，及时了解订单情况</div>
+        </li>
+        <li>
+          <span><em>*</em>常用邮箱:</span>
+          <input name="email" id="email" type="text" class="inputa" maxlength="50">
+          <img src="./深圳中国国旅_深圳旅行社_港澳旅游_香港旅游- 会员注册_files/no1.gif" width="16" height="16" id="emailIco" style="display:none;">
+          <div id="emailMsg">请输入有效的邮件地址</div>
+        </li>
+        <li>
+          <span><em>*</em>登陆密码:</span>
+          <input name="passwd" id="passwd" type="password" class="inputa" maxlength="14">
+          <img src="./深圳中国国旅_深圳旅行社_港澳旅游_香港旅游- 会员注册_files/no1.gif" width="16" height="16" id="passwdIco" style="display:none;">
+          <div id="passwdMsg">请输入6-16位密码</div>
+        </li>
+        <li>
+          <span><em>*</em>确认密码密码:</span>
+          <input name="passwdag" id="passwdag" type="password" class="inputa" maxlength="14">
+          <img src="./深圳中国国旅_深圳旅行社_港澳旅游_香港旅游- 会员注册_files/no1.gif" width="16" height="16" id="passwdagIco" style="display:none;">
+          <div id="passwdagMsg">请您再一次输入密码</div>
+        </li>
+        <li>
+          <span><em>*</em>邮箱验证码:</span>
+          <input type="text" class="inputa" style="width:85px;" maxlength="6" id="vdcode" name="vdcode">
+          <input type="button" value="获取邮箱验证码" id="getCode">
+          <div style="padding-top:25px;">
+            <input name="agree" id="agree" type="checkbox" value="1">
+            我已阅读并接受深圳中国旅行社官方网站<a href="http://www.xkcits.com/about/2010111261.html" target="_blank" style="text-decoration:underline; color:#22ade6;">用户协议</a>
+            <br><br>
+            <input type="image" src="./深圳中国国旅_深圳旅行社_港澳旅游_香港旅游- 会员注册_files/reg_sub.png" width="168" height="38">
+          </div>
+        </li>
+      </ul>
+    </form>
+    <div id="login_r" style="font-size:12px;">
+      <strong>为什么要注册会员?</strong>
+      <br>1. 以便我们更好的为您服务
+      <br><span>2. 会员参加旅游，可以获得更多优惠。</span>
+
+      <img src="./深圳中国国旅_深圳旅行社_港澳旅游_香港旅游- 会员注册_files/reg_img1.jpg" height="251" width="193" style="display:block; margin-top:20px;">
+    </div>
+  </div>
+</div>
+
+
+<div class="footer">
+  <div class="foot_title">
+    <p>
+      <a href="http://www.xkcits.com/about/2010111257.html">关于我们</a> 丨
+      <a href="http://www.xkcits.com/about/20110127310.html">旅游资质</a> 丨
+      <a href="http://www.xkcits.com/users/reg.php#">合作加盟</a> 丨
+      <a href="http://www.xkcits.com/about/201106121547.html">人才招聘</a> 丨
+      <a href="http://www.xkcits.com/about/2010111261.html">用户协议</a> 丨
+      <a href="http://www.xkcits.com/sitemap.html">网站地图</a> 丨
+      <a href="http://www.xkcits.com/about/20110127309.html">联系我们</a> 丨
+      <a href="http://www.xkcits.com/about/201308213272.html">付款方式</a>
+    </p>
+  </div>
+  <p class="foot_msg">地址：深圳市罗湖区红岭中路1002号寰宇大厦主楼第一、四、五层(查看地图) | 粤ICP备：05088116 | 官网：<a href="http://www.xkcits.com/">http://www.xkcits.com</a></p>
+</div>
+
+
+<script language="javascript">
+
+    $(function(){
+        $("#login_l .inputa").focus(function(){
+            $(this).addClass("on_focus");
+        }).blur(function(){
+            $(this).removeClass("on_focus");
+        });
+
+
+        $("#mobile").bind({
+            blur: function(){
+                if(egrMobileCheck($(this).val()) == false){
+                    $(this).parent().find("#mobileMsg").html("请正确输入您的手机号码!").css("color", "#f80426");
+                    $(this).next().show().attr("src", "/templets/default/images/no1.gif");
+                }else{
+                    axajSend("CheckMobile.php?m=" +Math.random()+"&mobile="+$(this).val(), "GET", null , returnFuc);
+                }
+            }
+        });
+
+        $("#email").bind({
+            blur: function(){
+                if(checkMail($(this).val()) == false){
+                    $(this).parent().find("#emailMsg").html("请输入正确的邮箱!").css("color", "#f80426");
+                    $(this).next().show().attr("src", "/templets/default/images/no1.gif");
+                }else{
+                    axajSend("CheckEmail.php?m=" +Math.random()+"&email="+$(this).val(), "GET", null , returnFuc_email);
+
+                }
+            }
+        });
+
+        $("#passwd").bind({
+            blur: function(){
+                if($(this).val().length < 6 || $(this).val().length > 16){
+                    $(this).parent().find("#passwdMsg").html("请输入6-16位密码!").css("color", "#f80426");
+                    $(this).next().show().attr("src", "/templets/default/images/no1.gif");
+                }else{
+                    $(this).parent().find("#passwdMsg").html("可以使用").css("color", "#999");
+                    $(this).next().show().attr("src", "/templets/default/images/yes1.gif");
+                }
+            }
+        });
+
+        $("#passwdag").bind({
+            blur: function(){
+                if($(this).val() != $("#passwd").val()){
+                    $(this).parent().find("#passwdagMsg").html("2次密码不一致!").css("color", "#f80426");
+                    $(this).next().show().attr("src", "/templets/default/images/no1.gif");
+                }else if($(this).val().length < 6 || $(this).val().length > 16){
+                    $(this).parent().find("#passwdagMsg").html("请输入6-16位密码!").css("color", "#f80426");
+                    $(this).next().show().attr("src", "/templets/default/images/no1.gif");
+                }else{
+                    $(this).parent().find("#passwdagMsg").html("可以使用").css("color", "#999");
+                    $(this).next().show().attr("src", "/templets/default/images/yes1.gif");
+                }
+            }
+        });
+
+
+        $("#formReg").submit(function(){
+            if(egrMobileCheck($("#mobile").val()) == false){
+                $("#mobile").parent().find("#mobileMsg").html("请正确输入您的手机号码!").css("color", "#f80426");
+                $("#mobile").next().show().attr("src", "/templets/default/images/no1.gif");
+                return false;
+            }
+            if(checkMail($("#email").val()) == false){
+                $("#email").parent().find("#emailMsg").html("请输入正确的邮箱!").css("color", "#f80426");
+                $("#email").next().show().attr("src", "/templets/default/images/no1.gif");
+
+                return false;
+            }
+            if($("#passwd").val().length < 6 || $("#passwd").val().length > 16){
+                $(this).parent().find("#passwdMsg").html("请输入6-16位密码!").css("color", "#f80426");
+                $(this).next().show().attr("src", "/templets/default/images/no1.gif");
+
+                return false;
+            }
+            if($("#passwdag").val() != $("#passwd").val()){
+                $(this).parent().find("#passwdagMsg").html("2次密码不一致!").css("color", "#f80426");
+                $(this).next().show().attr("src", "/templets/default/images/no1.gif");
+
+                return false;
+            }
+            if($("#vdcode").val().length <= 0){
+                alert("请输入手机验证码!");
+                return false;
+            }
+            if($("#agree").attr("checked") != "checked"){
+                alert("请先阅读并同意用户协议!");
+                return false;
+            }
+
+        });
+
+        var note_time = 100; var note_btn;
+        var mob=mob;
+        $("#getCode").click(function(){
+            if(checkMail($("#email").val()) == false){
+                $("#email").parent().find("#emailMsg").html("请输入正确的邮箱!").css("color", "#f80426");
+                $("#email").next().show().attr("src", "/templets/default/images/no1.gif");
+                return false;
+            }
+
+            $(this).attr("disabled", "disabled");
+
+            //此处发送短信
+            //axajSend("reg.php?m=post&mobile="+$("#mobile").val(), "GET", null ,null);
+            //此处发送邮件
+
+            axajSend("reg.php?m=post&email="+$("#email").val(), "GET", null ,null);
+
+            note_btn = $(this);
+            var noteCount = setInterval(function(){
+                note_btn.val("邮箱没收到？再次发送(" + note_time + ")");
+                if(note_time == 0){
+                    window.clearInterval(noteCount);
+                    note_btn.val("获取邮箱验证码");
+                    note_btn.removeAttr("disabled");
+                    note_time = 60;
+                }
+                note_time--;
+
+            }, 1000);
+
+        });
+
+    });
+    var returnFuc = function(text){
+        if(text=="1"){
+            $("#mobile").parent().find("#mobileMsg").html("此手机号已被注册!").css("color", "#f80426");
+            $("#mobile").next().show().attr("src", "/templets/default/images/no1.gif");
+
+            return false;
+        }else{
+            $("#mobile").parent().find("#mobileMsg").html("可以使用").css("color", "#999");
+            $("#mobile").next().show().attr("src", "/templets/default/images/yes1.gif");
+
+            return true;
+        }
+    }
+    var returnFuc_email = function(text){
+        if(text=="1"){
+            $("#email").parent().find("#emailMsg").html("此邮箱已被注册!").css("color", "#f80426");
+            $("#email").next().show().attr("src", "/templets/default/images/no1.gif");
+
+            return false;
+        }else{
+            $("#email").parent().find("#emailMsg").html("可以使用").css("color", "#999");
+            $("#email").next().show().attr("src", "/templets/default/images/yes1.gif");
+
+            return true;
+        }
+    }
+
+    axjaReturnFuc = function(value){}
+    axajSend = function( _url, _method, _send, returnFuc ){
+        if(!returnFuc)
+            returnFuc = axjaReturnFuc;
+        var xmlHttpObj;
+        if(window.ActiveXObject){
+            xmlHttpObj = new ActiveXObject("Microsoft.XMLHTTP");
+        }else if(window.XMLHttpRequest){
+            xmlHttpObj = new XMLHttpRequest();
+        }
+        try{
+            xmlHttpObj.onreadystatechange = function(){
+                if(xmlHttpObj.readyState == 4)
+                {
+                    if (xmlHttpObj.status == 200 )
+                    {
+                        returnFuc( xmlHttpObj.responseText );
+                    }
+                }
+            };
+            xmlHttpObj.open(_method, _url, true);
+            xmlHttpObj.send(_send);
+        }catch(exception){
+            alert("xmlHttp Fail");
+        }
+        return;
+    }
+
+
+    /* 手机校验 */
+    function egrMobileCheck(in_mobile){
+        var reg=new RegExp(/^1[3,5,8]\d{9}$/ig);
+        if(!reg.test(in_mobile)){
+            return false;
+        }
+        return true;
+    }
+
+    /* 邮件校验 */
+    function checkMail(in_email){
+        reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+        if(!(reg.test(in_email))){
+            return false;
+        }
+        return true;
+    }
+</script>
