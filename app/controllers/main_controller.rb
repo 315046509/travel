@@ -1,4 +1,5 @@
 class MainController < ApplicationController
+  protect_from_forgery :except => :login_check
   # 首页
   def index
   end
@@ -8,32 +9,19 @@ class MainController < ApplicationController
   end
 
   # 登录验证
-  #
-  # 2: 参数错误
-  # 0: 成功
-  # 1：失败
   def login_check
-    login_name = params[:name]
-    password = params[:password]
-    flag = nil
-    if Member.valid_use_login_params(login_name, password)
-      member = Member.login_check(login_name, password)
+    mobile = params[:mobile]
+    passwd = params[:passwd]
+    if Member.valid_use_login_params(mobile, passwd)
+      member = Member.login_check(mobile, passwd)
       if member.blank?
-        # 登录失败
-        flag = 1
+        flash[:error_msg] = "登陆失败"
+        redirect_to root_path and return
       else
         do_login(member)
-        flag = 0
+        flash[:error_msg] = "登陆成功"
+        redirect_to :back and return
       end
-    else
-      # 参数非法
-      flag = 0
-    end
-    respond_to do |format|
-      format.html do
-        redirect_to root_path and return
-      end
-      format.json { render :json => {:success => flag} }
     end
   end
 
@@ -44,43 +32,37 @@ class MainController < ApplicationController
 
   # 用户注册提交
   def user_create
-    user = params[:member][:user]
-    password = params[:member][:password]
-    passagain = params[:member][:member_passagain]
-    realname = params[:member][:realname]
-    tel = params[:member][:tel]
-    address = params[:member][:address]
-    @member = Member.new(:user => user,
-                         :password => Member.encrypt_password(password),
-                         :realname => realname,
-                         :tel => tel,
-                         :address => address
+    mobile = params[:member][:mobile]
+    email = params[:member][:email]
+    passwd = params[:member][:passwd]
+    passwdag = params[:member][:passwdag]
+    @member = Member.new(:mobile => mobile,
+                         :email => email,
+                         :passwd => Member.encrypt_password(passwd)
     )
     if @member.save
       #成功
-      member = Member.login_check(user, password)
-      respond_to do |format|
-        format.json do
-          if @member
-            do_login(member)
-            render :json => {:success => 0, :go_url => root_path}
-          else
-            render :json => {:success => 1}
-          end
-        end
+      member = Member.login_check(mobile, passwd)
+      if @member
+        do_login(member)
+        flash[:error_msg] = "登陆成功"
+        redirect_to root_path and return
+      else
+        redirect_to :back and return
       end
     else
+      flash[:error_msg] = "您所注册的手机号存在"
       redirect_to :back and return
     end
   end
 
-  #验证登录名
+#验证登录名
   def check_login
-    user = params[:member][:user]
-    render :text => Member.check_login_exist(user) ? "false" : "true"
+    mobile = params[:member][:mobile]
+    render :text => Member.check_login_exist(mobile) ? "false" : "true"
   end
 
-  # 注销
+# 注销
   def logout
     session[:member_id] = nil
     redirect_to root_path and return
@@ -88,7 +70,7 @@ class MainController < ApplicationController
 
   protected
 
-  # 登录
+# 登录
   def do_login(member)
     session[:member_id] = member.id
   end
