@@ -3,10 +3,16 @@
 <div class="title">
   <div class="title_menu center">
     <ul>
-      <li><a href="#">注册</a></li>
-      <li>丨</li>
-      <li><a href="#">登陆</a></li>
-      <li><a href="#">关于我们</a></li>
+
+      <% if @member_curr %>
+          <font color="#FF0000">会员：《<%= @member_curr.name %>》，欢迎您来到海外旅行社，祝您旅途愉快</font>
+          <a href="<%= logout_path %>">【退出】</a>
+      <% else %>
+          <li><a href="<%= signup_path %>">注册</a></li>
+          <li>丨</li>
+          <li><a href="<%= login_path %>">登陆</a></li>
+          <li><a href="#">关于我们</a></li>
+      <% end %>
     </ul>
     欢迎访问<a style="margin:0;" href="http://m.ccpxcm.com/travels" class="title_a">海外旅行社</a>
   </div>
@@ -426,9 +432,9 @@
   <div class="center">
 
     <ul class="nav_menu">
-      <li><a class="nav_cur" href="#">首页</a></li>
+      <li><a class="nav_cur" href="/">首页</a></li>
 
-      <li><a href="#">美国旅游</a></li>
+      <li><a href="<%= destination_one_index_path %>">美国旅游</a></li>
 
       <li><a href="#">英国旅游</a></li>
 

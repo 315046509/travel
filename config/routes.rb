@@ -4,7 +4,6 @@ Travel::Application.routes.draw do
   match '/login' => 'main#login', :via => :get
   match '/logout' => 'main#logout', :via => :get
   match '/signup' => 'main#signup', :via => :get
-
   resources :main do
     collection do
       post 'user_create'
@@ -12,6 +11,8 @@ Travel::Application.routes.draw do
       get 'check_login'
     end
   end
+  resources :destination_one
+  resources :destination_two
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

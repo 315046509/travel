@@ -542,198 +542,201 @@
 
 </div>
 <div class="classify_right">
-<div class="classify_right_top">
-  <div class="classify_right_sidebar">
-    <% if @member_curr %>
-        <div class="welcome">
-          <p><span>张起灵</span>您好，欢迎您登陆会员中心</p>
-        </div>
-    <% else %>
-        <div>
-          <a class="sidebar_register" href="<%= signup_path %>">注 册</a>
-          <a class="sidebar_login" href="<%= login_path %>">登 录</a>
-        </div>
-    <% end %>
-    <div class="sidebar_my">
-      <div class="sidebar_my_zj">
-        <p class="sidebar_my_zj_p"><span>99%</span>满意度</p>
+  <div class="classify_right_top">
+    <div class="classify_right_sidebar">
+      <% if @member_curr %>
+          <p class="travel_tj_price">
+            会员：<span><%= @member_curr.name %></span>
+          </p>
 
-        <p>已有<b class="c_f60">28639</b>人预订出游</p>
-      </div>
-      <div class="order_play">
-        <div class="new_orders">
-          <div class="hot_mudd">
-            <p class="order_title">
-              <a href="#">西藏</a>
-              <span>热门目的地</span>
-            </p>
-            <div class="orders">
-              <ul>
-                <li style="overflow: hidden; height: 30px; margin-top: 0px; margin-bottom: 10px; padding-top: 0px; padding-bottom: 0px;">
-                  <p>客户 <span>1860***5700</span> 22分钟前预订了
-                    <a title="香港三日游（海洋+迪士尼+自由）品质纯玩团" target="_blank" href="">香港三日游（海洋+迪士尼+自由）品质纯玩团</a>
-                  </p>
-                </li>
-                <li style="overflow: hidden; height: 2.9764952269368514px; margin-top: 0px; margin-bottom: 0.992165075645616px; padding-top: 0px; padding-bottom: 0px;">
-                  <p>客户 <span>1860***5700</span> 22分钟前预订了
-                    <a title="香港三日游（海洋+迪士尼+自由）品质纯玩团" target="_blank" href="">香港三日游（海洋+迪士尼+自由）品质纯玩团</a>
-                  </p>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="hot_mudd">
-            <p class="order_title">
-              <a href="#">香格里拉</a>
-              <span>热门目的地</span>
-            </p>
-            <div class="orders">
-              <ul>
-                <li style="overflow: hidden; height: 9.625610882967528px; margin-top: 0px; margin-bottom: 3.1282392923734585px; padding-top: 0px; padding-bottom: 0px;">
-                  <p>客户 <span>1501***9016</span> 8分钟前预订了
-                    <a title="香港三日游（海洋+杜莎+自由）品质纯玩团" target="_blank" href="">香港三日游（海洋+杜莎+自由）品质纯玩团</a>
-                  </p>
-                </li>
-                <li style="overflow: hidden; height: 10.431525702318797px; margin-top: 0px; margin-bottom: 3.390154555191922px; padding-top: 0px; padding-bottom: 0px;">
-                  <p>客户 <span>1501***9016</span> 8分钟前预订了
-                    <a title="香港三日游（海洋+杜莎+自由）品质纯玩团" target="_blank" href="">香港三日游（海洋+杜莎+自由）品质纯玩团</a>
-                  </p>
-                </li>
-                <li style="overflow: hidden; height: 11px; margin-top: 0px; margin-bottom: 3.574903726577759px; padding-top: 0px; padding-bottom: 0px;">
-                  <p>客户 <span>1501***9016</span> 8分钟前预订了
-                    <a title="香港三日游（海洋+杜莎+自由）品质纯玩团" target="_blank" href="">香港三日游（海洋+杜莎+自由）品质纯玩团</a>
-                  </p>
-                </li>
-              </ul>
-            </div>
-            <div class="clear"></div>
-          </div>
-          <div class="hot_mudd">
-            <p class="order_title">
-              <a href="http://www.xkcits.com/#">云南</a>
-              <span>热门目的地</span>
-            </p>
-
-            <div class="orders">
-              <ul>
-                <li>
-                  <p>客户 <span>1597***0098</span> 30分钟前预订了
-                    <a title="港澳五日游（海洋+迪+杜莎+澳门）品质纯玩团" target="_blank" href="">港澳五日游（海洋+迪+杜莎+澳门）品质纯玩团</a>
-                  </p>
-                </li>
-                <li style="overflow: hidden; height: 19.90332044482414px; margin-top: 0px; margin-bottom: 6.634440148274712px; padding-top: 0px; padding-bottom: 0px;">
-                  <p>客户 <span>1332***8109</span> 3分钟前预订了
-                    <a title="港澳四日游（优质诚信品质游）海洋公园线" target="_blank" href="">港澳四日游（优质诚信品质游）海洋公园线</a>
-                  </p>
-                </li>
-                <li style="overflow: hidden; height: 27.24508876075776px; margin-top: 0px; margin-bottom: 9.08169625358592px; padding-top: 0px; padding-bottom: 0px;">
-                  <p>客户 <span>1332***8109</span> 3分钟前预订了
-                    <a title="港澳四日游（优质诚信品质游）海洋公园线" target="_blank" href="">港澳四日游（优质诚信品质游）海洋公园线</a>
-                  </p>
-                </li>
-
-              </ul>
-            </div>
-          </div>
-          <div class="hot_mudd">
-            <p class="order_title">
-              <a href="http://www.xkcits.com/#">巴厘岛</a>
-              <span>热门目的地</span>
-            </p>
-
-            <div class="orders">
-              <ul>
-                <li style="overflow: hidden; height: 10.142686523274463px; margin-top: 0px; margin-bottom: 3.28987248371479px; padding-top: 0px; padding-bottom: 0px;">
-                  <p>客户 <span>1868***7818</span> 13分钟前预订了
-                    <a title="香港一日游（维多利亚游轮）品质纯玩团" target="_blank" href="">香港一日游（维多利亚游轮）品质纯玩团</a>
-                  </p>
-                </li>
-                <li style="overflow: hidden; height: 26.73586215864882px; margin-top: 0px; margin-bottom: 8.75769535722347px; padding-top: 0px; padding-bottom: 0px;">
-                  <p>客户 <span>1868***7818</span> 13分钟前预订了
-                    <a title="香港一日游（维多利亚游轮）品质纯玩团" target="_blank" href="">香港一日游（维多利亚游轮）品质纯玩团</a>
-                  </p>
-                </li>
-                <li style="overflow: hidden; height: 1.4987049666140777px; margin-top: 0px; margin-bottom: 0.5078495170094328px; padding-top: 0px; padding-bottom: 0px;">
-                  <p>客户 <span>1868***7818</span> 13分钟前预订了
-                    <a title="香港一日游（维多利亚游轮）品质纯玩团" target="_blank" href="">香港一日游（维多利亚游轮）品质纯玩团</a>
-                  </p>
-                </li>
-
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="newBanner">
-    <div class="play_img">
-      <a href="#" target="_bank">
-        <img alt="" class="all_imgs" id="img_1" src="../images/1403837083.jpg" style="display: none;"></a>
-      <a href="#" target="_bank">
-        <img alt="绿色全友" class="all_imgs" id="img_2" src="../images/1403257017.jpg" style="display: none;">
-      </a>
-      <a href="#" target="_bank">
-        <img alt="泰国六日品质游" class="all_imgs" id="img_3" src="../images/1396590471.jpg" style="display: none;">
-      </a>
-      <a href="#" target="_bank">
-        <img alt="肯尼亚" class="all_imgs" id="img_4" src="../images/1403585096.jpg" style="display: none;">
-      </a><a href="#" target="_bank">
-      <img alt="世界杯竞猜" class="all_imgs" id="img_5" src="../images/1403582071.jpg" style="display: none;"></a>
-      <a href="#" target="_bank">
-        <img alt="港澳游提前报名住澳门" class="all_imgs" id="img_6" src="../images/1394592841.jpg" style="display: inline;"></a>
-      <ul>
-        <li id="li_1" class=""><a href="javascript:void(0)"></a></li>
-        <li id="li_2" class=""><a href="javascript:void(0)"></a></li>
-        <li id="li_3" class=""><a href="javascript:void(0)"></a></li>
-        <li id="li_4" class=""><a href="javascript:void(0)"></a></li>
-        <li id="li_5" class=""><a href="javascript:void(0)"></a></li>
-        <li id="li_6" class="li_cur"><a href="javascript:void(0)"></a></li>
-      </ul>
-    </div>
-  </div>
-
-
-  <div class="clear"></div>
-</div>
-
-<div class="travel_sale">
-  <h2 class="travel_Hd">
-    <!---<a title="更多旅游特价" target="_blank" href="#">更多旅游特价>></a>-->
-    <span class="travel_Hd_type travel_tj_type">促销活动</span>
-    <span class="travel_Hd_msg">特实惠，真低价！</span>
-  </h2>
-
-  <div class="travel_Bd">
-    <ul class="travel_tj_list">
-
-      <li>
-        <div class="travel_tj_img">
-          <a title="巴厘岛6天4晚乐享悠闲游（买2送1）" target="_blank" href="#">
-            <img width="160px" height="100px" src="../images/1-140324160147.jpg" style="display: inline;">
-          </a>
-
+      <% else %>
           <div>
-            <p class="travel_tj_img_text">买2</p>
+            <a class="sidebar_register" href="<%= signup_path %>">注 册</a>
+            <a class="sidebar_login" href="<%= login_path %>">登 录</a>
+          </div>
+      <% end %>
+      <div class="sidebar_my">
+        <div class="sidebar_my_zj">
+          <p class="sidebar_my_zj_p"><span>99%</span>满意度</p>
 
-            <p class="travel_tj_img_price">送1</p>
+          <p>已有<b class="c_f60">28639</b>人预订出游</p>
+        </div>
+        <div class="order_play">
+          <div class="new_orders">
+            <div class="hot_mudd">
+              <p class="order_title">
+                <a href="#">西藏</a>
+                <span>热门目的地</span>
+              </p>
+
+              <div class="orders">
+                <ul>
+                  <li style="overflow: hidden; height: 30px; margin-top: 0px; margin-bottom: 10px; padding-top: 0px; padding-bottom: 0px;">
+                    <p>客户 <span>1860***5700</span> 22分钟前预订了
+                      <a title="香港三日游（海洋+迪士尼+自由）品质纯玩团" target="_blank" href="">香港三日游（海洋+迪士尼+自由）品质纯玩团</a>
+                    </p>
+                  </li>
+                  <li style="overflow: hidden; height: 2.9764952269368514px; margin-top: 0px; margin-bottom: 0.992165075645616px; padding-top: 0px; padding-bottom: 0px;">
+                    <p>客户 <span>1860***5700</span> 22分钟前预订了
+                      <a title="香港三日游（海洋+迪士尼+自由）品质纯玩团" target="_blank" href="">香港三日游（海洋+迪士尼+自由）品质纯玩团</a>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="hot_mudd">
+              <p class="order_title">
+                <a href="#">香格里拉</a>
+                <span>热门目的地</span>
+              </p>
+
+              <div class="orders">
+                <ul>
+                  <li style="overflow: hidden; height: 9.625610882967528px; margin-top: 0px; margin-bottom: 3.1282392923734585px; padding-top: 0px; padding-bottom: 0px;">
+                    <p>客户 <span>1501***9016</span> 8分钟前预订了
+                      <a title="香港三日游（海洋+杜莎+自由）品质纯玩团" target="_blank" href="">香港三日游（海洋+杜莎+自由）品质纯玩团</a>
+                    </p>
+                  </li>
+                  <li style="overflow: hidden; height: 10.431525702318797px; margin-top: 0px; margin-bottom: 3.390154555191922px; padding-top: 0px; padding-bottom: 0px;">
+                    <p>客户 <span>1501***9016</span> 8分钟前预订了
+                      <a title="香港三日游（海洋+杜莎+自由）品质纯玩团" target="_blank" href="">香港三日游（海洋+杜莎+自由）品质纯玩团</a>
+                    </p>
+                  </li>
+                  <li style="overflow: hidden; height: 11px; margin-top: 0px; margin-bottom: 3.574903726577759px; padding-top: 0px; padding-bottom: 0px;">
+                    <p>客户 <span>1501***9016</span> 8分钟前预订了
+                      <a title="香港三日游（海洋+杜莎+自由）品质纯玩团" target="_blank" href="">香港三日游（海洋+杜莎+自由）品质纯玩团</a>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div class="hot_mudd">
+              <p class="order_title">
+                <a href="http://www.xkcits.com/#">云南</a>
+                <span>热门目的地</span>
+              </p>
+
+              <div class="orders">
+                <ul>
+                  <li>
+                    <p>客户 <span>1597***0098</span> 30分钟前预订了
+                      <a title="港澳五日游（海洋+迪+杜莎+澳门）品质纯玩团" target="_blank" href="">港澳五日游（海洋+迪+杜莎+澳门）品质纯玩团</a>
+                    </p>
+                  </li>
+                  <li style="overflow: hidden; height: 19.90332044482414px; margin-top: 0px; margin-bottom: 6.634440148274712px; padding-top: 0px; padding-bottom: 0px;">
+                    <p>客户 <span>1332***8109</span> 3分钟前预订了
+                      <a title="港澳四日游（优质诚信品质游）海洋公园线" target="_blank" href="">港澳四日游（优质诚信品质游）海洋公园线</a>
+                    </p>
+                  </li>
+                  <li style="overflow: hidden; height: 27.24508876075776px; margin-top: 0px; margin-bottom: 9.08169625358592px; padding-top: 0px; padding-bottom: 0px;">
+                    <p>客户 <span>1332***8109</span> 3分钟前预订了
+                      <a title="港澳四日游（优质诚信品质游）海洋公园线" target="_blank" href="">港澳四日游（优质诚信品质游）海洋公园线</a>
+                    </p>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+            <div class="hot_mudd">
+              <p class="order_title">
+                <a href="http://www.xkcits.com/#">巴厘岛</a>
+                <span>热门目的地</span>
+              </p>
+
+              <div class="orders">
+                <ul>
+                  <li style="overflow: hidden; height: 10.142686523274463px; margin-top: 0px; margin-bottom: 3.28987248371479px; padding-top: 0px; padding-bottom: 0px;">
+                    <p>客户 <span>1868***7818</span> 13分钟前预订了
+                      <a title="香港一日游（维多利亚游轮）品质纯玩团" target="_blank" href="">香港一日游（维多利亚游轮）品质纯玩团</a>
+                    </p>
+                  </li>
+                  <li style="overflow: hidden; height: 26.73586215864882px; margin-top: 0px; margin-bottom: 8.75769535722347px; padding-top: 0px; padding-bottom: 0px;">
+                    <p>客户 <span>1868***7818</span> 13分钟前预订了
+                      <a title="香港一日游（维多利亚游轮）品质纯玩团" target="_blank" href="">香港一日游（维多利亚游轮）品质纯玩团</a>
+                    </p>
+                  </li>
+                  <li style="overflow: hidden; height: 1.4987049666140777px; margin-top: 0px; margin-bottom: 0.5078495170094328px; padding-top: 0px; padding-bottom: 0px;">
+                    <p>客户 <span>1868***7818</span> 13分钟前预订了
+                      <a title="香港一日游（维多利亚游轮）品质纯玩团" target="_blank" href="">香港一日游（维多利亚游轮）品质纯玩团</a>
+                    </p>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="newBanner">
+      <div class="play_img">
+        <a href="#" target="_bank">
+          <img alt="" class="all_imgs" id="img_1" src="../images/1403837083.jpg" style="display: none;"></a>
+        <a href="#" target="_bank">
+          <img alt="绿色全友" class="all_imgs" id="img_2" src="../images/1403257017.jpg" style="display: none;">
+        </a>
+        <a href="#" target="_bank">
+          <img alt="泰国六日品质游" class="all_imgs" id="img_3" src="../images/1396590471.jpg" style="display: none;">
+        </a>
+        <a href="#" target="_bank">
+          <img alt="肯尼亚" class="all_imgs" id="img_4" src="../images/1403585096.jpg" style="display: none;">
+        </a><a href="#" target="_bank">
+        <img alt="世界杯竞猜" class="all_imgs" id="img_5" src="../images/1403582071.jpg" style="display: none;"></a>
+        <a href="#" target="_bank">
+          <img alt="港澳游提前报名住澳门" class="all_imgs" id="img_6" src="../images/1394592841.jpg" style="display: inline;"></a>
+        <ul>
+          <li id="li_1" class=""><a href="javascript:void(0)"></a></li>
+          <li id="li_2" class=""><a href="javascript:void(0)"></a></li>
+          <li id="li_3" class=""><a href="javascript:void(0)"></a></li>
+          <li id="li_4" class=""><a href="javascript:void(0)"></a></li>
+          <li id="li_5" class=""><a href="javascript:void(0)"></a></li>
+          <li id="li_6" class="li_cur"><a href="javascript:void(0)"></a></li>
+        </ul>
+      </div>
+    </div>
 
-        <p class="travel_tj_msg">
-          <a title="巴厘岛6天4晚乐享悠闲游（买2送1）" target="_blank" href="#">巴厘岛6天4晚乐享悠闲游（买2送1）</a>
-        </p>
-
-        <p class="travel_tj_price">
-          <del>原价:4199</del>
-          <span><i>￥</i>3199</span>起
-        </p>
-      </li>
-    </ul>
 
     <div class="clear"></div>
   </div>
-</div>
+
+  <div class="travel_sale">
+    <h2 class="travel_Hd">
+      <!---<a title="更多旅游特价" target="_blank" href="#">更多旅游特价>></a>-->
+      <span class="travel_Hd_type travel_tj_type">促销活动</span>
+      <span class="travel_Hd_msg">特实惠，真低价！</span>
+    </h2>
+
+    <div class="travel_Bd">
+      <ul class="travel_tj_list">
+
+        <li>
+          <div class="travel_tj_img">
+            <a title="巴厘岛6天4晚乐享悠闲游（买2送1）" target="_blank" href="#">
+              <img width="160px" height="100px" src="../images/1-140324160147.jpg" style="display: inline;">
+            </a>
+
+            <div>
+              <p class="travel_tj_img_text">买2</p>
+
+              <p class="travel_tj_img_price">送1</p>
+            </div>
+          </div>
+
+          <p class="travel_tj_msg">
+            <a title="巴厘岛6天4晚乐享悠闲游（买2送1）" target="_blank" href="#">巴厘岛6天4晚乐享悠闲游（买2送1）</a>
+          </p>
+
+          <p class="travel_tj_price">
+            <del>原价:4199</del>
+            <span><i>￥</i>3199</span>起
+          </p>
+        </li>
+      </ul>
+
+      <div class="clear"></div>
+    </div>
+  </div>
 </div>
 
 <div class="clear"></div>

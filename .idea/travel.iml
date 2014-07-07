@@ -168,6 +168,8 @@
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v0.3.39, RVM: ruby-2.0.0-p451) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="uglifier (v2.5.1, RVM: ruby-2.0.0-p451) [gem]" level="application" />
     <orderEntry type="module" module-name="ceping" />
+    <orderEntry type="module" module-name="aimeng" />
+    <orderEntry type="module" module-name="dongying" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />

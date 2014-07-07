@@ -15,13 +15,16 @@ class MainController < ApplicationController
     if Member.valid_use_login_params(mobile, passwd)
       member = Member.login_check(mobile, passwd)
       if member.blank?
-        flash[:error_msg] = "登陆失败"
-        redirect_to root_path and return
+        flash[:error_msg] = "登陆失败，请检查手机号或密码是否有误！"
+        redirect_to :back and return
       else
         do_login(member)
         flash[:error_msg] = "登陆成功"
-        redirect_to :back and return
+        redirect_to root_path and return
       end
+    else
+      flash[:error_msg] = "请填写正确的手机号和密码！"
+      redirect_to :back and return
     end
   end
 
@@ -32,11 +35,13 @@ class MainController < ApplicationController
 
   # 用户注册提交
   def user_create
+    name = params[:member][:name]
     mobile = params[:member][:mobile]
     email = params[:member][:email]
     passwd = params[:member][:passwd]
     passwdag = params[:member][:passwdag]
-    @member = Member.new(:mobile => mobile,
+    @member = Member.new(:name => name,
+                         :mobile => mobile,
                          :email => email,
                          :passwd => Member.encrypt_password(passwd)
     )

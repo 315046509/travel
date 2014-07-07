@@ -14,7 +14,10 @@
 ActiveRecord::Schema.define(version: 20140703074939) do
 
   create_table "members", force: true do |t|
-    t.string   "user"
+    t.string   "name"
+    t.string   "mobile"
+    t.string   "email"
+    t.string   "passwd"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

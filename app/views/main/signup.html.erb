@@ -10,7 +10,7 @@
     </div>
 
     <div class="fn-left">
-      <a href="#">
+      <a href="/">
         <div class="reg_logo"></div>
       </a>
     </div>
@@ -21,12 +21,21 @@
   <div id="login_border" class="cfix">
     <%= form_for(@member, :url => user_create_main_index_path, :method => "post", :html => {:id => "formReg"}) do |f| %>
         <ul id="login_l">
+
+          <li>
+            <span><em>*</em>用户昵称:</span>
+            <input name="member[name]" id="name" type="text" class="inputa" maxlength="6">
+            <img src="../images/no1.gif" width="16" height="16" id="nameIco" style="display:none;">
+
+            <div id="nameMsg">请填写昵称</div>
+          </li>
+
           <li>
             <span><em>*</em>手机号码:</span>
             <input name="member[mobile]" id="mobile" type="text" class="inputa" maxlength="11">
             <img src="../images/no1.gif" width="16" height="16" id="moblieIco" style="display:none;">
 
-            <div id="mobileMsg">请填写有效手机号码，以便接收订单等通知，及时了解订单情况</div>
+            <div id="mobileMsg">请填写有效手机号码</div>
           </li>
           <li>
             <span><em>*</em>常用邮箱:</span>
@@ -50,7 +59,7 @@
             <div id="passwdagMsg">请您再一次输入密码</div>
           </li>
           <li>
-            <div style="padding-top:25px;">
+            <div style="padding-top:10px;">
               <input name="agree" id="agree" type="checkbox" value="1">
               我已阅读并接受海外旅行社官方网站<a href="#" target="_blank" style="text-decoration:underline; color:#22ade6;">用户协议</a>
               <br><br>
@@ -79,6 +88,17 @@
             $(this).removeClass("on_focus");
         });
 
+        $("#name").bind({
+            blur: function () {
+                if (($(this).val()) == false) {
+                    $(this).parent().find("#nameMsg").html("请输入昵称").css("color", "#f80426");
+                    $(this).next().show().attr("src", "../images/no1.gif");
+                } else {
+                    $(this).parent().find("#nameMsg").html("OK").css("color", "#999");
+                    $(this).next().show().attr("src", "../images/yes1.gif");
+                }
+            }
+        });
 
         $("#mobile").bind({
             blur: function () {
@@ -133,6 +153,11 @@
 
 
         $("#formReg").submit(function () {
+            if (($("#name").val()) == false) {
+                $("#name").parent().find("#nameMsg").html("请正确输入昵称!").css("color", "#f80426");
+                $("#name").next().show().attr("src", "../images/no1.gif");
+                return false;
+            }
             if (egrMobileCheck($("#mobile").val()) == false) {
                 $("#mobile").parent().find("#mobileMsg").html("请正确输入您的手机号码!").css("color", "#f80426");
                 $("#mobile").next().show().attr("src", "../images/no1.gif");
