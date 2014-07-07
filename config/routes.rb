@@ -13,6 +13,12 @@ Travel::Application.routes.draw do
   end
   resources :destination_one
   resources :destination_two
+  resources :destination_three
+  resources :destination_four
+  resources :destination_five
+  resources :destination_six
+  resources :destination_seven
+  resources :destination_eight
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

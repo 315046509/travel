@@ -1,0 +1,2 @@
+class DestinationFiveController < ApplicationController
+end

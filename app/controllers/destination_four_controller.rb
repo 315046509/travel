@@ -1,0 +1,2 @@
+class DestinationFourController < ApplicationController
+end

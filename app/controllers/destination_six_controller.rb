@@ -1,0 +1,2 @@
+class DestinationSixController < ApplicationController
+end

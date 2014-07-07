@@ -1,0 +1,2 @@
+class DestinationEightController < ApplicationController
+end
