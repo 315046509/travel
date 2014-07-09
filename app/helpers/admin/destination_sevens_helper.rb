@@ -1,0 +1,2 @@
+module Admin::DestinationSevensHelper
+end

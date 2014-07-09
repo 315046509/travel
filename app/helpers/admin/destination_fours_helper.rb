@@ -1,0 +1,2 @@
+module Admin::DestinationFoursHelper
+end

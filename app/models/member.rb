@@ -1,6 +1,7 @@
 #encoding:UTF-8
 class Member < ActiveRecord::Base
-  has_many :babies
+  scope :order_ct_desc, lambda { order("created_at DESC") }
+
   validates :mobile, :presence => {:message => "手机号不能为空"},
             :uniqueness => {:message => "手机号以存在！"}
   validates_format_of :mobile, :multiline => true, :message => "手机号码不正确!", :with => /^(13[0-9]|15[0-9]|18[0-9])\d{8}$/

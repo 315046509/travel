@@ -1,6 +1,5 @@
 Travel::Application.routes.draw do
   root :to => "main#index"
-
   match '/login' => 'main#login', :via => :get
   match '/logout' => 'main#logout', :via => :get
   match '/signup' => 'main#signup', :via => :get
@@ -19,6 +18,42 @@ Travel::Application.routes.draw do
   resources :destination_six
   resources :destination_seven
   resources :destination_eight
+  # admin
+  namespace :admin do
+    match '' => 'accounts#index', :via => :get
+    match '/login' => 'main#login', :via => :get
+    match '/logout' => 'main#logout', :via => :get
+    resources :main do
+      collection do
+        post 'check_login'
+      end
+    end
+    resources :accounts do
+      collection do
+        post 'update_multiple'
+      end
+    end
+    resources :announcements
+    # 导航栏一
+    resources :destination_ones
+    resources :destination_twos do
+      member do
+        delete 'delett_tejia'
+      end
+      collection do
+        get 'tejia'
+        get 'new_tejia'
+        post 'create_tejia'
+      end
+    end
+    resources :destination_threes
+    resources :destination_fours
+    resources :destination_fives
+    resources :destination_sixs
+    resources :destination_sevens
+    resources :destination_eights
+    resources :destination_nines
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -23,7 +23,7 @@
   <img src="../images/logo.jpg"></a></div>
 <div class="">
 <div class="newTop-search">
-    <span class="newTop-search-s1 fn-left"></span>
+  <span class="newTop-search-s1 fn-left"></span>
 </div>
 <ul class="toolNav">
 <li id="itineraries">
@@ -380,7 +380,7 @@
   </ul>
 </li>
 <li id="conferenceTourism">
-  <a href="#">酒店预定</a>
+  <a href="#">酒店展示</a>
   <ul class="subNav" style="display: none; ">
     <li>
 
@@ -446,6 +446,9 @@
     <span class="first_span"><font color="red">最新公告:</font></span>
 
     <marquee onmouseover="this.stop()" onmouseout="this.start()" scrollamount="1" scrolldelay="7" direction="left" width="920" height="20" style="line-height: 19px;">
-      <a>海外旅行社，海外旅行社，海外旅行社，哦耶！</a></marquee>
+      <% @jobs.each do |q| %>
+          <a><%= q.title %></a>
+      <% end %>
+    </marquee>
   </p>
 </div>
