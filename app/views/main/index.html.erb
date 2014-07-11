@@ -16,7 +16,6 @@
     </dt>
     <dd>
       <a target="_blank" href="#">香港</a>
-
     </dd>
   </dl>
   <div class="subNav_box">
@@ -572,7 +571,7 @@
               <div class="orders">
                 <ul>
                   <li style="overflow: hidden; height: 30px; margin-top: 0px; margin-bottom: 10px; padding-top: 0px; padding-bottom: 0px;">
-                    <p>客户 <span>1860***5700</span> 22分钟前预订了
+                    <p>客户 <span>1860***5700</span> 12分钟前预订了
                       <a title="香港三日游（海洋+迪士尼+自由）品质纯玩团" target="_blank" href="">香港三日游（海洋+迪士尼+自由）品质纯玩团</a>
                     </p>
                   </li>
@@ -593,12 +592,12 @@
               <div class="orders">
                 <ul>
                   <li style="overflow: hidden; height: 9.625610882967528px; margin-top: 0px; margin-bottom: 3.1282392923734585px; padding-top: 0px; padding-bottom: 0px;">
-                    <p>客户 <span>1501***9016</span> 8分钟前预订了
+                    <p>客户 <span>1501***9016</span> 3分钟前预订了
                       <a title="香港三日游（海洋+杜莎+自由）品质纯玩团" target="_blank" href="">香港三日游（海洋+杜莎+自由）品质纯玩团</a>
                     </p>
                   </li>
                   <li style="overflow: hidden; height: 10.431525702318797px; margin-top: 0px; margin-bottom: 3.390154555191922px; padding-top: 0px; padding-bottom: 0px;">
-                    <p>客户 <span>1501***9016</span> 8分钟前预订了
+                    <p>客户 <span>1501***9016</span> 5分钟前预订了
                       <a title="香港三日游（海洋+杜莎+自由）品质纯玩团" target="_blank" href="">香港三日游（海洋+杜莎+自由）品质纯玩团</a>
                     </p>
                   </li>
@@ -708,32 +707,32 @@
     </h2>
 
     <div class="travel_Bd">
-      <ul class="travel_tj_list">
+      <% @lunbos.each do |q| %>
+          <ul class="travel_tj_list">
+            <li>
+              <div class="travel_tj_img">
+                <a title="<%= q.title %>" target="_blank" href="#">
+                  <%= image_tag q.avatar.url(:index1) %>
+                </a>
 
-        <li>
-          <div class="travel_tj_img">
-            <a title="巴厘岛6天4晚乐享悠闲游（买2送1）" target="_blank" href="#">
-              <img width="160px" height="100px" src="../images/1-140324160147.jpg" style="display: inline;">
-            </a>
+                <div>
+                  <p class="travel_tj_img_text">买2</p>
 
-            <div>
-              <p class="travel_tj_img_text">买2</p>
+                  <p class="travel_tj_img_price">送1</p>
+                </div>
+              </div>
 
-              <p class="travel_tj_img_price">送1</p>
-            </div>
-          </div>
+              <p class="travel_tj_msg">
+                <a title="<%= q.title %>" target="_blank" href="#"><%= q.title %></a>
+              </p>
 
-          <p class="travel_tj_msg">
-            <a title="巴厘岛6天4晚乐享悠闲游（买2送1）" target="_blank" href="#">巴厘岛6天4晚乐享悠闲游（买2送1）</a>
-          </p>
-
-          <p class="travel_tj_price">
-            <del>原价:4199</del>
-            <span><i>￥</i>3199</span>起
-          </p>
-        </li>
-      </ul>
-
+              <p class="travel_tj_price">
+                <del>原价:4199</del>
+                <span><i>￥</i><%= q.price %></span>起
+              </p>
+            </li>
+          </ul>
+      <% end %>
       <div class="clear"></div>
     </div>
   </div>
@@ -755,34 +754,33 @@
     <dt>
       <a target="_blank" href="#">香港游</a>
     </dt>
-    <dd>
-
-      <a title="香港品质纯玩" target="_blank" href="#">香港品质纯玩</a>
-
-
-    </dd>
+    <% @category_1_city.each do |q| %>
+        <dd class="dd">
+          <a target="_blank" href="http://www.xkcits.com/chujing/riben" title="<%= q.title %>"><%= q.title %></a>
+        </dd>
+    <% end %>
     <div class="clear"></div>
   </dl>
   <dl>
     <dt>
       <a target="_blank" href="#">澳门游</a>
     </dt>
-    <dd>
-
-      <a title="主教山" target="_blank" href="#">主教山</a>
-
-    </dd>
+    <% @category_2_city.each do |q| %>
+        <dd class="dd">
+          <a target="_blank" href="http://www.xkcits.com/chujing/riben" title="<%= q.title %>"><%= q.title %></a>
+        </dd>
+    <% end %>
     <div class="clear"></div>
   </dl>
   <dl>
     <dt>
       <a target="_blank" href="#">港澳游</a>
     </dt>
-    <dd>
-
-      <a title="港澳品质纯玩" target="_blank" href="#">港澳品质纯玩</a>
-
-    </dd>
+    <% @category_3_city.each do |q| %>
+        <dd class="dd">
+          <a target="_blank" href="http://www.xkcits.com/chujing/riben" title="<%= q.title %>"><%= q.title %></a>
+        </dd>
+    <% end %>
     <div class="clear"></div>
   </dl>
 
@@ -809,221 +807,227 @@
 </ul>
 
 <div class="newChannel_list visible" id="hk_div1">
-  <ul>
-    <li class="lineitem">
-      <div class="img fn-left">
-        <a title="" target="_blank" href="#">
-          <img alt="" src="../images/1-131012135120.jpg" style="display: inline;">
-        </a>
+  <% @recommend1.each do |q| %>
+      <ul>
+        <li class="lineitem">
+          <div class="img fn-left">
+            <a title="" target="_blank" href="#">
+              <%= image_tag q.avatar.url(:index) %>
+            </a>
+          </div>
 
-        <div class="prd_num">产品编号：SHS736</div>
-      </div>
-
-      <dl class="info fn-left">
-        <dt class="t">
-          <a title="香港二日游（海洋公园线）诚信精品团" target="_blank" href="#">
-            <img alt="暑期特价" src="../images/sqtj.gif" style="margin-right: 3px;">香港二日游（海洋公园线）诚信精品团</a>
-        </dt>
-        <dd class="desc">1．景点：维多利亚港/星光大道/DFS国际免税店/黄大仙/浅水湾富</dd>
-        <dd class="moredesc">
+          <dl class="info fn-left">
+            <dt class="t">
+              <a title="<%= q.title %>" target="_blank" href="#">
+                <img alt="暑期特价" src="../images/sqtj.gif" style="margin-right: 3px;">
+                <%= q.title %>
+              </a>
+            </dt>
+            <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
+            <dd class="moredesc">
                                 	<span>
                                         满意度：
                                         <span class="n">98%</span>
                                     </span>
                                     <span class="pin">
-                                        <span class="n">25</span>
-                                        人点评
+                                        <span class="n">5012</span>
+                                        人赞
                                     </span>
                                     <span>
-                                        最近出发班期：
-                                        <span class="n">8/5,8/6</span>
+                                        更新时间：
+                                        <span class="n"><%= my_datetime q.created_at %></span>
                                     </span>
-          <a class="date" href="javascript:;">全部班期</a>
-        </dd>
-      </dl>
+            </dd>
+          </dl>
 
-      <div class="detail fn-right">
-        <span class="sup">双重优惠</span>
+          <div class="detail fn-right">
+            <span class="sup">双重优惠</span>
 
-        <p class="price">
-          <span class="u">￥</span>
-          <span class="n">500</span>
-          起
-        </p>
+            <p class="price">
+              <span class="u">￥</span>
+              <span class="n"><%= q.price %></span>
+              起
+            </p>
                                 <span class="d">
                                 	<em class="dsnum">50</em>
                                 </span>
                                 <span class="s">
                                 	<em class="dsnum">200</em>
                                 </span>
-      </div>
+          </div>
 
-      <div class="clear"></div>
-    </li>
-  </ul>
+          <div class="clear"></div>
+        </li>
+      </ul>
+  <% end %>
 </div>
 
 <div class="newChannel_list" id="hk_div2">
-  <ul>
-    <li class="lineitem">
-      <div class="img fn-left">
-        <a title="" target="_blank" href="#">
-          <img alt="" data-original="http://picxk.zycits.com/uploads/allimg/131125/1-131125110429.jpg" style="display: inline;" src="../images/grey.gif">
-        </a>
+  <% @recommend1.each do |q| %>
+      <ul>
+        <li class="lineitem">
+          <div class="img fn-left">
+            <a title="" target="_blank" href="#">
+              <%= image_tag q.avatar.url(:index) %>
+            </a>
+          </div>
 
-        <div class="prd_num">产品编号：SHS4536</div>
-      </div>
-
-      <dl class="info fn-left">
-        <dt class="t">
-          <a title="港澳三日(海洋公园)线诚信精品团" target="_blank" href="#"><img alt="暑期特价" src="../images/sqtj.gif" style="margin-right: 3px;">港澳三日(海洋公园)线诚信精品团</a>
-        </dt>
-        <dd class="desc">景点：维多利亚港/星光大道/DFS国际免税店/黄大仙/浅水湾富人区</dd>
-        <dd class="moredesc">
+          <dl class="info fn-left">
+            <dt class="t">
+              <a title="<%= q.title %>" target="_blank" href="#">
+                <img alt="暑期特价" src="../images/sqtj.gif" style="margin-right: 3px;">
+                <%= q.title %>
+              </a>
+            </dt>
+            <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
+            <dd class="moredesc">
                                 	<span>
                                         满意度：
                                         <span class="n">98%</span>
                                     </span>
                                     <span class="pin">
-                                        <span class="n">13</span>
-                                        人点评
+                                        <span class="n">5012</span>
+                                        人赞
                                     </span>
                                     <span>
-                                        最近出发班期：
-                                        <span class="n">8/5,8/6</span>
+                                        更新时间：
+                                        <span class="n"><%= my_datetime q.created_at %></span>
                                     </span>
-          <a class="date" href="javascript:;">全部班期</a>
-        </dd>
-      </dl>
+            </dd>
+          </dl>
 
-      <div class="detail fn-right">
-        <span class="sup">双重优惠</span>
+          <div class="detail fn-right">
+            <span class="sup">双重优惠</span>
 
-        <p class="price">
-          <span class="u">￥</span>
-          <span class="n">350</span>
-          起
-        </p>
+            <p class="price">
+              <span class="u">￥</span>
+              <span class="n"><%= q.price %></span>
+              起
+            </p>
                                 <span class="d">
                                 	<em class="dsnum">50</em>
                                 </span>
                                 <span class="s">
                                 	<em class="dsnum">200</em>
                                 </span>
-      </div>
+          </div>
 
-      <div class="clear"></div>
-    </li>
-  </ul>
+          <div class="clear"></div>
+        </li>
+      </ul>
+  <% end %>
 </div>
 
 <div class="newChannel_list" id="hk_div3">
-  <ul>
-    <li class="lineitem">
-      <div class="img fn-left">
-        <a title="" target="_blank" href="#">
-          <img alt="" data-original="http://picxk.zycits.com/uploads/allimg/140603/1-1406031H317.jpg" style="display: inline;" src="../images/grey.gif">
-        </a>
+  <% @recommend1.each do |q| %>
+      <ul>
+        <li class="lineitem">
+          <div class="img fn-left">
+            <a title="" target="_blank" href="#">
+              <%= image_tag q.avatar.url(:index) %>
+            </a>
+          </div>
 
-        <div class="prd_num">产品编号：SHS5042</div>
-      </div>
-
-      <dl class="info fn-left">
-        <dt class="t">
-          <a title="香港一日游（纯玩）品质团" target="_blank" href="#">香港一日游（纯玩）品质团</a>
-        </dt>
-        <dd class="desc">1.市区用餐，正餐不低于30元/人。 2.深圳领队及香港导游陪同讲</dd>
-        <dd class="moredesc">
+          <dl class="info fn-left">
+            <dt class="t">
+              <a title="<%= q.title %>" target="_blank" href="#">
+                <img alt="暑期特价" src="../images/sqtj.gif" style="margin-right: 3px;">
+                <%= q.title %>
+              </a>
+            </dt>
+            <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
+            <dd class="moredesc">
                                 	<span>
                                         满意度：
                                         <span class="n">98%</span>
                                     </span>
                                     <span class="pin">
-                                        <span class="n">20</span>
-                                        人点评
+                                        <span class="n">5012</span>
+                                        人赞
                                     </span>
                                     <span>
-                                        最近出发班期：
-                                        <span class="n">8/5,8/6</span>
+                                        更新时间：
+                                        <span class="n"><%= my_datetime q.created_at %></span>
                                     </span>
-          <a class="date" href="javascript:;">全部班期</a>
-        </dd>
-      </dl>
+            </dd>
+          </dl>
 
-      <div class="detail fn-right">
-        <span class="sup">双重优惠</span>
+          <div class="detail fn-right">
+            <span class="sup">双重优惠</span>
 
-        <p class="price">
-          <span class="u">￥</span>
-          <span class="n">188</span>
-          起
-        </p>
+            <p class="price">
+              <span class="u">￥</span>
+              <span class="n"><%= q.price %></span>
+              起
+            </p>
                                 <span class="d">
                                 	<em class="dsnum">50</em>
                                 </span>
                                 <span class="s">
                                 	<em class="dsnum">200</em>
                                 </span>
-      </div>
+          </div>
 
-      <div class="clear"></div>
-    </li>
-
-  </ul>
+          <div class="clear"></div>
+        </li>
+      </ul>
+  <% end %>
 </div>
 
 <div class="newChannel_list" id="hk_div4">
-  <ul>
-    <li class="lineitem">
-      <div class="img fn-left">
-        <a title="" target="_blank" href="#">
-          <img alt="" data-original="http://picxk.zycits.com/uploads/allimg/130904/1-130Z4161018.jpg" style="display: inline;" src="../images/grey.gif">
-        </a>
+  <% @recommend1.each do |q| %>
+      <ul>
+        <li class="lineitem">
+          <div class="img fn-left">
+            <a title="" target="_blank" href="#">
+              <%= image_tag q.avatar.url(:index) %>
+            </a>
+          </div>
 
-        <div class="prd_num">产品编号：SHS423</div>
-      </div>
-
-      <dl class="info fn-left">
-        <dt class="t">
-          <a title="澳门美食观光一天团" target="_blank" href="#">澳门美食观光一天团</a>
-        </dt>
-        <dd class="desc">1.早去晚回，全程豪华旅游巴 2.含中晚餐（餐标不低于30/人）</dd>
-        <dd class="moredesc">
+          <dl class="info fn-left">
+            <dt class="t">
+              <a title="<%= q.title %>" target="_blank" href="#">
+                <img alt="暑期特价" src="../images/sqtj.gif" style="margin-right: 3px;">
+                <%= q.title %>
+              </a>
+            </dt>
+            <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
+            <dd class="moredesc">
                                 	<span>
                                         满意度：
                                         <span class="n">98%</span>
                                     </span>
                                     <span class="pin">
-                                        <span class="n">1</span>
-                                        人点评
+                                        <span class="n">5012</span>
+                                        人赞
                                     </span>
                                     <span>
-                                        最近出发班期：
-                                        <span class="n">8/5,8/6</span>
+                                        更新时间：
+                                        <span class="n"><%= my_datetime q.created_at %></span>
                                     </span>
-          <a class="date" href="javascript:;">全部班期</a>
-        </dd>
-      </dl>
+            </dd>
+          </dl>
 
-      <div class="detail fn-right">
-        <span class="sup">双重优惠</span>
+          <div class="detail fn-right">
+            <span class="sup">双重优惠</span>
 
-        <p class="price">
-          <span class="u">￥</span>
-          <span class="n">198</span>
-          起
-        </p>
+            <p class="price">
+              <span class="u">￥</span>
+              <span class="n"><%= q.price %></span>
+              起
+            </p>
                                 <span class="d">
                                 	<em class="dsnum">50</em>
                                 </span>
                                 <span class="s">
                                 	<em class="dsnum">200</em>
                                 </span>
-      </div>
+          </div>
 
-      <div class="clear"></div>
-    </li>
-  </ul>
+          <div class="clear"></div>
+        </li>
+      </ul>
+  <% end %>
 </div>
 </div>
 
@@ -1031,7 +1035,15 @@
 </div>
 
 <!-- 这里后加一栏 -->
-<%#= render "comment/newlan" %>
+<div class="center">
+  <div class="gd_hot dbfen">
+    <h2 class="travel_Hd">
+      <span class="travel_Hd_type travel_gt_type">特别板块</span>
+      <span class="travel_Hd_msg">海外特别板块!</span>
+    </h2>
+      <%= render "comment/newlan" %>
+  </div>
+</div>
 
 <!-- 这里后加一栏 -->
 </div>
@@ -1043,77 +1055,78 @@
 </center>
 
 <div class="center">
-  <div class="cj_hot dbfen">
-    <h2 class="travel_Hd">
-      <span class="travel_Hd_type travel_gt_type">出境热门旅游</span>
-      <span class="travel_Hd_msg">豪华出境 专业无忧!</span>
-    </h2>
+<div class="cj_hot dbfen">
+<h2 class="travel_Hd">
+  <span class="travel_Hd_type travel_gt_type">出境热门旅游</span>
+  <span class="travel_Hd_msg">豪华出境 专业无忧!</span>
+</h2>
 
-    <div class="newChannel_Bd">
-      <div class="newChannel_left">
-        <dl>
-          <dt>
-            <a target="_blank" href="#">亚洲</a>
-          </dt>
-          <dd>
+<div class="newChannel_Bd">
+  <div class="newChannel_left">
+    <dl>
+      <dt>
+        <a target="_blank" href="#">亚洲</a>
+      </dt>
+      <dd>
 
-            <a title="普吉岛" target="_blank" href="#">普吉岛</a>
+        <a title="普吉岛" target="_blank" href="#">普吉岛</a>
 
-          </dd>
-          <div class="clear"></div>
-        </dl>
-        <dl>
-          <dt>
-            <a target="_blank" href="#">非洲</a>
-          </dt>
-          <dd>
+      </dd>
+      <div class="clear"></div>
+    </dl>
+    <dl>
+      <dt>
+        <a target="_blank" href="#">非洲</a>
+      </dt>
+      <dd>
 
-            <a title="肯尼亚" target="_blank" href="#">肯尼亚</a>
+        <a title="肯尼亚" target="_blank" href="#">肯尼亚</a>
 
-          </dd>
-          <div class="clear"></div>
-        </dl>
-        <dl>
-          <dt>
-            <a target="_blank" href="#">美洲</a>
-          </dt>
-          <dd>
+      </dd>
+      <div class="clear"></div>
+    </dl>
+    <dl>
+      <dt>
+        <a target="_blank" href="#">美洲</a>
+      </dt>
+      <dd>
 
-            <a title="加拿大" target="_blank" href="#">加拿大</a>
+        <a title="加拿大" target="_blank" href="#">加拿大</a>
 
-          </dd>
-          <div class="clear"></div>
-        </dl>
-        <dl>
-          <dt>
-            <a target="_blank" href="#">澳洲</a>
-          </dt>
-          <dd>
+      </dd>
+      <div class="clear"></div>
+    </dl>
+    <dl>
+      <dt>
+        <a target="_blank" href="#">澳洲</a>
+      </dt>
+      <dd>
 
-            <a title="澳大利亚" target="_blank" href="#">澳大利亚</a>
+        <a title="澳大利亚" target="_blank" href="#">澳大利亚</a>
 
-          </dd>
-          <div class="clear"></div>
-        </dl>
-      </div>
+      </dd>
+      <div class="clear"></div>
+    </dl>
+  </div>
 
-      <div class="newChannel_right">
-        <ul class="newChannel_tab">
-          <li class="cur" id="cj_li1">亚洲</li>
-          <li id="cj_li2">非洲</li>
-          <li id="cj_li3">美洲</li>
-          <li id="cj_li4" style="margin:0;">澳洲</li>
-        </ul>
+  <div class="newChannel_right">
+    <ul class="newChannel_tab">
+      <li class="cur" id="cj_li1">亚洲</li>
+      <li id="cj_li2">非洲</li>
+      <li id="cj_li3">美洲</li>
+      <li id="cj_li4" style="margin:0;">澳洲</li>
+    </ul>
 
-        <div class="newChannel_list visible" id="cj_div1">
+    <div class="newChannel_list visible" id="cj_div1">
+      <% @exithot1.each do |q| %>
           <ul>
             <li>
                         	<span class="dbfen_price">
                             	<span class="u">￥</span>
-                                <span class="n">2799</span>
+                                <span class="n"><%= q.price %></span>
                                 起
                             </span>
-              <a href="#">【乐享】乐享普吉岛五天无自费品质团</a>普吉岛
+              <a href="#"><%= q.title %></a>
             </li>
 
 
@@ -1122,114 +1135,131 @@
 
 
           <div class="showLine">
-            <a href="#"><img data-original="http://picxk.zycits.com/uploads/allimg/140612/1-140612162249.jpg" width="180" height="135" src="./images/grey.gif"></a>
+            <a href="#">
+              <%= image_tag q.avatar.url(:index) %>
+            </a>
 
             <div>
-              <p><a href="#">【泰国暑期】金品质海洋</a></p>
+              <p><a href="#"><%= q.title %></a></p>
 
               <p>
-                <span><b>￥2499</b>起</span>
+                <span><b>￥<%= q.price %></b>起</span>
                 <del>原价：5749</del>
               </p>
             </div>
           </div>
-
-        </div>
-
-        <div class="newChannel_list" id="cj_div2">
-          <ul>
-            <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n">23600</span>
-                                起
-                            </span>
-              <a href="#">肯尼亚迪拜经典9天游</a>肯尼亚
-            </li>
-
-
-          </ul>
-          <div class="clear"></div>
-
-          <div class="showLine">
-            <a href="#"><img data-original="../images/1-140612160I7.jpg" width="180" height="135" src="../images/grey.gif"></a>
-
-            <div>
-              <p><a href="#">肯尼亚迪拜亲子游十日-香</a></p>
-
-              <p>
-                <span><b>￥21200</b>起</span>
-                <del>原价：24450</del>
-              </p>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="newChannel_list" id="cj_div3">
-          <ul>
-            <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n">9299</span>
-                                起
-                            </span>
-              <a href="#">美国夏威夷人间天堂之旅7天品质团（CI）</a>夏威夷
-            </li>
-
-          </ul>
-          <div class="clear"></div>
-
-          <div class="showLine">
-            <a href="#"><img data-original="http://picxk.zycits.com/uploads/allimg/140403/1-140403111528-51.jpg" width="180" height="135" src="../images/grey.gif"></a>
-
-            <div>
-              <p><a href="#">美国关岛6天4晚休闲之旅</a></p>
-
-              <p>
-                <span><b>￥7480</b>起</span>
-                <del>原价：10730</del>
-              </p>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="newChannel_list" id="cj_div4">
-          <ul>
-            <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n">6900</span>
-                                起
-                            </span>
-              <a href="#">天宁岛/塞班岛六天两岛游</a>塞班岛
-            </li>
-
-
-          </ul>
-          <div class="clear"></div>
-
-          <div class="showLine">
-            <a href="#"><img data-original="../images/1-140331104506.jpg" width="180" height="135" src="../images/grey.gif"></a>
-
-            <div>
-              <p><a href="#">香港直飞斐济双岛自由行</a></p>
-
-              <p>
-                <span><b>￥11150</b>起</span>
-                <del>原价：14400</del>
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="clear"></div>
+      <% end %>
     </div>
 
+    <div class="newChannel_list" id="cj_div2">
+      <% @exithot2.each do |q| %>
+          <ul>
+            <li>
+                        	<span class="dbfen_price">
+                            	<span class="u">￥</span>
+                                <span class="n"><%= q.price %></span>
+                                起
+                            </span>
+              <a href="#"><%= q.title %></a>
+            </li>
+
+
+          </ul>
+          <div class="clear"></div>
+
+
+          <div class="showLine">
+            <a href="#">
+              <%= image_tag q.avatar.url(:index) %>
+            </a>
+
+            <div>
+              <p><a href="#"><%= q.title %></a></p>
+
+              <p>
+                <span><b>￥<%= q.price %></b>起</span>
+                <del>原价：5749</del>
+              </p>
+            </div>
+          </div>
+      <% end %>
+    </div>
+
+    <div class="newChannel_list" id="cj_div3">
+      <% @exithot3.each do |q| %>
+          <ul>
+            <li>
+                        	<span class="dbfen_price">
+                            	<span class="u">￥</span>
+                                <span class="n"><%= q.price %></span>
+                                起
+                            </span>
+              <a href="#"><%= q.title %></a>
+            </li>
+
+
+          </ul>
+          <div class="clear"></div>
+
+
+          <div class="showLine">
+            <a href="#">
+              <%= image_tag q.avatar.url(:index) %>
+            </a>
+
+            <div>
+              <p><a href="#"><%= q.title %></a></p>
+
+              <p>
+                <span><b>￥<%= q.price %></b>起</span>
+                <del>原价：5749</del>
+              </p>
+            </div>
+          </div>
+      <% end %>
+
+    </div>
+
+    <div class="newChannel_list" id="cj_div4">
+      <% @exithot4.each do |q| %>
+          <ul>
+            <li>
+                        	<span class="dbfen_price">
+                            	<span class="u">￥</span>
+                                <span class="n"><%= q.price %></span>
+                                起
+                            </span>
+              <a href="#"><%= q.title %></a>
+            </li>
+
+
+          </ul>
+          <div class="clear"></div>
+
+
+          <div class="showLine">
+            <a href="#">
+              <%= image_tag q.avatar.url(:index) %>
+            </a>
+
+            <div>
+              <p><a href="#"><%= q.title %></a></p>
+
+              <p>
+                <span><b>￥<%= q.price %></b>起</span>
+                <del>原价：5749</del>
+              </p>
+            </div>
+          </div>
+      <% end %>
+
+    </div>
   </div>
+
+  <div class="clear"></div>
+</div>
+
+</div>
 </div>
 
 <center>
@@ -1251,204 +1281,230 @@
     <dt>
       <a target="_blank" href="#">国内热门旅游目的地</a>
     </dt>
-    <dd>
-      <a title="上海" target="_blank" href="#">上海</a>
-    </dd>
+    <% @onecities.each do |q| %>
+        <dd>
+          <a title="<%= q.title %>" target="_blank" href="#"><%= q.title %></a>
+        </dd>
+    <% end %>
     <div class="clear"></div>
   </dl>
 </div>
 
 <div class="newChannel_right">
-  <ul class="newChannel_tab">
-    <li class="cur" id="gn_li1">华北</li>
-    <li id="gn_li2">华南</li>
-    <li id="gn_li3">华东</li>
-    <li id="gn_li4">华中</li>
-    <li id="gn_li5">西南</li>
-    <li id="gn_li6" style="margin:0;">西北</li>
-  </ul>
+<ul class="newChannel_tab">
+  <li class="cur" id="gn_li1">华北</li>
+  <li id="gn_li2">华南</li>
+  <li id="gn_li3">华东</li>
+  <li id="gn_li4">华中</li>
+  <li id="gn_li5">西南</li>
+  <li id="gn_li6" style="margin:0;">西北</li>
+</ul>
 
-  <div class="newChannel_list visible" id="gn_div1">
-    <ul>
+<div class="newChannel_list visible" id="gn_div1">
+  <% @domestic1.each do |q| %>
+      <ul>
 
-      <li>
+        <li>
                         	<span class="dbfen_price">
                             	<span class="u">￥</span>
-                                <span class="n">3280</span>
+                                <span class="n"><%= q.price %></span>
                                 起
                             </span>
-        <a href="#">山西平遥古城、乔家大院四日游</a>五台山
-      </li>
+          <a href="#"><%= q.title %></a>
+        </li>
 
-    </ul>
-    <div class="clear"></div>
+      </ul>
+      <div class="clear"></div>
 
 
-    <div class="showLine">
-      <a href="#"><img data-original="../images/1-14032G54G3.jpg" width="180" height="135" src="../images/grey.gif"></a>
+      <div class="showLine">
+        <a href="#">
+          <%= image_tag q.avatar.url(:index) %>
+        </a>
 
-      <div>
-        <p><a href="#">五台山四天祈福之旅</a></p>
+        <div>
+          <p><a href="#"><%= q.title %></a></p>
 
-        <p>
-          <span><b>￥3280</b>起</span>
-          <del>原价：6530</del>
-        </p>
+          <p>
+            <span><b>￥<%= q.price %></b>起</span>
+            <del>原价：6530</del>
+          </p>
+        </div>
       </div>
-    </div>
+  <% end %>
 
+</div>
 
-  </div>
+<div class="newChannel_list" id="gn_div2">
+  <% @domestic2.each do |q| %>
+      <ul>
 
-  <div class="newChannel_list" id="gn_div2">
-    <ul>
-
-      <li>
+        <li>
                         	<span class="dbfen_price">
                             	<span class="u">￥</span>
-                                <span class="n">3890</span>
+                                <span class="n"><%= q.price %></span>
                                 起
                             </span>
-        <a href="#">逍遥海南•快乐岛海豚湾亲海四日之旅</a>海南
-      </li>
+          <a href="#"><%= q.title %></a>
+        </li>
 
-    </ul>
-    <div class="clear"></div>
-    <div class="showLine">
-      <a href="#"><img data-original="../images/1-130PG33112.jpg" width="180" height="135" src="../images/grey.gif"></a>
+      </ul>
+      <div class="clear"></div>
 
-      <div>
-        <p><a href="#">T线：深圳到桂林阳朔休闲</a></p>
 
-        <p>
-          <span><b>￥840</b>起</span>
-          <del>原价：4090</del>
-        </p>
+      <div class="showLine">
+        <a href="#">
+          <%= image_tag q.avatar.url(:index) %>
+        </a>
+
+        <div>
+          <p><a href="#"><%= q.title %></a></p>
+
+          <p>
+            <span><b>￥<%= q.price %></b>起</span>
+            <del>原价：6530</del>
+          </p>
+        </div>
       </div>
-    </div>
+  <% end %>
+</div>
 
-  </div>
+<div class="newChannel_list" id="gn_div3">
+  <% @domestic3.each do |q| %>
+      <ul>
 
-  <div class="newChannel_list" id="gn_div3">
-    <ul>
-
-      <li>
+        <li>
                         	<span class="dbfen_price">
                             	<span class="u">￥</span>
-                                <span class="n">1158</span>
+                                <span class="n"><%= q.price %></span>
                                 起
                             </span>
-        <a href="#">厦门鼓浪屿+客家土楼双动4日游</a>厦门
-      </li>
+          <a href="#"><%= q.title %></a>
+        </li>
+
+      </ul>
+      <div class="clear"></div>
 
 
-    </ul>
-    <div class="clear"></div>
+      <div class="showLine">
+        <a href="#">
+          <%= image_tag q.avatar.url(:index) %>
+        </a>
 
-    <div class="showLine">
-      <a href="#"><img data-original="../images/1-140416094428.jpg" width="180" height="135" src="../images/grey.gif"></a>
+        <div>
+          <p><a href="#"><%= q.title %></a></p>
 
-      <div>
-        <p><a href="#">武夷山四天三晚双飞优质</a></p>
-
-        <p>
-          <span><b>￥2880</b>起</span>
-          <del>原价：6130</del>
-        </p>
+          <p>
+            <span><b>￥<%= q.price %></b>起</span>
+            <del>原价：6530</del>
+          </p>
+        </div>
       </div>
-    </div>
+  <% end %>
+</div>
 
-  </div>
+<div class="newChannel_list" id="gn_div4">
+  <% @domestic4.each do |q| %>
+      <ul>
 
-  <div class="newChannel_list" id="gn_div4">
-    <ul>
-      <li>
+        <li>
                         	<span class="dbfen_price">
                             	<span class="u">￥</span>
-                                <span class="n">1800</span>
+                                <span class="n"><%= q.price %></span>
                                 起
                             </span>
-        <a href="#">A1线：长沙•张家界•魅力湘西高铁四天纯玩团</a>湖南
-      </li>
+          <a href="#"><%= q.title %></a>
+        </li>
+
+      </ul>
+      <div class="clear"></div>
 
 
-    </ul>
-    <div class="clear"></div>
+      <div class="showLine">
+        <a href="#">
+          <%= image_tag q.avatar.url(:index) %>
+        </a>
 
-    <div class="showLine">
-      <a href="#"><img data-original="../images/1-14032G51234-50.jpg" width="180" height="135" src="../images/grey.gif"></a>
+        <div>
+          <p><a href="#"><%= q.title %></a></p>
 
-      <div>
-        <p><a href="#">A1线：长沙•张家界•魅力</a></p>
-
-        <p>
-          <span><b>￥1800</b>起</span>
-          <del>原价：5050</del>
-        </p>
+          <p>
+            <span><b>￥<%= q.price %></b>起</span>
+            <del>原价：6530</del>
+          </p>
+        </div>
       </div>
-    </div>
+  <% end %>
+</div>
 
-  </div>
+<div class="newChannel_list" id="gn_div5">
+  <% @domestic5.each do |q| %>
+      <ul>
 
-  <div class="newChannel_list" id="gn_div5">
-    <ul>
-      <li>
+        <li>
                         	<span class="dbfen_price">
                             	<span class="u">￥</span>
-                                <span class="n">4580</span>
+                                <span class="n"><%= q.price %></span>
                                 起
                             </span>
-        <a href="#">成都、九寨沟、牟尼沟、锦里仿古街、四飞五天</a>九寨沟
-      </li>
+          <a href="#"><%= q.title %></a>
+        </li>
+
+      </ul>
+      <div class="clear"></div>
 
 
-    </ul>
-    <div class="clear"></div>
+      <div class="showLine">
+        <a href="#">
+          <%= image_tag q.avatar.url(:index) %>
+        </a>
 
-    <div class="showLine">
-      <a href="#"><img data-original="../images/366-1311221P934.jpg" width="180" height="135" src="../images/grey.gif"></a>
+        <div>
+          <p><a href="#"><%= q.title %></a></p>
 
-      <div>
-        <p><a href="#">成都、九寨沟、牟尼沟、</a></p>
-
-        <p>
-          <span><b>￥4580</b>起</span>
-          <del>原价：7830</del>
-        </p>
+          <p>
+            <span><b>￥<%= q.price %></b>起</span>
+            <del>原价：6530</del>
+          </p>
+        </div>
       </div>
-    </div>
+  <% end %>
 
-  </div>
+</div>
 
-  <div class="newChannel_list" id="gn_div6">
-    <ul>
+<div class="newChannel_list" id="gn_div6">
+  <% @domestic6.each do |q| %>
+      <ul>
 
-      <li>
+        <li>
                         	<span class="dbfen_price">
                             	<span class="u">￥</span>
-                                <span class="n">1480</span>
+                                <span class="n"><%= q.price %></span>
                                 起
                             </span>
-        <a href="#">宁夏水洞沟、贺兰山岩画、影视城双飞五日游（</a>宁夏
-      </li>
+          <a href="#"><%= q.title %></a>
+        </li>
 
-    </ul>
-    <div class="clear"></div>
+      </ul>
+      <div class="clear"></div>
 
-    <div class="showLine">
-      <a href="#"><img data-original="../images/1-140331105231.jpg" width="180" height="135" src="../images/grey.gif"></a>
 
-      <div>
-        <p><a href="#">宁夏水洞沟、贺兰山岩画</a></p>
+      <div class="showLine">
+        <a href="#">
+          <%= image_tag q.avatar.url(:index) %>
+        </a>
 
-        <p>
-          <span><b>￥1480</b>起</span>
-          <del>原价：4730</del>
-        </p>
+        <div>
+          <p><a href="#"><%= q.title %></a></p>
+
+          <p>
+            <span><b>￥<%= q.price %></b>起</span>
+            <del>原价：6530</del>
+          </p>
+        </div>
       </div>
-    </div>
-
-  </div>
+  <% end %>
+</div>
 </div>
 
 <div class="clear"></div>
@@ -1464,326 +1520,326 @@
   </div>
 </center>
 
-<div class="center">
-<div class="gd_hot dbfen">
-<h2 class="travel_Hd">
-  <span class="travel_Hd_type travel_gt_type">广东热门旅游</span>
-  <span class="travel_Hd_msg">精品广东 品质保证!</span>
-</h2>
+<!--<div class="center">-->
+<!--<div class="gd_hot dbfen">-->
+<!--<h2 class="travel_Hd">-->
+<!--<span class="travel_Hd_type travel_gt_type">广东热门旅游</span>-->
+<!--<span class="travel_Hd_msg">精品广东 品质保证!</span>-->
+<!--</h2>-->
 
-<div class="newChannel_Bd">
-<div class="newChannel_left">
-  <dl>
-    <dt>
-      <a target="_blank" href="#">珠三角</a>
-    </dt>
-    <dd>
+<!--<div class="newChannel_Bd">-->
+<!--<div class="newChannel_left">-->
+<!--<dl>-->
+<!--<dt>-->
+<!--<a target="_blank" href="#">珠三角</a>-->
+<!--</dt>-->
+<!--<dd>-->
 
-      <a title="深圳" target="_blank" href="#">深圳</a>
+<!--<a title="深圳" target="_blank" href="#">深圳</a>-->
 
-    </dd>
-    <div class="clear"></div>
-  </dl>
-  <dl>
-    <dt>
-      <a target="_blank" href="#">粤北</a>
-    </dt>
-    <dd>
+<!--</dd>-->
+<!--<div class="clear"></div>-->
+<!--</dl>-->
+<!--<dl>-->
+<!--<dt>-->
+<!--<a target="_blank" href="#">粤北</a>-->
+<!--</dt>-->
+<!--<dd>-->
 
-      <a title="清远" target="_blank" href="#">清远</a>
-
-
-    </dd>
-    <div class="clear"></div>
-  </dl>
-  <dl>
-    <dt>
-      <a target="_blank" href="#">粤东</a>
-    </dt>
-    <dd>
-
-      <a title="河源" target="_blank" href="#">河源</a>
-
-    </dd>
-    <div class="clear"></div>
-  </dl>
-  <dl>
-    <dt>
-      <a target="_blank" href="#">粤西</a>
-    </dt>
-    <dd>
-
-      <a title="肇庆" target="_blank" href="#">肇庆</a>
-
-    </dd>
-    <div class="clear"></div>
-  </dl>
-</div>
-
-<div class="newChannel_right">
-<ul class="newChannel_tab">
-  <li class="cur" id="gd_li1">珠三角</li>
-  <li id="gd_li2">粤北</li>
-  <li id="gd_li3">粤东</li>
-  <li style="margin:0;" id="gd_li4">粤西</li>
-</ul>
-
-<div class="newChannel_list visible" id="gd_div1">
-  <ul>
-    <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n">498</span>
-                                起
-                            </span>
-      <a href="#">广东四大名园之清晖园、神秘果园、百年骑楼、</a>佛山
-    </li>
-    <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n">288</span>
-                                起
-                            </span>
-      <a href="#">惠东金海生态园、天后宫、巽寮湾海边沙滩露营</a>惠州
-    </li>
-    <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n">198</span>
-                                起
-                            </span>
-      <a href="#">惠州雷公峡漂流、野炊一日游</a>惠州
-    </li>
-    <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n">568</span>
-                                起
-                            </span>
-      <a href="#">台山富都温泉、猛虎峡漂流、新会小鸟天堂2天</a>江门
-    </li>
-    <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n">498</span>
-                                起
-                            </span>
-      <a href="#">【江门】5A级恩平帝都温泉、泉林生态园、赤坎古</a>江门
-    </li>
+<!--<a title="清远" target="_blank" href="#">清远</a>-->
 
 
-  </ul>
-  <div class="clear"></div>
+<!--</dd>-->
+<!--<div class="clear"></div>-->
+<!--</dl>-->
+<!--<dl>-->
+<!--<dt>-->
+<!--<a target="_blank" href="#">粤东</a>-->
+<!--</dt>-->
+<!--<dd>-->
 
-  <div class="showLine">
-    <a href="#"><img data-original="../images/1-130PGAG9.jpg" width="180" height="135" src="../images/grey.gif"></a>
+<!--<a title="河源" target="_blank" href="#">河源</a>-->
 
-    <div>
-      <p><a href="#">珠海梅农奇观、广州岭南</a></p>
+<!--</dd>-->
+<!--<div class="clear"></div>-->
+<!--</dl>-->
+<!--<dl>-->
+<!--<dt>-->
+<!--<a target="_blank" href="#">粤西</a>-->
+<!--</dt>-->
+<!--<dd>-->
 
-      <p>
-        <span><b>￥240</b>起</span>
-        <del>原价：3490</del>
-      </p>
-    </div>
-  </div>
+<!--<a title="肇庆" target="_blank" href="#">肇庆</a>-->
 
+<!--</dd>-->
+<!--<div class="clear"></div>-->
+<!--</dl>-->
+<!--</div>-->
 
-</div>
+<!--<div class="newChannel_right">-->
+<!--<ul class="newChannel_tab">-->
+<!--<li class="cur" id="gd_li1">珠三角</li>-->
+<!--<li id="gd_li2">粤北</li>-->
+<!--<li id="gd_li3">粤东</li>-->
+<!--<li style="margin:0;" id="gd_li4">粤西</li>-->
+<!--</ul>-->
 
-<div class="newChannel_list" id="gd_div2">
-  <ul>
-    <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n"> 478</span>
-                                起
-                            </span>
-      <a href="#">清远阳山连南特色汽车两天团</a>清远
-    </li>
-    <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n">178</span>
-                                起
-                            </span>
-      <a href="#">清远飞来湖公园、新银盏温泉纯玩一日游</a>清远
-    </li>
-    <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n">418</span>
-                                起
-                            </span>
-      <a href="#">清远两天品质汽车团</a>清远
-    </li>
-    <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n">479</span>
-                                起
-                            </span>
-      <a href="#">清远连州特色汽车两天团</a>清远
-    </li>
-    <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n">528</span>
-                                起
-                            </span>
-      <a href="#">新丰云髻山、云天海温泉、龙门蓝田瑶族风情园</a>韶关
-    </li>
-
-
-  </ul>
-  <div class="clear"></div>
-
-  <div class="showLine">
-    <a href="#"><img data-original="../images/1-130PQG522.jpg" width="180" height="135" src="../images/grey.gif"></a>
-
-    <div>
-      <p><a href="#">清远黄腾峡漂流汽车一天</a></p>
-
-      <p>
-        <span><b>￥148</b>起</span>
-        <del>原价：3398</del>
-      </p>
-    </div>
-  </div>
-
-</div>
-
-<div class="newChannel_list" id="gd_div3">
-  <ul>
-    <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n">488</span>
-                                起
-                            </span>
-      <a href="#">阳江海陵岛、开平影视基地、五星阳江温泉两日</a>阳江
-    </li>
-    <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n">438</span>
-                                起
-                            </span>
-      <a href="#">潮州开元寺、江滨长廊、韩文公祠、龙泉岩美食</a>潮汕
-    </li>
-    <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n"></span>
-                                起
-                            </span>
-      <a href="#">梅州雁南飞、客家围龙屋二日客家文化游</a>梅州
-    </li>
-    <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n">440</span>
-                                起
-                            </span>
-      <a href="#">阳江海陵岛、南海一号博物馆、北峰山漂流二日</a>阳江
-    </li>
-    <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n">470</span>
-                                起
-                            </span>
-      <a href="#">汕尾红海湾、京明温泉、黄满祭瀑布群二日游</a>潮汕
-    </li>
+<!--<div class="newChannel_list visible" id="gd_div1">-->
+<!--<ul>-->
+<!--<li>-->
+<!--<span class="dbfen_price">-->
+<!--<span class="u">￥</span>-->
+<!--<span class="n">498</span>-->
+<!--起-->
+<!--</span>-->
+<!--<a href="#">广东四大名园之清晖园、神秘果园、百年骑楼、</a>佛山-->
+<!--</li>-->
+<!--<li>-->
+<!--<span class="dbfen_price">-->
+<!--<span class="u">￥</span>-->
+<!--<span class="n">288</span>-->
+<!--起-->
+<!--</span>-->
+<!--<a href="#">惠东金海生态园、天后宫、巽寮湾海边沙滩露营</a>惠州-->
+<!--</li>-->
+<!--<li>-->
+<!--<span class="dbfen_price">-->
+<!--<span class="u">￥</span>-->
+<!--<span class="n">198</span>-->
+<!--起-->
+<!--</span>-->
+<!--<a href="#">惠州雷公峡漂流、野炊一日游</a>惠州-->
+<!--</li>-->
+<!--<li>-->
+<!--<span class="dbfen_price">-->
+<!--<span class="u">￥</span>-->
+<!--<span class="n">568</span>-->
+<!--起-->
+<!--</span>-->
+<!--<a href="#">台山富都温泉、猛虎峡漂流、新会小鸟天堂2天</a>江门-->
+<!--</li>-->
+<!--<li>-->
+<!--<span class="dbfen_price">-->
+<!--<span class="u">￥</span>-->
+<!--<span class="n">498</span>-->
+<!--起-->
+<!--</span>-->
+<!--<a href="#">【江门】5A级恩平帝都温泉、泉林生态园、赤坎古</a>江门-->
+<!--</li>-->
 
 
-  </ul>
-  <div class="clear"></div>
+<!--</ul>-->
+<!--<div class="clear"></div>-->
 
-  <div class="showLine">
-    <a href="#"><img data-original="../images/1-130PGA210.jpg" width="180" height="135" src="../images/grey.gif"></a>
+<!--<div class="showLine">-->
+<!--<a href="#"><img data-original="../images/1-130PGAG9.jpg" width="180" height="135" src="../images/grey.gif"></a>-->
 
-    <div>
-      <p><a href="#">梅州雁南飞、客家围龙屋</a></p>
+<!--<div>-->
+<!--<p><a href="#">珠海梅农奇观、广州岭南</a></p>-->
 
-      <p>
-        <span><b>￥</b>起</span>
-        <del>原价：3250</del>
-      </p>
-    </div>
-  </div>
-
-</div>
-
-<div class="newChannel_list" id="gd_div4">
-  <ul>
-    <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n">458</span>
-                                起
-                            </span>
-      <a href="#">肇庆七星岩、鼎湖山、白沙龙母庙、白石端砚村</a>肇庆
-    </li>
-    <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n">468</span>
-                                起
-                            </span>
-      <a href="#">德庆盘龙峡彩虹花田、森林温矿泉、黄金沟二日</a>肇庆
-    </li>
-    <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n">898</span>
-                                起
-                            </span>
-      <a href="#">恩平温泉乐园、湖光岩、红嘴鸥游船三日游</a>湛江
-    </li>
-    <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n">798</span>
-                                起
-                            </span>
-      <a href="#">恩平温泉乐园、海滨小城-湛江、红嘴鸥游船三日</a>湛江
-    </li>
-    <li>
-                        	<span class="dbfen_price">
-                            	<span class="u">￥</span>
-                                <span class="n">678</span>
-                                起
-                            </span>
-      <a href="#">肇庆七星岩、鼎湖山休闲美食优质二天团</a>肇庆
-    </li>
+<!--<p>-->
+<!--<span><b>￥240</b>起</span>-->
+<!--<del>原价：3490</del>-->
+<!--</p>-->
+<!--</div>-->
+<!--</div>-->
 
 
-  </ul>
-  <div class="clear"></div>
+<!--</div>-->
 
-  <div class="showLine">
-    <a href="#">
-      <img data-original="../images/130807/1-130PG54534.jpg" width="180" height="135" src="../images/grey.gif"></a>
+<!--<div class="newChannel_list" id="gd_div2">-->
+<!--<ul>-->
+<!--<li>-->
+<!--<span class="dbfen_price">-->
+<!--<span class="u">￥</span>-->
+<!--<span class="n"> 478</span>-->
+<!--起-->
+<!--</span>-->
+<!--<a href="#">清远阳山连南特色汽车两天团</a>清远-->
+<!--</li>-->
+<!--<li>-->
+<!--<span class="dbfen_price">-->
+<!--<span class="u">￥</span>-->
+<!--<span class="n">178</span>-->
+<!--起-->
+<!--</span>-->
+<!--<a href="#">清远飞来湖公园、新银盏温泉纯玩一日游</a>清远-->
+<!--</li>-->
+<!--<li>-->
+<!--<span class="dbfen_price">-->
+<!--<span class="u">￥</span>-->
+<!--<span class="n">418</span>-->
+<!--起-->
+<!--</span>-->
+<!--<a href="#">清远两天品质汽车团</a>清远-->
+<!--</li>-->
+<!--<li>-->
+<!--<span class="dbfen_price">-->
+<!--<span class="u">￥</span>-->
+<!--<span class="n">479</span>-->
+<!--起-->
+<!--</span>-->
+<!--<a href="#">清远连州特色汽车两天团</a>清远-->
+<!--</li>-->
+<!--<li>-->
+<!--<span class="dbfen_price">-->
+<!--<span class="u">￥</span>-->
+<!--<span class="n">528</span>-->
+<!--起-->
+<!--</span>-->
+<!--<a href="#">新丰云髻山、云天海温泉、龙门蓝田瑶族风情园</a>韶关-->
+<!--</li>-->
 
-    <div>
-      <p><a href="http://www.xkcits.com/guangdong/2134.html">恩平温泉乐园、海滨小城</a></p>
 
-      <p>
-        <span><b>￥798</b>起</span>
-        <del>原价：4048</del>
-      </p>
-    </div>
-  </div>
+<!--</ul>-->
+<!--<div class="clear"></div>-->
 
-</div>
-</div>
+<!--<div class="showLine">-->
+<!--<a href="#"><img data-original="../images/1-130PQG522.jpg" width="180" height="135" src="../images/grey.gif"></a>-->
 
-<div class="clear"></div>
-</div>
+<!--<div>-->
+<!--<p><a href="#">清远黄腾峡漂流汽车一天</a></p>-->
 
-</div>
-</div>
+<!--<p>-->
+<!--<span><b>￥148</b>起</span>-->
+<!--<del>原价：3398</del>-->
+<!--</p>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</div>-->
+
+<!--<div class="newChannel_list" id="gd_div3">-->
+<!--<ul>-->
+<!--<li>-->
+<!--<span class="dbfen_price">-->
+<!--<span class="u">￥</span>-->
+<!--<span class="n">488</span>-->
+<!--起-->
+<!--</span>-->
+<!--<a href="#">阳江海陵岛、开平影视基地、五星阳江温泉两日</a>阳江-->
+<!--</li>-->
+<!--<li>-->
+<!--<span class="dbfen_price">-->
+<!--<span class="u">￥</span>-->
+<!--<span class="n">438</span>-->
+<!--起-->
+<!--</span>-->
+<!--<a href="#">潮州开元寺、江滨长廊、韩文公祠、龙泉岩美食</a>潮汕-->
+<!--</li>-->
+<!--<li>-->
+<!--<span class="dbfen_price">-->
+<!--<span class="u">￥</span>-->
+<!--<span class="n"></span>-->
+<!--起-->
+<!--</span>-->
+<!--<a href="#">梅州雁南飞、客家围龙屋二日客家文化游</a>梅州-->
+<!--</li>-->
+<!--<li>-->
+<!--<span class="dbfen_price">-->
+<!--<span class="u">￥</span>-->
+<!--<span class="n">440</span>-->
+<!--起-->
+<!--</span>-->
+<!--<a href="#">阳江海陵岛、南海一号博物馆、北峰山漂流二日</a>阳江-->
+<!--</li>-->
+<!--<li>-->
+<!--<span class="dbfen_price">-->
+<!--<span class="u">￥</span>-->
+<!--<span class="n">470</span>-->
+<!--起-->
+<!--</span>-->
+<!--<a href="#">汕尾红海湾、京明温泉、黄满祭瀑布群二日游</a>潮汕-->
+<!--</li>-->
+
+
+<!--</ul>-->
+<!--<div class="clear"></div>-->
+
+<!--<div class="showLine">-->
+<!--<a href="#"><img data-original="../images/1-130PGA210.jpg" width="180" height="135" src="../images/grey.gif"></a>-->
+
+<!--<div>-->
+<!--<p><a href="#">梅州雁南飞、客家围龙屋</a></p>-->
+
+<!--<p>-->
+<!--<span><b>￥</b>起</span>-->
+<!--<del>原价：3250</del>-->
+<!--</p>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</div>-->
+
+<!--<div class="newChannel_list" id="gd_div4">-->
+<!--<ul>-->
+<!--<li>-->
+<!--<span class="dbfen_price">-->
+<!--<span class="u">￥</span>-->
+<!--<span class="n">458</span>-->
+<!--起-->
+<!--</span>-->
+<!--<a href="#">肇庆七星岩、鼎湖山、白沙龙母庙、白石端砚村</a>肇庆-->
+<!--</li>-->
+<!--<li>-->
+<!--<span class="dbfen_price">-->
+<!--<span class="u">￥</span>-->
+<!--<span class="n">468</span>-->
+<!--起-->
+<!--</span>-->
+<!--<a href="#">德庆盘龙峡彩虹花田、森林温矿泉、黄金沟二日</a>肇庆-->
+<!--</li>-->
+<!--<li>-->
+<!--<span class="dbfen_price">-->
+<!--<span class="u">￥</span>-->
+<!--<span class="n">898</span>-->
+<!--起-->
+<!--</span>-->
+<!--<a href="#">恩平温泉乐园、湖光岩、红嘴鸥游船三日游</a>湛江-->
+<!--</li>-->
+<!--<li>-->
+<!--<span class="dbfen_price">-->
+<!--<span class="u">￥</span>-->
+<!--<span class="n">798</span>-->
+<!--起-->
+<!--</span>-->
+<!--<a href="#">恩平温泉乐园、海滨小城-湛江、红嘴鸥游船三日</a>湛江-->
+<!--</li>-->
+<!--<li>-->
+<!--<span class="dbfen_price">-->
+<!--<span class="u">￥</span>-->
+<!--<span class="n">678</span>-->
+<!--起-->
+<!--</span>-->
+<!--<a href="#">肇庆七星岩、鼎湖山休闲美食优质二天团</a>肇庆-->
+<!--</li>-->
+
+
+<!--</ul>-->
+<!--<div class="clear"></div>-->
+
+<!--<div class="showLine">-->
+<!--<a href="#">-->
+<!--<img data-original="../images/130807/1-130PG54534.jpg" width="180" height="135" src="../images/grey.gif"></a>-->
+
+<!--<div>-->
+<!--<p><a href="http://www.xkcits.com/guangdong/2134.html">恩平温泉乐园、海滨小城</a></p>-->
+
+<!--<p>-->
+<!--<span><b>￥798</b>起</span>-->
+<!--<del>原价：4048</del>-->
+<!--</p>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="clear"></div>-->
+<!--</div>-->
+
+<!--</div>-->
+<!--</div>-->
 
 
 <div class="center">

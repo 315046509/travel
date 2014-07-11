@@ -1,9 +1,13 @@
 class Tejia < ActiveRecord::Base
-  validates :title, :presence => {:message => "名称不能为空！"}, :length => {:maximum => 12, :message => "名称长度不能超过12"}
+  validates :title, :presence => {:message => "名称不能为空！"}
   validates :description, :presence => {:message => "内容不能为空！"}
+  validates :price, :presence => {:message => "价格不能为空！"}
+
+
+  belongs_to :city
 
   attr_accessor :avatar
-  has_attached_file :avatar, :styles => {:index => "709x250#", :thumb => "68x48#", :show => "373x233#"}, :default_url => "/images/:style/missing.png",
+  has_attached_file :avatar, :styles => {:index => "222x180#",:index1 => "160x100#", :thumb => "68x48#", :show => "373x233#"}, :default_url => "/images/:style/missing.png",
                     :url => "/tejia/:id_partition/:style/:filename"
   validates_attachment_size :avatar, :less_than => 2.megabytes
   validates_attachment_content_type :avatar, :content_type => ['image/png', 'image/x-png', 'image/jpeg', 'image/pjpeg', 'image/jpg']

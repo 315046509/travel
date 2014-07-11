@@ -37,7 +37,7 @@ gem 'kaminari', '0.14.1'
 # 图片插件
 gem "rmagick", '2.13.2', :require => "RMagick"
 gem 'paperclip', '3.5.1'
-
+gem 'ckeditor'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

@@ -436,7 +436,7 @@
 
       <li><a href="<%= destination_seven_index_path %>">长春旅游</a></li>
 
-      <li><a href="<%= destination_eight_index_path %>">长春周边游</a></li>
+      <li><a href="<%= destination_eight_index_path %>">酒店展示</a></li>
 
     </ul>
   </div>
@@ -446,7 +446,7 @@
     <span class="first_span"><font color="red">最新公告:</font></span>
 
     <marquee onmouseover="this.stop()" onmouseout="this.start()" scrollamount="1" scrolldelay="7" direction="left" width="920" height="20" style="line-height: 19px;">
-      <% @jobs.each do |q| %>
+      <% @announcement.each do |q| %>
           <a><%= q.title %></a>
       <% end %>
     </marquee>

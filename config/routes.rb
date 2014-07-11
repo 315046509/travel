@@ -1,4 +1,5 @@
 Travel::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   root :to => "main#index"
   match '/login' => 'main#login', :via => :get
   match '/logout' => 'main#logout', :via => :get
@@ -10,7 +11,11 @@ Travel::Application.routes.draw do
       get 'check_login'
     end
   end
-  resources :destination_one
+  resources :destination_one do
+    member do
+      delete 'tejia_show'
+    end
+  end
   resources :destination_two
   resources :destination_three
   resources :destination_four
@@ -28,31 +33,54 @@ Travel::Application.routes.draw do
         post 'check_login'
       end
     end
+
+    # 会员管理
     resources :accounts do
       collection do
         post 'update_multiple'
       end
     end
+
+    # 最新公告
     resources :announcements
+
     # 导航栏一
-    resources :destination_ones
-    resources :destination_twos do
-      member do
-        delete 'delett_tejia'
-      end
-      collection do
-        get 'tejia'
-        get 'new_tejia'
-        post 'create_tejia'
-      end
+    resources :one_cities do
+      # 出境
+      resources :exithots
+      # 国内
+      resources :domestics
+      # 海外经典板块
+      resources :jingdians
     end
-    resources :destination_threes
-    resources :destination_fours
-    resources :destination_fives
-    resources :destination_sixs
-    resources :destination_sevens
-    resources :destination_eights
-    resources :destination_nines
+
+    # 导航栏二
+    resources :citys do
+      # 特价
+      resources :tejia
+      # 攻略
+      resources :raiders
+      # 推荐
+      resources :recommends
+      # 跟团
+      resources :gentuans
+      # 跟团
+      resources :freelines
+    end
+
+    # 导航栏三
+    resources :three_cities do
+      # 特价
+      resources :three_tejia
+      # 攻略
+      resources :three_raiders
+      # 推荐
+      resources :three_recommends
+      # 跟团
+      resources :three_gentuans
+      # 跟团
+      resources :three_freelines
+    end
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,4 +1,4 @@
-class Admin::AnnouncementsController < ApplicationController
+class Admin::AnnouncementsController < Admin::MainController
   layout 'admin'
 
   def index

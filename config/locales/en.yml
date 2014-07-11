@@ -27,3 +27,11 @@ en:
       previous: "&lsaquo; 上一页"
       next: "下一页 &rsaquo;"
       truncate: "..."
+  ckeditor:
+    page_title: 'CKEditor Files Manager'
+    confirm_delete: 'Delete file?'
+    buttons:
+      cancel: 'Cancel'
+      upload: 'Upload'
+      delete: 'Delete'
+      next: 'Next'

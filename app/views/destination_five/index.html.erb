@@ -2,92 +2,47 @@
 <div class="center">
 <div class="channel_side fn-left">
   <div class="side_hot">
-    <h3 class="side_title"> 韩国游导航</h3>
+    <h3 class="side_title"> 美国游导航</h3>
 
     <div class="line_list">
+      <!-- 分类一 -->
       <dl>
         <dt class="t">
-          <a target="_blank" href="http://www.xkcits.com/chujing/#" title="热门出境">热门出境</a>
+          <a title="港澳旅游">港澳旅游</a>
         </dt>
-        <dd class="dd">
-          <a target="_blank" href="http://www.xkcits.com/chujing/riben" title="日本">日本</a>
-        </dd>
-        <div class="clear"></div>
+        <% @category_1_city.each do |q| %>
+            <dd class="dd">
+              <a target="_blank" href="http://www.xkcits.com/chujing/riben" title="<%= q.title %>"><%= q.title %></a>
+            </dd>
+        <% end %>
       </dl>
-      <dl>
-        <dt class="t">
-          <a target="_blank" href="http://www.xkcits.com/chujing/#" title="热门海岛">热门海岛</a>
-        </dt>
-        <dd class="dd">
-          <a target="_blank" href="http://www.xkcits.com/chujing/alianqiu" title="阿联酋">阿联酋</a>
-        </dd>
-        <div class="clear"></div>
-      </dl>
-      <dl>
-        <dt class="t">
-          <a target="_blank" href="http://www.xkcits.com/chujing/#" title="东南亚">东南亚</a>
-        </dt>
-        <dd class="dd">
-          <a title="普吉岛" target="_blank" href="http://www.xkcits.com/chujing/pujidao/">普吉岛</a>
-        </dd>
-        <div class="clear"></div>
-      </dl>
+      <br/><br/>
 
+      <!-- 分类二 -->
       <dl>
         <dt class="t">
-          <a target="_blank" href="http://www.xkcits.com/chujing/#" title="亚洲">亚洲</a>
+          <a title="出境旅游">出境旅游</a>
         </dt>
-        <dd class="dd">
-          <a title="日本" target="_blank" href="http://www.xkcits.com/chujing/riben/">日本</a>
-        </dd>
-        <dd class="dd">
-          <a title="韩国" target="_blank" href="http://www.xkcits.com/chujing/hanguo/">韩国</a>
-        </dd>
-        <dd class="dd">
-          <a title="朝鲜" target="_blank" href="http://www.xkcits.com/chujing/chaoxian/">朝鲜</a>
-        </dd>
-        <div class="clear"></div>
+        <% @category_2_city.each do |q| %>
+            <dd class="dd">
+              <a target="_blank" href="http://www.xkcits.com/chujing/riben" title="<%= q.title %>"><%= q.title %></a>
+            </dd>
+        <% end %>
       </dl>
+      <br/><br/>
 
+      <!-- 分类三 -->
       <dl>
         <dt class="t">
-          <a target="_blank" href="http://www.xkcits.com/chujing/#" title="欧洲">欧洲</a>
+          <a title="国内旅游">国内旅游</a>
         </dt>
-        <dd class="dd">
-          <a title="意大利" target="_blank" href="http://www.xkcits.com/chujing/yidali/">意大利</a>
-        </dd>
-        <div class="clear"></div>
+        <% @category_3_city.each do |q| %>
+            <dd class="dd">
+              <a target="_blank" href="http://www.xkcits.com/chujing/riben" title="<%= q.title %>"><%= q.title %></a>
+            </dd>
+        <% end %>
       </dl>
-
-      <dl>
-        <dt class="t">
-          <a target="_blank" href="http://www.xkcits.com/chujing/#" title="美洲">美洲</a>
-        </dt>
-        <dd class="dd">
-          <a title="加拿大" target="_blank" href="http://www.xkcits.com/chujing/jianada/">加拿大</a>
-        </dd>
-        <div class="clear"></div>
-      </dl>
-
-      <dl>
-        <dt class="t">
-          <a target="_blank" href="http://www.xkcits.com/chujing/#" title="中东非洲">中东非洲</a>
-        </dt>
-        <dd class="dd">
-          <a title="肯尼亚" target="_blank" href="http://www.xkcits.com/chujing/kenniya/">肯尼亚</a>
-        </dd>
-        <div class="clear"></div>
-      </dl>
-
-      <dl>
-        <dt class="t">
-          <a target="_blank" href="http://www.xkcits.com/chujing/#" title="澳洲">澳洲</a>
-        </dt>
-        <dd class="dd">
-          <a title="澳大利亚" target="_blank" href="http://www.xkcits.com/chujing/aodaliya/">澳大利亚</a>
-        </dd>
-        <div class="clear"></div>
-      </dl>
+      <br/><br/>
     </div>
   </div>
 
@@ -103,17 +58,11 @@
       <a href="#"><img src="../images/gongl2.gif" data-original="/pics/gongl2.gif" style="display: inline;"></a>
     </div>
 
-    <ul class="gonglue_list">
-      <li>・ <a href="#">风光摄影技巧，捕抓路上最美的风景</a></li>
-      <li>・ <a href="#">马塞马拉——非洲野生动物观光第一目的地</a></li>
-      <li>・ <a href="#">舌尖上的肯尼亚——肯尼亚美食之旅</a></li>
-      <li>・ <a href="#">肯尼亚旅游有什么要注意的?肯尼亚旅游须知</a></li>
-      <li>・ <a href="#">如何去肯尼亚？肯尼亚交通指南</a></li>
-      <li>・ <a href="#">肯尼亚旅游签证如何办理？肯尼亚旅游签证办理</a></li>
-      <li>・ <a href="#">走进动感、野性、自然——肯尼亚</a></li>
-      <li>・ <a href="#">2013巴厘岛美食大搜罗</a></li>
-      <li>・ <a href="#">马来西亚使用大陆手机卡漫游资费</a></li>
-    </ul>
+    <% @jobs.each do |q| %>
+        <ul class="gonglue_list">
+          <li>・ <a href="#"><%= q.title %></a></li>
+        </ul>
+    <% end %>
   </div>
 </div>
 
@@ -143,48 +92,24 @@
 
   <div class="tj_chujing">
     <ul class="cj_tj_list cfix">
-      <li>
-        <a target="_blank" href="http://www.xkcits.com/chujing/514.html" title="巴厘岛五天蜜月旅游自由行,巴厘岛蜜月五星旅游">
-          <img src="../images/1-130P9143U8.jpg" width="222" height="180">
-        </a>
+      <% @lunbos.each do |q| %>
+          <li>
+            <a target="_blank" href="http://www.xkcits.com/chujing/4737.html" title="<%= q.title %>">
+              <%= image_tag q.avatar.url(:index) %>
+            </a>
 
-        <h3><a href="http://www.xkcits.com/chujing/514.html">巴厘岛五天蜜月旅游自由行,巴厘岛蜜月五星旅游</a></h3>
+            <h3><a href="http://www.xkcits.com/chujing/4737.html"><%= q.title %></a></h3>
 
-        <div class="cj_tj_price">
-          <span><i>￥<em>14380</em></i>/人起</span>
-          <a href="http://www.xkcits.com/chujing/514.html"></a>
-        </div>
-        <div class="cj_tj_yh"><span>限时特价</span></div>
-      </li>
-      <li>
-        <a target="_blank" href="http://www.xkcits.com/chujing/2106.html" title="塞班岛、天宁岛六天两岛游,让您体验丛林之旅的">
-          <img src="../images/1-130PGA125.jpg" width="222" height="180"></a>
-
-        <h3><a href="http://www.xkcits.com/chujing/2106.html">塞班岛、天宁岛六天两岛游,让您体验丛林之旅的</a></h3>
-
-        <div class="cj_tj_price">
-          <span><i>￥<em>8880</em></i>/人起</span>
-          <a href="http://www.xkcits.com/chujing/2106.html"></a>
-        </div>
-        <div class="cj_tj_yh"><span>限时特价</span></div>
-      </li>
-      <li>
-        <a target="_blank" href="http://www.xkcits.com/chujing/4737.html" title="韩国首尔南怡岛五日游">
-          <img src="../images/366-140303105620.jpg" width="222" height="180"></a>
-
-        <h3><a href="http://www.xkcits.com/chujing/4737.html">韩国首尔南怡岛五日游</a></h3>
-
-        <div class="cj_tj_price">
-          <span><i>￥<em>2980</em></i>/人起</span>
-          <a href="http://www.xkcits.com/chujing/4737.html"></a>
-        </div>
-        <div class="cj_tj_yh"><span>限时特价</span></div>
-      </li>
-
+            <div class="cj_tj_price">
+              <span><i>￥<em><%= q.price %></em></i>/人起</span>
+              <a href="http://www.xkcits.com/chujing/4737.html"></a>
+            </div>
+            <div class="cj_tj_yh"><span>限时特价</span></div>
+          </li>
+      <% end %>
     </ul>
   </div>
 </div>
-
 
 <div class="hk_hot">
 <h2 class="travel_Hd">
@@ -207,702 +132,508 @@
 </ul>
 
 <div class="newChannel_list visible" id="hk_div1">
-  <ul>
-    <li class="lineitem">
-      <div class="img fn-left">
-        <a title="肯尼亚迁徙豪华8日（2晚马赛马拉）-广州 - KQ" target="_blank" href="http://www.xkcits.com/chujing/5079.html">
-          <img alt="肯尼亚迁徙豪华8日（2晚马赛马拉）-广州 - KQ" src="../images/1-140612160649.jpg">
-        </a>
+  <% @recommend1.each do |q| %>
+      <ul>
+        <li class="lineitem">
+          <div class="img fn-left">
+            <a title="<%= q.title %>" target="_blank" href="#">
+              <%= image_tag q.avatar.url(:index) %>
+            </a>
+          </div>
+          <dl class="info fn-left">
+            <dt class="t">
+              <a title="<%= q.title %>" target="_blank" href="#">
+                <%= q.title %>
+              </a>
+            </dt>
+            <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
+            <dd class="moredesc">
+              <span>满意度：<span class="n">98%</span></span>
+              <span class="pin"><span class="n">5012</span>人赞</span>
+              <span>更新时间：<span class="n"><%= my_datetime q.created_at %></span></span>
+            </dd>
+          </dl>
 
-        <div class="prd_num">产品编号：SHS5079</div>
-      </div>
-      <dl class="info fn-left">
-        <dt class="t">
-          <a title="肯尼亚迁徙豪华8日（2晚马赛马拉）-广州 - KQ" target="_blank" href="http://www.xkcits.com/chujing/5079.html">肯尼亚迁徙豪华8日（2晚马赛马拉）-广州
-            - KQ</a>
-        </dt>
-        <dd class="desc">1、全程搭乘肯尼亚航空公司班机 2、全程入住当地豪华4-5星级酒</dd>
+          <div class="detail fn-right">
+            <span class="sup">双重优惠</span>
 
-        <dd class="moredesc">
-          <span>满意度：<span class="n">98%</span></span><span class="pin"><span class="n">52</span>人点评</span><span>最近出发班期：<span class="n">‎7‎/28, 8‎/4...</span></span>
-          <a class="date" href="javascript:;">全部班期</a>
-        </dd>
-      </dl>
-
-      <div class="detail fn-right">
-        <span class="sup">双重优惠</span>
-
-        <p class="price">
-          <span class="u">￥</span>
-          <span class="n">18800</span>
-          起
-        </p>
-                                    <span class="d">
-                                        <em class="dsnum">50</em>
-                                    </span>
-                                    <span class="s">
-                                        <em class="dsnum">200</em>
-                                    </span>
-      </div>
-
-      <div class="clear"></div>
-    </li>
-
-    <p class="newChannel_more">
-      <a title="查看欧洲旅游更多" target="_blank" href="http://www.xkcits.com/chujing/ouzhou">查看更多&gt;&gt;</a>
-    </p>
-  </ul>
+            <p class="price">
+              <span class="u">￥</span>
+              <span class="n"><%= q.price %></span>起
+            </p>
+            <span class="d"><em class="dsnum">50</em></span>
+            <span class="s"><em class="dsnum">200</em></span>
+          </div>
+        </li>
+      </ul>
+  <% end %>
 </div>
 <div class="newChannel_list" id="hk_div2">
-  <ul>
+  <% @recommend2.each do |q| %>
+      <ul>
+        <li class="lineitem">
+          <div class="img fn-left">
+            <a title="<%= q.title %>" target="_blank" href="#">
+              <%= image_tag q.avatar.url(:index) %>
+            </a>
+          </div>
+          <dl class="info fn-left">
+            <dt class="t">
+              <a title="<%= q.title %>" target="_blank" href="#">
+                <%= q.title %>
+              </a>
+            </dt>
+            <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
+            <dd class="moredesc">
+              <span>满意度：<span class="n">98%</span></span>
+              <span class="pin"><span class="n">5012</span>人赞</span>
+              <span>更新时间：<span class="n"><%= my_datetime q.created_at %></span></span>
+            </dd>
+          </dl>
 
+          <div class="detail fn-right">
+            <span class="sup">双重优惠</span>
 
-    <li class="lineitem">
-      <div class="img fn-left">
-        <a title="槟城兰卡威五天尊贵海岛假期（KA双飞1+2+1 香港往" target="_blank" href="#">
-          <img alt="槟城兰卡威五天尊贵海岛假期（KA双飞1+2+1 香港往" src="../images/1-140613134R5.jpg">
-        </a>
-
-        <div class="prd_num">产品编号：SHS5110</div>
-      </div>
-
-      <dl class="info fn-left">
-        <dt class="t">
-          <a title="槟城兰卡威五天尊贵海岛假期（KA双飞1+2+1 香港往" target="_blank" href="http://www.xkcits.com/chujing/5110.html">槟城兰卡威五天尊贵海岛假期（KA双飞1+2+1
-            香港往</a>
-        </dt>
-        <dd class="desc">1.乘港龙航空豪华客机，午机香港往返，直飞槟城； 2.游览著名</dd>
-
-        <dd class="moredesc">
-                                        <span>
-                                            满意度：
-                                            <span class="n">98%</span>
-                                        </span>
-                                        <span class="pin">
-                                            <span class="n">27</span>
-                                            人点评
-                                        </span>
-                                        <span>
-                                            最近出发班期：
-                                            <span class="n">7/22, 7/23...</span>
-                                        </span>
-          <a class="date" href="javascript:;">全部班期</a>
-        </dd>
-      </dl>
-
-      <div class="detail fn-right">
-        <span class="sup">双重优惠</span>
-
-        <p class="price">
-          <span class="u">￥</span>
-          <span class="n">5480</span>
-          起
-        </p>
-                                    <span class="d">
-                                        <em class="dsnum">50</em>
-                                    </span>
-                                    <span class="s">
-                                        <em class="dsnum">200</em>
-                                    </span>
-      </div>
-
-      <div class="clear"></div>
-    </li>
-
-
-  </ul>
-  <p class="newChannel_more">
-    <a title="查看出境旅游更多" target="_blank" href="#">查看更多&gt;&gt;</a>
-  </p>
+            <p class="price">
+              <span class="u">￥</span>
+              <span class="n"><%= q.price %></span>起
+            </p>
+            <span class="d"><em class="dsnum">50</em></span>
+            <span class="s"><em class="dsnum">200</em></span>
+          </div>
+        </li>
+      </ul>
+  <% end %>
 </div>
 
 <div class="newChannel_list" id="hk_div3">
-  <ul>
+  <% @recommend3.each do |q| %>
+      <ul>
+        <li class="lineitem">
+          <div class="img fn-left">
+            <a title="<%= q.title %>" target="_blank" href="#">
+              <%= image_tag q.avatar.url(:index) %>
+            </a>
+          </div>
+          <dl class="info fn-left">
+            <dt class="t">
+              <a title="<%= q.title %>" target="_blank" href="#">
+                <%= q.title %>
+              </a>
+            </dt>
+            <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
+            <dd class="moredesc">
+              <span>满意度：<span class="n">98%</span></span>
+              <span class="pin"><span class="n">5012</span>人赞</span>
+              <span>更新时间：<span class="n"><%= my_datetime q.created_at %></span></span>
+            </dd>
+          </dl>
 
-    <li class="lineitem">
-      <div class="img fn-left">
-        <a title="君悦巴厘品质之旅六天四晚" target="_blank" href="http://www.xkcits.com/chujing/5092.html">
-          <img alt="君悦巴厘品质之旅六天四晚" src="../images/1-1406121H558.jpg">
-        </a>
+          <div class="detail fn-right">
+            <span class="sup">双重优惠</span>
 
-        <div class="prd_num">产品编号：SHS5092</div>
-      </div>
-
-      <dl class="info fn-left">
-        <dt class="t">
-          <a title="君悦巴厘品质之旅六天四晚" target="_blank" href="http://www.xkcits.com/chujing/5092.html">君悦巴厘品质之旅六天四晚</a>
-        </dt>
-        <dd class="desc">★【豪华尊享】 两晚VILLA+两晚钻石国际五星Grand Hyatt ★【乐趣无</dd>
-
-        <dd class="moredesc">
-                                        <span>
-                                            满意度：
-                                            <span class="n">98%</span>
-                                        </span>
-                                        <span class="pin">
-                                            <span class="n">93</span>
-                                            人点评
-                                        </span>
-                                        <span>
-                                            最近出发班期：
-                                            <span class="n">6/02, 6/03...</span>
-                                        </span>
-          <a class="date" href="javascript:;">全部班期</a>
-        </dd>
-      </dl>
-
-      <div class="detail fn-right">
-        <span class="sup">双重优惠</span>
-
-        <p class="price">
-          <span class="u">￥</span>
-          <span class="n">3680</span>
-          起
-        </p>
-                                    <span class="d">
-                                        <em class="dsnum">50</em>
-                                    </span>
-                                    <span class="s">
-                                        <em class="dsnum">200</em>
-                                    </span>
-      </div>
-
-      <div class="clear"></div>
-    </li>
-
-
-  </ul>
-  <p class="newChannel_more">
-    <a title="查看东南亚更多" target="_blank" href="http://www.xkcits.com/chujing/dongnanya">查看更多&gt;&gt;</a>
-  </p>
+            <p class="price">
+              <span class="u">￥</span>
+              <span class="n"><%= q.price %></span>起
+            </p>
+            <span class="d"><em class="dsnum">50</em></span>
+            <span class="s"><em class="dsnum">200</em></span>
+          </div>
+        </li>
+      </ul>
+  <% end %>
 </div>
 
 <div class="newChannel_list" id="hk_div4">
-  <ul>
+  <% @recommend4.each do |q| %>
+      <ul>
+        <li class="lineitem">
+          <div class="img fn-left">
+            <a title="<%= q.title %>" target="_blank" href="#">
+              <%= image_tag q.avatar.url(:index) %>
+            </a>
+          </div>
+          <dl class="info fn-left">
+            <dt class="t">
+              <a title="<%= q.title %>" target="_blank" href="#">
+                <%= q.title %>
+              </a>
+            </dt>
+            <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
+            <dd class="moredesc">
+              <span>满意度：<span class="n">98%</span></span>
+              <span class="pin"><span class="n">5012</span>人赞</span>
+              <span>更新时间：<span class="n"><%= my_datetime q.created_at %></span></span>
+            </dd>
+          </dl>
 
-    <li class="lineitem">
-      <div class="img fn-left">
-        <a title="东京北海道温泉赏樱豪华六天团" target="_blank" href="http://www.xkcits.com/chujing/4722.html">
-          <img alt="东京北海道温泉赏樱豪华六天团" src="../images/366-140303111359.jpg">
-        </a>
+          <div class="detail fn-right">
+            <span class="sup">双重优惠</span>
 
-        <div class="prd_num">产品编号：SHS4722</div>
-      </div>
-
-      <dl class="info fn-left">
-        <dt class="t">
-          <a title="东京北海道温泉赏樱豪华六天团" target="_blank" href="http://www.xkcits.com/chujing/4722.html">东京北海道温泉赏樱豪华六天团</a>
-        </dt>
-        <dd class="desc">★特别安排景点： 银座、上野公园（赏樱）、皇居外苑二重桥、</dd>
-
-        <dd class="moredesc">
-                                        <span>
-                                            满意度：
-                                            <span class="n">98%</span>
-                                        </span>
-                                        <span class="pin">
-                                            <span class="n">50</span>
-                                            人点评
-                                        </span>
-                                        <span>
-                                            最近出发班期：
-                                            <span class="n">3/30, </span>
-                                        </span>
-          <a class="date" href="javascript:;">全部班期</a>
-        </dd>
-      </dl>
-
-      <div class="detail fn-right">
-        <span class="sup">双重优惠</span>
-
-        <p class="price">
-          <span class="u">￥</span>
-          <span class="n">8480</span>
-          起
-        </p>
-                                    <span class="d">
-                                        <em class="dsnum">50</em>
-                                    </span>
-                                    <span class="s">
-                                        <em class="dsnum">200</em>
-                                    </span>
-      </div>
-
-      <div class="clear"></div>
-    </li>
-
-  </ul>
-  <p class="newChannel_more">
-    <a title="查看日韩更多" target="_blank" href="http://www.xkcits.com/chujing/rihan">查看更多&gt;&gt;</a>
-  </p>
+            <p class="price">
+              <span class="u">￥</span>
+              <span class="n"><%= q.price %></span>起
+            </p>
+            <span class="d"><em class="dsnum">50</em></span>
+            <span class="s"><em class="dsnum">200</em></span>
+          </div>
+        </li>
+      </ul>
+  <% end %>
 </div>
 
 <div class="newChannel_list" id="hk_div5">
-  <ul>
+  <% @recommend5.each do |q| %>
+      <ul>
+        <li class="lineitem">
+          <div class="img fn-left">
+            <a title="<%= q.title %>" target="_blank" href="#">
+              <%= image_tag q.avatar.url(:index) %>
+            </a>
+          </div>
+          <dl class="info fn-left">
+            <dt class="t">
+              <a title="<%= q.title %>" target="_blank" href="#">
+                <%= q.title %>
+              </a>
+            </dt>
+            <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
+            <dd class="moredesc">
+              <span>满意度：<span class="n">98%</span></span>
+              <span class="pin"><span class="n">5012</span>人赞</span>
+              <span>更新时间：<span class="n"><%= my_datetime q.created_at %></span></span>
+            </dd>
+          </dl>
 
-    <li class="lineitem">
-      <div class="img fn-left">
-        <a title="&lt;strong&gt;欧洲六国9天精选游&lt;/strong&gt;" target="_blank" href="http://www.xkcits.com/chujing/4388.html">
-          <img alt="&lt;strong&gt;欧洲六国9天精选游&lt;/strong&gt;" src="../images/366-131125195A7.jpg">
-        </a>
+          <div class="detail fn-right">
+            <span class="sup">双重优惠</span>
 
-        <div class="prd_num">产品编号：SHS4388</div>
-      </div>
-
-      <dl class="info fn-left">
-        <dt class="t">
-          <a title="&lt;strong&gt;欧洲六国9天精选游&lt;/strong&gt;" target="_blank" href="http://www.xkcits.com/chujing/4388.html"><strong>欧洲六国9天精选游</strong></a>
-        </dt>
-        <dd class="desc">★参观世界三大博物馆之一的法国国家艺术宝库－罗浮宫，并安</dd>
-
-        <dd class="moredesc">
-                                        <span>
-                                            满意度：
-                                            <span class="n">98%</span>
-                                        </span>
-                                        <span class="pin">
-                                            <span class="n">68</span>
-                                            人点评
-                                        </span>
-                                        <span>
-                                            最近出发班期：
-                                            <span class="n">12/01, 12/02...</span>
-                                        </span>
-          <a class="date" href="javascript:;">全部班期</a>
-        </dd>
-      </dl>
-
-      <div class="detail fn-right">
-        <span class="sup">双重优惠</span>
-
-        <p class="price">
-          <span class="u">￥</span>
-          <span class="n">12700</span>
-          起
-        </p>
-                                    <span class="d">
-                                        <em class="dsnum">50</em>
-                                    </span>
-                                    <span class="s">
-                                        <em class="dsnum">200</em>
-                                    </span>
-      </div>
-
-      <div class="clear"></div>
-    </li>
-
-
-  </ul>
-  <p class="newChannel_more">
-    <a title="查看日韩更多" target="_blank" href="http://www.xkcits.com/chujing/rihan">查看更多&gt;&gt;</a>
-  </p>
+            <p class="price">
+              <span class="u">￥</span>
+              <span class="n"><%= q.price %></span>起
+            </p>
+            <span class="d"><em class="dsnum">50</em></span>
+            <span class="s"><em class="dsnum">200</em></span>
+          </div>
+        </li>
+      </ul>
+  <% end %>
 </div>
 
 <div class="newChannel_list" id="hk_div6">
-  <ul>
+  <% @recommend6.each do |q| %>
+      <ul>
+        <li class="lineitem">
+          <div class="img fn-left">
+            <a title="<%= q.title %>" target="_blank" href="#">
+              <%= image_tag q.avatar.url(:index) %>
+            </a>
+          </div>
+          <dl class="info fn-left">
+            <dt class="t">
+              <a title="<%= q.title %>" target="_blank" href="#">
+                <%= q.title %>
+              </a>
+            </dt>
+            <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
+            <dd class="moredesc">
+              <span>满意度：<span class="n">98%</span></span>
+              <span class="pin"><span class="n">5012</span>人赞</span>
+              <span>更新时间：<span class="n"><%= my_datetime q.created_at %></span></span>
+            </dd>
+          </dl>
 
+          <div class="detail fn-right">
+            <span class="sup">双重优惠</span>
 
-    <li class="lineitem">
-      <div class="img fn-left">
-        <a title="美国东西岸名校深度15天亲子之旅(升级版）" target="_blank" href="http://www.xkcits.com/chujing/2172.html">
-          <img alt="美国东西岸名校深度15天亲子之旅(升级版）" src="../images/1-130PG35139.jpg">
-        </a>
-
-        <div class="prd_num">产品编号：SHS2172</div>
-      </div>
-
-      <dl class="info fn-left">
-        <dt class="t">
-          <a title="美国东西岸名校深度15天亲子之旅(升级版）" target="_blank" href="http://www.xkcits.com/chujing/2172.html">美国东西岸名校深度15天亲子之旅(升级版）</a>
-        </dt>
-        <dd class="desc">给孩子一个最有意义的暑期礼物； 走进八大世界名校，近距离感</dd>
-
-        <dd class="moredesc">
-                                        <span>
-                                            满意度：
-                                            <span class="n">98%</span>
-                                        </span>
-                                        <span class="pin">
-                                            <span class="n">67</span>
-                                            人点评
-                                        </span>
-                                        <span>
-                                            最近出发班期：
-                                            <span class="n">6/22, 6/23...</span>
-                                        </span>
-          <a class="date" href="javascript:;">全部班期</a>
-        </dd>
-      </dl>
-
-      <div class="detail fn-right">
-        <span class="sup">双重优惠</span>
-
-        <p class="price">
-          <span class="u">￥</span>
-          <span class="n">30800</span>
-          起
-        </p>
-                                    <span class="d">
-                                        <em class="dsnum">50</em>
-                                    </span>
-                                    <span class="s">
-                                        <em class="dsnum">200</em>
-                                    </span>
-      </div>
-
-      <div class="clear"></div>
-    </li>
-
-
-  </ul>
-  <p class="newChannel_more">
-    <a title="查看北美洲更多" target="_blank" href="http://www.xkcits.com/chujing/beimeizhou">查看更多&gt;&gt;</a>
-  </p>
+            <p class="price">
+              <span class="u">￥</span>
+              <span class="n"><%= q.price %></span>起
+            </p>
+            <span class="d"><em class="dsnum">50</em></span>
+            <span class="s"><em class="dsnum">200</em></span>
+          </div>
+        </li>
+      </ul>
+  <% end %>
 </div>
 
 <div class="newChannel_list" id="hk_div7">
-  <ul>
+  <% @recommend7.each do |q| %>
+      <ul>
+        <li class="lineitem">
+          <div class="img fn-left">
+            <a title="<%= q.title %>" target="_blank" href="#">
+              <%= image_tag q.avatar.url(:index) %>
+            </a>
+          </div>
+          <dl class="info fn-left">
+            <dt class="t">
+              <a title="<%= q.title %>" target="_blank" href="#">
+                <%= q.title %>
+              </a>
+            </dt>
+            <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
+            <dd class="moredesc">
+              <span>满意度：<span class="n">98%</span></span>
+              <span class="pin"><span class="n">5012</span>人赞</span>
+              <span>更新时间：<span class="n"><%= my_datetime q.created_at %></span></span>
+            </dd>
+          </dl>
 
+          <div class="detail fn-right">
+            <span class="sup">双重优惠</span>
 
-    <li class="lineitem">
-      <div class="img fn-left">
-        <a title="坦桑尼亚8天行程" target="_blank" href="http://www.xkcits.com/chujing/4809.html">
-          <img alt="坦桑尼亚8天行程" src="../images/1-14031Q04521-50.jpg">
-        </a>
-
-        <div class="prd_num">产品编号：SHS4809</div>
-      </div>
-
-      <dl class="info fn-left">
-        <dt class="t">
-          <a title="坦桑尼亚8天行程" target="_blank" href="http://www.xkcits.com/chujing/4809.html">坦桑尼亚8天行程</a>
-        </dt>
-        <dd class="desc">航空：全程广州往返五星航空公司—卡塔尔航空； 游玩：非洲第</dd>
-
-        <dd class="moredesc">
-                                        <span>
-                                            满意度：
-                                            <span class="n">98%</span>
-                                        </span>
-                                        <span class="pin">
-                                            <span class="n">70</span>
-                                            人点评
-                                        </span>
-                                        <span>
-                                            最近出发班期：
-                                            <span class="n">4/25, 5/23...</span>
-                                        </span>
-          <a class="date" href="javascript:;">全部班期</a>
-        </dd>
-      </dl>
-
-      <div class="detail fn-right">
-        <span class="sup">双重优惠</span>
-
-        <p class="price">
-          <span class="u">￥</span>
-          <span class="n">25999</span>
-          起
-        </p>
-                                    <span class="d">
-                                        <em class="dsnum">50</em>
-                                    </span>
-                                    <span class="s">
-                                        <em class="dsnum">200</em>
-                                    </span>
-      </div>
-
-      <div class="clear"></div>
-    </li>
-
-
-  </ul>
-  <p class="newChannel_more">
-    <a title="查看非洲更多" target="_blank" href="http://www.xkcits.com/chujing/feizhou">查看更多&gt;&gt;</a>
-  </p>
+            <p class="price">
+              <span class="u">￥</span>
+              <span class="n"><%= q.price %></span>起
+            </p>
+            <span class="d"><em class="dsnum">50</em></span>
+            <span class="s"><em class="dsnum">200</em></span>
+          </div>
+        </li>
+      </ul>
+  <% end %>
 </div>
 
 <div class="newChannel_list" id="hk_div8">
-  <ul>
+  <% @recommend8.each do |q| %>
+      <ul>
+        <li class="lineitem">
+          <div class="img fn-left">
+            <a title="<%= q.title %>" target="_blank" href="#">
+              <%= image_tag q.avatar.url(:index) %>
+            </a>
+          </div>
+          <dl class="info fn-left">
+            <dt class="t">
+              <a title="<%= q.title %>" target="_blank" href="#">
+                <%= q.title %>
+              </a>
+            </dt>
+            <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
+            <dd class="moredesc">
+              <span>满意度：<span class="n">98%</span></span>
+              <span class="pin"><span class="n">5012</span>人赞</span>
+              <span>更新时间：<span class="n"><%= my_datetime q.created_at %></span></span>
+            </dd>
+          </dl>
 
-    <li class="lineitem">
-      <div class="img fn-left">
-        <a title="澳洲大堡礁8天阳光之旅" target="_blank" href="http://www.xkcits.com/chujing/1716.html">
-          <img alt="澳洲大堡礁8天阳光之旅" src="../images/1-130PQ15353.jpg">
-        </a>
+          <div class="detail fn-right">
+            <span class="sup">双重优惠</span>
 
-        <div class="prd_num">产品编号：SHS1716</div>
-      </div>
-
-      <dl class="info fn-left">
-        <dt class="t">
-          <a title="澳洲大堡礁8天阳光之旅" target="_blank" href="http://www.xkcits.com/chujing/1716.html">澳洲大堡礁8天阳光之旅</a>
-        </dt>
-        <dd class="desc">★独家安排乘坐南方航空公司国际航机广州直飞往返澳洲，安全</dd>
-
-        <dd class="moredesc">
-                                        <span>
-                                            满意度：
-                                            <span class="n">98%</span>
-                                        </span>
-                                        <span class="pin">
-                                            <span class="n">73</span>
-                                            人点评
-                                        </span>
-                                        <span>
-                                            最近出发班期：
-                                            <span class="n">6/21, 6/22...</span>
-                                        </span>
-          <a class="date" href="javascript:;">全部班期</a>
-        </dd>
-      </dl>
-
-      <div class="detail fn-right">
-        <span class="sup">双重优惠</span>
-
-        <p class="price">
-          <span class="u">￥</span>
-          <span class="n">13380</span>
-          起
-        </p>
-                                    <span class="d">
-                                        <em class="dsnum">50</em>
-                                    </span>
-                                    <span class="s">
-                                        <em class="dsnum">200</em>
-                                    </span>
-      </div>
-
-      <div class="clear"></div>
-    </li>
-
-
-  </ul>
-  <p class="newChannel_more">
-    <a title="查看澳洲更多" target="_blank" href="http://www.xkcits.com/chujing/aozhou">查看更多&gt;&gt;</a>
-  </p>
-</div>
-
-
-</div>
-
-<div class="clear"></div>
+            <p class="price">
+              <span class="u">￥</span>
+              <span class="n"><%= q.price %></span>起
+            </p>
+            <span class="d"><em class="dsnum">50</em></span>
+            <span class="s"><em class="dsnum">200</em></span>
+          </div>
+        </li>
+      </ul>
+  <% end %>
 </div>
 
 </div>
-
+</div>
 
 <div class="big_banner">
   <img src="../images/cj_banner.jpg" data-original="/pics/cj_banner.jpg" style="display: inline;">
 </div>
 
-
 <div class="tuan_hot dbfen">
-<h2 class="travel_Hd">
-  <span class="travel_Hd_type travel_gt_type">跟团游热门地区</span>
-  <span class="travel_Hd_msg">精挑细选，让您轻松出游！</span>
-</h2>
+  <h2 class="travel_Hd">
+    <span class="travel_Hd_type travel_gt_type">跟团游热门地区</span>
+    <span class="travel_Hd_msg">精挑细选，让您轻松出游！</span>
+  </h2>
 
-<div class="newChannel_Bd">
-  <div class="newChannel_right">
-    <ul class="newChannel_tab">
-      <li class="cur" id="tu_li1">美国</li>
-      <li id="tu_li2">法国</li>
-      <li id="tu_li3">泰国</li>
-      <li id="tu_li4">巴厘岛</li>
-      <li id="tu_li5">韩国</li>
-      <li id="tu_li6" style="margin:0;">澳大利亚</li>
-    </ul>
+  <div class="newChannel_Bd">
+    <div class="newChannel_right">
+      <ul class="newChannel_tab">
+        <li class="cur" id="tu_li1">美国</li>
+        <li id="tu_li2">法国</li>
+        <li id="tu_li3">泰国</li>
+        <li id="tu_li4">巴厘岛</li>
+        <li id="tu_li5">韩国</li>
+        <li id="tu_li6" style="margin:0;">澳大利亚</li>
+      </ul>
 
-    <div class="newChannel_list visible" id="tu_div1">
-      <ul>
-        <li>
+      <div class="newChannel_list visible" id="tu_div1">
+        <% @gentuan1.each do |q| %>
+            <ul>
+              <li>
                                 <span class="dbfen_price">
                                     <span class="u">￥</span>
-                                    <span class="n">9299</span>
+                                    <span class="n"><%= q.price %></span>
                                     起
                                 </span>
-          <a href="http://www.xkcits.com/chujing/5122.html">美国夏威夷人间天堂之旅7天品质团（CI）</a>夏威夷
-        </li>
+                <a href="#"><%= q.title %>（CI）</a>
+              </li>
 
 
-      </ul>
-      <div class="clear"></div>
+            </ul>
+            <div class="clear"></div>
 
-      <div class="showLine">
-        <a href="http://www.xkcits.com/chujing/5122.html"><img src="../images/1-14061G13130.jpg" width="180" height="135"></a>
+            <div class="showLine">
+              <a href="http://www.xkcits.com/chujing/5122.html">
+                <%= image_tag q.avatar.url(:index) %>
+              </a>
 
-        <div>
-          <p><a href="http://www.xkcits.com/chujing/5122.html">美国夏威夷人间天堂之旅</a></p>
+              <div>
+                <p><a href="#"><%= q.title %></a></p>
 
-          <p>
-            <span><b>￥9299</b>起</span>
-            <del>原价：11799</del>
-          </p>
-        </div>
+                <p>
+                  <span><b>￥<%= q.price %></b>起</span>
+                  <del>原价：11799</del>
+                </p>
+              </div>
 
+            </div>
+        <% end %>
       </div>
 
-    </div>
-
-    <div class="newChannel_list" id="tu_div2">
-      <ul>
-
-        <li>
+      <div class="newChannel_list" id="tu_div2">
+        <% @gentuan2.each do |q| %>
+            <ul>
+              <li>
                                 <span class="dbfen_price">
                                     <span class="u">￥</span>
-                                    <span class="n">18300</span>
+                                    <span class="n"><%= q.price %></span>
                                     起
                                 </span>
-          <a href="http://www.xkcits.com/chujing/4557.html">法国瑞士两国10天游</a>法国
-        </li>
+                <a href="#"><%= q.title %>（CI）</a>
+              </li>
 
 
-      </ul>
-      <div class="clear"></div>
+            </ul>
+            <div class="clear"></div>
 
-      <div class="showLine">
-        <a href="http://www.xkcits.com/chujing/4557.html"><img src="../images/366-131126091218.jpg" width="180" height="135"></a>
+            <div class="showLine">
+              <a href="http://www.xkcits.com/chujing/5122.html">
+                <%= image_tag q.avatar.url(:index) %>
+              </a>
 
-        <div>
-          <p><a href="http://www.xkcits.com/chujing/4557.html">法国瑞士两国10天游</a></p>
+              <div>
+                <p><a href="#"><%= q.title %></a></p>
 
-          <p>
-            <span><b>￥18300</b>起</span>
-            <del>原价：20800</del>
-          </p>
-        </div>
+                <p>
+                  <span><b>￥<%= q.price %></b>起</span>
+                  <del>原价：11799</del>
+                </p>
+              </div>
 
+            </div>
+        <% end %>
       </div>
-    </div>
 
-    <div class="newChannel_list" id="tu_div3">
-      <ul>
-        <li>
+      <div class="newChannel_list" id="tu_div3">
+        <% @gentuan3.each do |q| %>
+            <ul>
+              <li>
                                 <span class="dbfen_price">
                                     <span class="u">￥</span>
-                                    <span class="n">4180</span>
+                                    <span class="n"><%= q.price %></span>
                                     起
                                 </span>
-          <a href="http://www.xkcits.com/chujing/5097.html">【暑假亲子游】尊享清迈·夜间动物园五天亲子纯</a>泰国
-        </li>
+                <a href="#"><%= q.title %>（CI）</a>
+              </li>
 
-      </ul>
-      <div class="clear"></div>
 
-      <div class="showLine">
-        <a href="http://www.xkcits.com/chujing/5097.html"><img src="../images/1-140613101308.jpg" width="180" height="135"></a>
+            </ul>
+            <div class="clear"></div>
 
-        <div>
-          <p><a href="http://www.xkcits.com/chujing/5097.html">【暑假亲子游】尊享清迈</a></p>
+            <div class="showLine">
+              <a href="http://www.xkcits.com/chujing/5122.html">
+                <%= image_tag q.avatar.url(:index) %>
+              </a>
 
-          <p>
-            <span><b>￥4180</b>起</span>
-            <del>原价：6680</del>
-          </p>
-        </div>
+              <div>
+                <p><a href="#"><%= q.title %></a></p>
 
+                <p>
+                  <span><b>￥<%= q.price %></b>起</span>
+                  <del>原价：11799</del>
+                </p>
+              </div>
+
+            </div>
+        <% end %>
       </div>
-    </div>
 
-    <div class="newChannel_list" id="tu_div4">
-      <ul>
-        <li>
+      <div class="newChannel_list" id="tu_div4">
+        <% @gentuan4.each do |q| %>
+            <ul>
+              <li>
                                 <span class="dbfen_price">
                                     <span class="u">￥</span>
-                                    <span class="n">4280</span>
+                                    <span class="n"><%= q.price %></span>
                                     起
                                 </span>
-          <a href="http://www.xkcits.com/chujing/5168.html">｛魅丽蓝点｝巴厘岛四晚五天的纯玩行</a>巴厘岛
-        </li>
-
-      </ul>
-      <div class="clear"></div>
-
-      <div class="showLine">
-
-        <a href="http://www.xkcits.com/chujing/5168.html"><img src="../images/1-14061G14433.jpg" width="180" height="135"></a>
-
-        <div>
-          <p><a href="http://www.xkcits.com/chujing/5168.html">｛魅丽蓝点｝巴厘岛四晚</a></p>
-
-          <p>
-            <span><b>￥4280</b>起</span>
-            <del>原价：6780</del>
-          </p>
-        </div>
+                <a href="#"><%= q.title %>（CI）</a>
+              </li>
 
 
+            </ul>
+            <div class="clear"></div>
+
+            <div class="showLine">
+              <a href="http://www.xkcits.com/chujing/5122.html">
+                <%= image_tag q.avatar.url(:index) %>
+              </a>
+
+              <div>
+                <p><a href="#"><%= q.title %></a></p>
+
+                <p>
+                  <span><b>￥<%= q.price %></b>起</span>
+                  <del>原价：11799</del>
+                </p>
+              </div>
+
+            </div>
+        <% end %>
       </div>
-    </div>
 
-    <div class="newChannel_list" id="tu_div5">
-      <ul>
-
-        <li>
+      <div class="newChannel_list" id="tu_div5">
+        <% @gentuan5.each do |q| %>
+            <ul>
+              <li>
                                 <span class="dbfen_price">
                                     <span class="u">￥</span>
-                                    <span class="n">3580</span>
+                                    <span class="n"><%= q.price %></span>
                                     起
                                 </span>
-          <a href="http://www.xkcits.com/chujing/5113.html">“花漾煦春”首尔、小法兰西、神奇3D冰雪世界炫</a>韩国
-        </li>
-
-      </ul>
-      <div class="clear"></div>
-
-      <div class="showLine">
-
-        <a href="http://www.xkcits.com/chujing/5113.html"><img src="../images/1-140613141I0.jpg" width="180" height="135"></a>
-
-        <div>
-          <p><a href="http://www.xkcits.com/chujing/5113.html">“花漾煦春”首尔、小法</a></p>
-
-          <p>
-            <span><b>￥3580</b>起</span>
-            <del>原价：6080</del>
-          </p>
-        </div>
+                <a href="#"><%= q.title %>（CI）</a>
+              </li>
 
 
+            </ul>
+            <div class="clear"></div>
+
+            <div class="showLine">
+              <a href="http://www.xkcits.com/chujing/5122.html">
+                <%= image_tag q.avatar.url(:index) %>
+              </a>
+
+              <div>
+                <p><a href="#"><%= q.title %></a></p>
+
+                <p>
+                  <span><b>￥<%= q.price %></b>起</span>
+                  <del>原价：11799</del>
+                </p>
+              </div>
+
+            </div>
+        <% end %>
       </div>
-    </div>
 
-    <div class="newChannel_list" id="tu_div6">
-      <ul>
-        <li>
-                                <span class="dbfen_price">
-                                    <span class="u">￥</span>
-                                    <span class="n">14180</span>
-                                    起
-                                </span>
-          <a href="http://www.xkcits.com/chujing/5152.html">澳洲大堡礁墨尔本8天名城品质游</a>悉尼、凯恩斯（绿岛）、墨尔
-        </li>
-
-      </ul>
-      <div class="clear"></div>
-
-      <div class="showLine">
-
-        <a href="http://www.xkcits.com/chujing/5152.html"><img src="../images/1-14061G32549.jpg" width="180" height="135"></a>
-
-        <div>
-          <p><a href="http://www.xkcits.com/chujing/5152.html">澳洲大堡礁墨尔本8天名城</a></p>
-
-          <p>
-            <span><b>￥14180</b>起</span>
-            <del>原价：16680</del>
-          </p>
-        </div>
-
+      <div class="newChannel_list" id="tu_div6">
 
       </div>
     </div>
-
+    <div class="clear"></div>
   </div>
-
-  <div class="clear"></div>
-</div>
 </div>
 
 
@@ -924,138 +655,124 @@
 
 
       <div class="newChannel_list visible" id="zy_div1">
-        <ul>
-          <li>
-                                <span class="dbfen_price">
-                                    <span class="u">￥</span>
-                                    <span class="n">13900</span>
-                                    起
-                                </span>
-            <a href="http://www.xkcits.com/chujing/5085.html">斯里兰卡+马尔代夫八天精华游（广州往返）</a>马尔代夫
-          </li>
+        <% @freeline1.each do |q| %>
+            <ul>
+              <li>
+                <span class="dbfen_price">
+                  <span class="u">￥</span><span class="n"><%= q.price %></span>起
+                </span>
+                <a href="#"><%= q.title %></a>
+              </li>
+            </ul>
+            <div class="showLine">
+              <%= image_tag q.avatar.url(:index) %>
+              <div>
+                <p><a href="#"><%= q.title %></a></p>
 
-        </ul>
-        <div class="clear"></div>
-
-        <div class="showLine">
-
-          <a href="http://www.xkcits.com/chujing/5085.html"><img src="../images/1-140612160952.jpg" width="180" height="135"></a>
-
-          <div>
-            <p><a href="http://www.xkcits.com/chujing/5085.html">斯里兰卡+马尔代夫八天精</a></p>
-
-            <p>
-              <span><b>￥13900</b>起</span>
-              <del>原价：16400</del>
-            </p>
-          </div>
-
-
-        </div>
+                <p>
+                  <span><b>￥<%= q.price %></b>起</span>
+                  <del>原价：16400</del>
+                </p>
+              </div>
+            </div>
+        <% end %>
       </div>
 
 
       <div class="newChannel_list" id="zy_div2">
-        <ul>
-          <li>
-                                <span class="dbfen_price">
-                                    <span class="u">￥</span>
-                                    <span class="n">15999</span>
-                                    起
-                                </span>
-            <a href="http://www.xkcits.com/chujing/5160.html">迪拜奢华678六天</a>迪拜
-          </li>
-        </ul>
-        <div class="clear"></div>
-        <div class="showLine">
-          <a href="http://www.xkcits.com/chujing/5160.html"><img src="../images/1-14061G35106.jpg" width="180" height="135"></a>
+        <% @freeline2.each do |q| %>
+            <ul>
+              <li>
+                <span class="dbfen_price">
+                  <span class="u">￥</span><span class="n"><%= q.price %></span>起
+                </span>
+                <a href="#"><%= q.title %></a>
+              </li>
+            </ul>
+            <div class="showLine">
+              <%= image_tag q.avatar.url(:index) %>
+              <div>
+                <p><a href="#"><%= q.title %></a></p>
 
-          <div>
-            <p><a href="http://www.xkcits.com/chujing/5160.html">迪拜奢华678六天</a></p>
-
-            <p>
-              <span><b>￥15999</b>起</span>
-              <del>原价：18499</del>
-            </p>
-          </div>
-        </div>
+                <p>
+                  <span><b>￥<%= q.price %></b>起</span>
+                  <del>原价：16400</del>
+                </p>
+              </div>
+            </div>
+        <% end %>
       </div>
+
       <div class="newChannel_list" id="zy_div3">
-        <ul>
-          <li>
-                                <span class="dbfen_price">
-                                    <span class="u">￥</span>
-                                    <span class="n">2899</span>
-                                    起
-                                </span>
-            <a href="http://www.xkcits.com/chujing/5132.html">风情沙巴UO五日游</a>沙巴
-          </li>
-        </ul>
-        <div class="clear"></div>
-        <div class="showLine">
-          <a href="http://www.xkcits.com/chujing/5132.html"><img src="../images/1-14061G15421.jpg" width="180" height="135"></a>
+        <% @freeline3.each do |q| %>
+            <ul>
+              <li>
+                <span class="dbfen_price">
+                  <span class="u">￥</span><span class="n"><%= q.price %></span>起
+                </span>
+                <a href="#"><%= q.title %></a>
+              </li>
+            </ul>
+            <div class="showLine">
+              <%= image_tag q.avatar.url(:index) %>
+              <div>
+                <p><a href="#"><%= q.title %></a></p>
 
-          <div>
-            <p><a href="http://www.xkcits.com/chujing/5132.html">风情沙巴UO五日游</a></p>
-
-            <p>
-              <span><b>￥2899</b>起</span>
-              <del>原价：5399</del>
-            </p>
-          </div>
-        </div>
+                <p>
+                  <span><b>￥<%= q.price %></b>起</span>
+                  <del>原价：16400</del>
+                </p>
+              </div>
+            </div>
+        <% end %>
       </div>
+
       <div class="newChannel_list" id="zy_div4">
-        <ul>
-          <li>
-                                <span class="dbfen_price">
-                                    <span class="u">￥</span>
-                                    <span class="n">17200</span>
-                                    起
-                                </span>
-            <a href="http://www.xkcits.com/chujing/2076.html">东欧六国（德、捷、奥、斯、斯、匈）布拉格观</a>德国
-          </li>
-        </ul>
-        <div class="clear"></div>
-        <div class="showLine">
-          <a href="http://www.xkcits.com/chujing/2076.html"><img src="../images/1-130PQ02430.jpg" width="180" height="135"></a>
+        <% @freeline4.each do |q| %>
+            <ul>
+              <li>
+                <span class="dbfen_price">
+                  <span class="u">￥</span><span class="n"><%= q.price %></span>起
+                </span>
+                <a href="#"><%= q.title %></a>
+              </li>
+            </ul>
+            <div class="showLine">
+              <%= image_tag q.avatar.url(:index) %>
+              <div>
+                <p><a href="#"><%= q.title %></a></p>
 
-          <div>
-            <p><a href="http://www.xkcits.com/chujing/2076.html">东欧六国（德、捷、奥、</a></p>
-
-            <p>
-              <span><b>￥17200</b>起</span>
-              <del>原价：19700</del>
-            </p>
-          </div>
-        </div>
+                <p>
+                  <span><b>￥<%= q.price %></b>起</span>
+                  <del>原价：16400</del>
+                </p>
+              </div>
+            </div>
+        <% end %>
       </div>
 
       <div class="newChannel_list" id="zy_div5">
-        <ul>
+        <% @freeline5.each do |q| %>
+            <ul>
+              <li>
+                <span class="dbfen_price">
+                  <span class="u">￥</span><span class="n"><%= q.price %></span>起
+                </span>
+                <a href="#"><%= q.title %></a>
+              </li>
+            </ul>
+            <div class="showLine">
+              <%= image_tag q.avatar.url(:index) %>
+              <div>
+                <p><a href="#"><%= q.title %></a></p>
 
-          <li>
-                                <span class="dbfen_price">
-                                    <span class="u">￥</span>
-                                    <span class="n">10999</span>
-                                    起
-                                </span>
-            <a href="http://www.xkcits.com/chujing/5105.html">南非超值八天游</a>南非
-          </li>
-        </ul>
-        <div class="clear"></div>
-        <div class="showLine">
-          <a href="http://www.xkcits.com/chujing/5105.html"><img src="../images/1-140613110206.jpg" width="180" height="135"></a>
-
-          <div>
-            <p><a href="http://www.xkcits.com/chujing/5105.html">南非超值八天游</a></p>
-
-            <p>
-              <span><b>￥10999</b>起</span>
-              <del>原价：13499</del>
-            </p>
-          </div>
-        </div>
+                <p>
+                  <span><b>￥<%= q.price %></b>起</span>
+                  <del>原价：16400</del>
+                </p>
+              </div>
+            </div>
+        <% end %>
       </div>
     </div>
     <div class="clear"></div>
@@ -1063,7 +780,7 @@
 </div>
 
 </div>
-
+</div>
 <div class="clear"></div>
 </div>
 <%= render "comment/footer" %>

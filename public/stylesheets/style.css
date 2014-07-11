@@ -277,9 +277,10 @@ table{border-collapse:collapse;border-spacing:0}
 .dbfen .newChannel_right{ height:290px; }
 .dbfen .newChannel_list li{ height:44px; padding:0; line-height:44px; width:500px; }
 .dbfen .newChannel_list li a{ color:#81bc2c; font-size:14px; font-weight:bold; margin-right:10px; }
-.dbfen_price{ float:right; margin-right:10px; }
+.dbfen_price{ float:right; margin-right:40px; }
 .dbfen_price .u{color: #FF6600;}
 .dbfen_price .n{color: #FF6600; font-size: 20px; margin-right: 3px; }
+.dbfen_price .jingdian{color: #FF6600; font-size: 10px; margin-right: 3px; }
 .dbfen .newChannel_list li.dbfen_last_li{ width:689px; }
 .dbfen .newChannel_list li.dbfen_last_li .dbfen_price{ margin-right:199px; }
 .dbfen .showLine{ height:190px; position:absolute; right:12px; top:15px; width:180px; }
