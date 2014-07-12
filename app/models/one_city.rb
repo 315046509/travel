@@ -7,6 +7,7 @@ class OneCity < ActiveRecord::Base
   has_many :exithots
   has_many :domestics
   has_many :jingdians
+  has_many :hotdoors
 
   def OneCity.question_category_name(category_id)
     QUESTION_CATEGORYS.each do |item|

@@ -5,6 +5,13 @@ Travel::Application.routes.draw do
   match '/logout' => 'main#logout', :via => :get
   match '/signup' => 'main#signup', :via => :get
   resources :main do
+    member do
+      get 'show_tejia'
+      get 'show_rm'
+      get 'show_classic'
+      get 'show_chujing'
+      get 'show_domestic'
+    end
     collection do
       post 'user_create'
       post 'login_check'
@@ -52,6 +59,8 @@ Travel::Application.routes.draw do
       resources :domestics
       # 海外经典板块
       resources :jingdians
+      # 热门
+      resources :hotdoors
     end
 
     # 导航栏二

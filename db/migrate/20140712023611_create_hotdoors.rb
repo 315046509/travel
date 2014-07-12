@@ -1,6 +1,6 @@
-class CreateJingdians < ActiveRecord::Migration
+class CreateHotdoors < ActiveRecord::Migration
   def change
-    create_table :jingdians do |t|
+    create_table :hotdoors do |t|
       t.string :title
       t.text :description
       t.integer :price

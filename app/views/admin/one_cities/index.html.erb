@@ -31,9 +31,9 @@
           <th>分类</th>
           <th>城市</th>
           <th>海外板块旅游</th>
+          <th>港澳热门旅游</th>
           <th>出境热门旅游</th>
           <th>国内热门旅游</th>
-          <th>旅游风向标</th>
           <th>删除</th>
         </tr>
         </thead>
@@ -44,9 +44,9 @@
               <td><%= q.question_category_name %></td>
               <td><%= q.title %></td>
               <td><%= link_to '海外板块旅游', admin_one_city_jingdians_path(q), :class => "btn btn-primary" %></td>
+              <td><%= link_to '港澳热门旅游', admin_one_city_hotdoors_path(q), :class => "btn btn-primary" %></td>
               <td><%= link_to '出境热门旅游', admin_one_city_exithots_path(q), :class => "btn btn-primary" %></td>
               <td><%= link_to '国内热门旅游', admin_one_city_domestics_path(q), :class => "btn btn-primary" %></td>
-              <td><%= link_to '旅游风向标', admin_city_tejia_path(q), :class => "btn btn-primary" %></td>
               <td><%= link_to '删除', admin_one_city_path(q), :class => "btn btn-primary", :method => :delete, :confirm => "您确定要删除吗?" %></td>
             </tr>
         <% end %>

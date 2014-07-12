@@ -711,7 +711,7 @@
           <ul class="travel_tj_list">
             <li>
               <div class="travel_tj_img">
-                <a title="<%= q.title %>" target="_blank" href="#">
+                <a title="<%= q.title %>" target="_blank" href="<%= show_tejia_main_path(q) %>">
                   <%= image_tag q.avatar.url(:index1) %>
                 </a>
 
@@ -723,7 +723,7 @@
               </div>
 
               <p class="travel_tj_msg">
-                <a title="<%= q.title %>" target="_blank" href="#"><%= q.title %></a>
+                <a title="<%= q.title %>" target="_blank" href="<%= show_tejia_main_path(q) %>"><%= q.title %></a>
               </p>
 
               <p class="travel_tj_price">
@@ -756,7 +756,7 @@
     </dt>
     <% @category_1_city.each do |q| %>
         <dd class="dd">
-          <a target="_blank" href="http://www.xkcits.com/chujing/riben" title="<%= q.title %>"><%= q.title %></a>
+          <a target="_blank" href="#" title="<%= q.title %>"><%= q.title %></a>
         </dd>
     <% end %>
     <div class="clear"></div>
@@ -767,7 +767,7 @@
     </dt>
     <% @category_2_city.each do |q| %>
         <dd class="dd">
-          <a target="_blank" href="http://www.xkcits.com/chujing/riben" title="<%= q.title %>"><%= q.title %></a>
+          <a target="_blank" href="#" title="<%= q.title %>"><%= q.title %></a>
         </dd>
     <% end %>
     <div class="clear"></div>
@@ -778,7 +778,7 @@
     </dt>
     <% @category_3_city.each do |q| %>
         <dd class="dd">
-          <a target="_blank" href="http://www.xkcits.com/chujing/riben" title="<%= q.title %>"><%= q.title %></a>
+          <a target="_blank" href="#" title="<%= q.title %>"><%= q.title %></a>
         </dd>
     <% end %>
     <div class="clear"></div>
@@ -807,18 +807,18 @@
 </ul>
 
 <div class="newChannel_list visible" id="hk_div1">
-  <% @recommend1.each do |q| %>
+  <% @hotdoor1.each do |q| %>
       <ul>
         <li class="lineitem">
           <div class="img fn-left">
-            <a title="" target="_blank" href="#">
+            <a title="" target="_blank" href="<%= show_rm_main_path(q) %>">
               <%= image_tag q.avatar.url(:index) %>
             </a>
           </div>
 
           <dl class="info fn-left">
             <dt class="t">
-              <a title="<%= q.title %>" target="_blank" href="#">
+              <a title="<%= q.title %>" target="_blank" href="<%= show_rm_main_path(q) %>">
                 <img alt="暑期特价" src="../images/sqtj.gif" style="margin-right: 3px;">
                 <%= q.title %>
               </a>
@@ -830,8 +830,7 @@
                                         <span class="n">98%</span>
                                     </span>
                                     <span class="pin">
-                                        <span class="n">5012</span>
-                                        人赞
+                                        <span class="n"></span>
                                     </span>
                                     <span>
                                         更新时间：
@@ -863,18 +862,18 @@
 </div>
 
 <div class="newChannel_list" id="hk_div2">
-  <% @recommend1.each do |q| %>
+  <% @hotdoor2.each do |q| %>
       <ul>
         <li class="lineitem">
           <div class="img fn-left">
-            <a title="" target="_blank" href="#">
+            <a title="" target="_blank" href="<%= show_rm_main_path(q) %>">
               <%= image_tag q.avatar.url(:index) %>
             </a>
           </div>
 
           <dl class="info fn-left">
             <dt class="t">
-              <a title="<%= q.title %>" target="_blank" href="#">
+              <a title="<%= q.title %>" target="_blank" href="<%= show_rm_main_path(q) %>">
                 <img alt="暑期特价" src="../images/sqtj.gif" style="margin-right: 3px;">
                 <%= q.title %>
               </a>
@@ -886,8 +885,7 @@
                                         <span class="n">98%</span>
                                     </span>
                                     <span class="pin">
-                                        <span class="n">5012</span>
-                                        人赞
+                                        <span class="n"></span>
                                     </span>
                                     <span>
                                         更新时间：
@@ -919,18 +917,18 @@
 </div>
 
 <div class="newChannel_list" id="hk_div3">
-  <% @recommend1.each do |q| %>
+  <% @hotdoor3.each do |q| %>
       <ul>
         <li class="lineitem">
           <div class="img fn-left">
-            <a title="" target="_blank" href="#">
+            <a title="" target="_blank" href="<%= show_rm_main_path(q) %>">
               <%= image_tag q.avatar.url(:index) %>
             </a>
           </div>
 
           <dl class="info fn-left">
             <dt class="t">
-              <a title="<%= q.title %>" target="_blank" href="#">
+              <a title="<%= q.title %>" target="_blank" href="<%= show_rm_main_path(q) %>">
                 <img alt="暑期特价" src="../images/sqtj.gif" style="margin-right: 3px;">
                 <%= q.title %>
               </a>
@@ -942,8 +940,7 @@
                                         <span class="n">98%</span>
                                     </span>
                                     <span class="pin">
-                                        <span class="n">5012</span>
-                                        人赞
+                                        <span class="n"></span>
                                     </span>
                                     <span>
                                         更新时间：
@@ -975,18 +972,18 @@
 </div>
 
 <div class="newChannel_list" id="hk_div4">
-  <% @recommend1.each do |q| %>
+  <% @hotdoor4.each do |q| %>
       <ul>
         <li class="lineitem">
           <div class="img fn-left">
-            <a title="" target="_blank" href="#">
+            <a title="" target="_blank" href="<%= show_rm_main_path(q) %>">
               <%= image_tag q.avatar.url(:index) %>
             </a>
           </div>
 
           <dl class="info fn-left">
             <dt class="t">
-              <a title="<%= q.title %>" target="_blank" href="#">
+              <a title="<%= q.title %>" target="_blank" href="<%= show_rm_main_path(q) %>">
                 <img alt="暑期特价" src="../images/sqtj.gif" style="margin-right: 3px;">
                 <%= q.title %>
               </a>
@@ -1041,7 +1038,7 @@
       <span class="travel_Hd_type travel_gt_type">特别板块</span>
       <span class="travel_Hd_msg">海外特别板块!</span>
     </h2>
-      <%= render "comment/newlan" %>
+    <%= render "comment/newlan" %>
   </div>
 </div>
 
@@ -1050,7 +1047,7 @@
 </div>
 <center>
   <div class="guanggao">
-    <a href="#"><img alt="游泰国1988元" src="../images/1402908101.jpg" data-original="/uploads/userup/0/1402908101.jpg" border="0"></a>
+    <a href="#"><img alt="游泰国1988元" src="../images/1402908101.jpg" data-original="../images/1402908101.jpg" border="0"></a>
   </div>
 </center>
 
@@ -1126,7 +1123,7 @@
                                 <span class="n"><%= q.price %></span>
                                 起
                             </span>
-              <a href="#"><%= q.title %></a>
+              <a href="<%= show_chujing_main_path(q) %>"><%= q.title %></a>
             </li>
 
 
@@ -1135,12 +1132,12 @@
 
 
           <div class="showLine">
-            <a href="#">
+            <a href="<%= show_chujing_main_path(q) %>">
               <%= image_tag q.avatar.url(:index) %>
             </a>
 
             <div>
-              <p><a href="#"><%= q.title %></a></p>
+              <p><a href="<%= show_chujing_main_path(q) %>"><%= q.title %></a></p>
 
               <p>
                 <span><b>￥<%= q.price %></b>起</span>
@@ -1160,7 +1157,7 @@
                                 <span class="n"><%= q.price %></span>
                                 起
                             </span>
-              <a href="#"><%= q.title %></a>
+              <a href="<%= show_chujing_main_path(q) %>"><%= q.title %></a>
             </li>
 
 
@@ -1174,7 +1171,7 @@
             </a>
 
             <div>
-              <p><a href="#"><%= q.title %></a></p>
+              <p><a href="<%= show_chujing_main_path(q) %>"><%= q.title %></a></p>
 
               <p>
                 <span><b>￥<%= q.price %></b>起</span>
@@ -1194,7 +1191,7 @@
                                 <span class="n"><%= q.price %></span>
                                 起
                             </span>
-              <a href="#"><%= q.title %></a>
+              <a href="<%= show_chujing_main_path(q) %>"><%= q.title %></a>
             </li>
 
 
@@ -1203,12 +1200,12 @@
 
 
           <div class="showLine">
-            <a href="#">
+            <a href="<%= show_chujing_main_path(q) %>">
               <%= image_tag q.avatar.url(:index) %>
             </a>
 
             <div>
-              <p><a href="#"><%= q.title %></a></p>
+              <p><a href="<%= show_chujing_main_path(q) %>"><%= q.title %></a></p>
 
               <p>
                 <span><b>￥<%= q.price %></b>起</span>
@@ -1229,7 +1226,7 @@
                                 <span class="n"><%= q.price %></span>
                                 起
                             </span>
-              <a href="#"><%= q.title %></a>
+              <a href="<%= show_chujing_main_path(q) %>"><%= q.title %></a>
             </li>
 
 
@@ -1238,12 +1235,12 @@
 
 
           <div class="showLine">
-            <a href="#">
+            <a href="<%= show_chujing_main_path(q) %>">
               <%= image_tag q.avatar.url(:index) %>
             </a>
 
             <div>
-              <p><a href="#"><%= q.title %></a></p>
+              <p><a href="<%= show_chujing_main_path(q) %>"><%= q.title %></a></p>
 
               <p>
                 <span><b>￥<%= q.price %></b>起</span>
@@ -1310,7 +1307,7 @@
                                 <span class="n"><%= q.price %></span>
                                 起
                             </span>
-          <a href="#"><%= q.title %></a>
+          <a href="<%= show_domestic_main_path(q) %>"><%= q.title %></a>
         </li>
 
       </ul>
@@ -1318,12 +1315,12 @@
 
 
       <div class="showLine">
-        <a href="#">
+        <a href="<%= show_domestic_main_path(q) %>">
           <%= image_tag q.avatar.url(:index) %>
         </a>
 
         <div>
-          <p><a href="#"><%= q.title %></a></p>
+          <p><a href="<%= show_domestic_main_path(q) %>"><%= q.title %></a></p>
 
           <p>
             <span><b>￥<%= q.price %></b>起</span>
@@ -1345,7 +1342,7 @@
                                 <span class="n"><%= q.price %></span>
                                 起
                             </span>
-          <a href="#"><%= q.title %></a>
+          <a href="<%= show_domestic_main_path(q) %>"><%= q.title %></a>
         </li>
 
       </ul>
@@ -1353,12 +1350,12 @@
 
 
       <div class="showLine">
-        <a href="#">
+        <a href="<%= show_domestic_main_path(q) %>">
           <%= image_tag q.avatar.url(:index) %>
         </a>
 
         <div>
-          <p><a href="#"><%= q.title %></a></p>
+          <p><a href="<%= show_domestic_main_path(q) %>"><%= q.title %></a></p>
 
           <p>
             <span><b>￥<%= q.price %></b>起</span>
@@ -1379,7 +1376,7 @@
                                 <span class="n"><%= q.price %></span>
                                 起
                             </span>
-          <a href="#"><%= q.title %></a>
+          <a href="<%= show_domestic_main_path(q) %>"><%= q.title %></a>
         </li>
 
       </ul>
@@ -1387,12 +1384,12 @@
 
 
       <div class="showLine">
-        <a href="#">
+        <a href="<%= show_domestic_main_path(q) %>">
           <%= image_tag q.avatar.url(:index) %>
         </a>
 
         <div>
-          <p><a href="#"><%= q.title %></a></p>
+          <p><a href="<%= show_domestic_main_path(q) %>"><%= q.title %></a></p>
 
           <p>
             <span><b>￥<%= q.price %></b>起</span>
@@ -1413,7 +1410,7 @@
                                 <span class="n"><%= q.price %></span>
                                 起
                             </span>
-          <a href="#"><%= q.title %></a>
+          <a href="<%= show_domestic_main_path(q) %>"><%= q.title %></a>
         </li>
 
       </ul>
@@ -1421,12 +1418,12 @@
 
 
       <div class="showLine">
-        <a href="#">
+        <a href="<%= show_domestic_main_path(q) %>">
           <%= image_tag q.avatar.url(:index) %>
         </a>
 
         <div>
-          <p><a href="#"><%= q.title %></a></p>
+          <p><a href="<%= show_domestic_main_path(q) %>"><%= q.title %></a></p>
 
           <p>
             <span><b>￥<%= q.price %></b>起</span>
@@ -1447,7 +1444,7 @@
                                 <span class="n"><%= q.price %></span>
                                 起
                             </span>
-          <a href="#"><%= q.title %></a>
+          <a href="<%= show_domestic_main_path(q) %>"><%= q.title %></a>
         </li>
 
       </ul>
@@ -1455,12 +1452,12 @@
 
 
       <div class="showLine">
-        <a href="#">
+        <a href="<%= show_domestic_main_path(q) %>">
           <%= image_tag q.avatar.url(:index) %>
         </a>
 
         <div>
-          <p><a href="#"><%= q.title %></a></p>
+          <p><a href="<%= show_domestic_main_path(q) %>"><%= q.title %></a></p>
 
           <p>
             <span><b>￥<%= q.price %></b>起</span>
@@ -1482,7 +1479,7 @@
                                 <span class="n"><%= q.price %></span>
                                 起
                             </span>
-          <a href="#"><%= q.title %></a>
+          <a href="<%= show_domestic_main_path(q) %>"><%= q.title %></a>
         </li>
 
       </ul>
@@ -1490,12 +1487,12 @@
 
 
       <div class="showLine">
-        <a href="#">
+        <a href="<%= show_domestic_main_path(q) %>">
           <%= image_tag q.avatar.url(:index) %>
         </a>
 
         <div>
-          <p><a href="#"><%= q.title %></a></p>
+          <p><a href="<%= show_domestic_main_path(q) %>"><%= q.title %></a></p>
 
           <p>
             <span><b>￥<%= q.price %></b>起</span>
@@ -1519,461 +1516,8 @@
     <a href="#"><img alt="泰国" src="../images/1393816333.jpg" data-original="/uploads/userup/0/1393816333.jpg" border="0"></a>
   </div>
 </center>
-
-<!--<div class="center">-->
-<!--<div class="gd_hot dbfen">-->
-<!--<h2 class="travel_Hd">-->
-<!--<span class="travel_Hd_type travel_gt_type">广东热门旅游</span>-->
-<!--<span class="travel_Hd_msg">精品广东 品质保证!</span>-->
-<!--</h2>-->
-
-<!--<div class="newChannel_Bd">-->
-<!--<div class="newChannel_left">-->
-<!--<dl>-->
-<!--<dt>-->
-<!--<a target="_blank" href="#">珠三角</a>-->
-<!--</dt>-->
-<!--<dd>-->
-
-<!--<a title="深圳" target="_blank" href="#">深圳</a>-->
-
-<!--</dd>-->
-<!--<div class="clear"></div>-->
-<!--</dl>-->
-<!--<dl>-->
-<!--<dt>-->
-<!--<a target="_blank" href="#">粤北</a>-->
-<!--</dt>-->
-<!--<dd>-->
-
-<!--<a title="清远" target="_blank" href="#">清远</a>-->
-
-
-<!--</dd>-->
-<!--<div class="clear"></div>-->
-<!--</dl>-->
-<!--<dl>-->
-<!--<dt>-->
-<!--<a target="_blank" href="#">粤东</a>-->
-<!--</dt>-->
-<!--<dd>-->
-
-<!--<a title="河源" target="_blank" href="#">河源</a>-->
-
-<!--</dd>-->
-<!--<div class="clear"></div>-->
-<!--</dl>-->
-<!--<dl>-->
-<!--<dt>-->
-<!--<a target="_blank" href="#">粤西</a>-->
-<!--</dt>-->
-<!--<dd>-->
-
-<!--<a title="肇庆" target="_blank" href="#">肇庆</a>-->
-
-<!--</dd>-->
-<!--<div class="clear"></div>-->
-<!--</dl>-->
-<!--</div>-->
-
-<!--<div class="newChannel_right">-->
-<!--<ul class="newChannel_tab">-->
-<!--<li class="cur" id="gd_li1">珠三角</li>-->
-<!--<li id="gd_li2">粤北</li>-->
-<!--<li id="gd_li3">粤东</li>-->
-<!--<li style="margin:0;" id="gd_li4">粤西</li>-->
-<!--</ul>-->
-
-<!--<div class="newChannel_list visible" id="gd_div1">-->
-<!--<ul>-->
-<!--<li>-->
-<!--<span class="dbfen_price">-->
-<!--<span class="u">￥</span>-->
-<!--<span class="n">498</span>-->
-<!--起-->
-<!--</span>-->
-<!--<a href="#">广东四大名园之清晖园、神秘果园、百年骑楼、</a>佛山-->
-<!--</li>-->
-<!--<li>-->
-<!--<span class="dbfen_price">-->
-<!--<span class="u">￥</span>-->
-<!--<span class="n">288</span>-->
-<!--起-->
-<!--</span>-->
-<!--<a href="#">惠东金海生态园、天后宫、巽寮湾海边沙滩露营</a>惠州-->
-<!--</li>-->
-<!--<li>-->
-<!--<span class="dbfen_price">-->
-<!--<span class="u">￥</span>-->
-<!--<span class="n">198</span>-->
-<!--起-->
-<!--</span>-->
-<!--<a href="#">惠州雷公峡漂流、野炊一日游</a>惠州-->
-<!--</li>-->
-<!--<li>-->
-<!--<span class="dbfen_price">-->
-<!--<span class="u">￥</span>-->
-<!--<span class="n">568</span>-->
-<!--起-->
-<!--</span>-->
-<!--<a href="#">台山富都温泉、猛虎峡漂流、新会小鸟天堂2天</a>江门-->
-<!--</li>-->
-<!--<li>-->
-<!--<span class="dbfen_price">-->
-<!--<span class="u">￥</span>-->
-<!--<span class="n">498</span>-->
-<!--起-->
-<!--</span>-->
-<!--<a href="#">【江门】5A级恩平帝都温泉、泉林生态园、赤坎古</a>江门-->
-<!--</li>-->
-
-
-<!--</ul>-->
-<!--<div class="clear"></div>-->
-
-<!--<div class="showLine">-->
-<!--<a href="#"><img data-original="../images/1-130PGAG9.jpg" width="180" height="135" src="../images/grey.gif"></a>-->
-
-<!--<div>-->
-<!--<p><a href="#">珠海梅农奇观、广州岭南</a></p>-->
-
-<!--<p>-->
-<!--<span><b>￥240</b>起</span>-->
-<!--<del>原价：3490</del>-->
-<!--</p>-->
-<!--</div>-->
-<!--</div>-->
-
-
-<!--</div>-->
-
-<!--<div class="newChannel_list" id="gd_div2">-->
-<!--<ul>-->
-<!--<li>-->
-<!--<span class="dbfen_price">-->
-<!--<span class="u">￥</span>-->
-<!--<span class="n"> 478</span>-->
-<!--起-->
-<!--</span>-->
-<!--<a href="#">清远阳山连南特色汽车两天团</a>清远-->
-<!--</li>-->
-<!--<li>-->
-<!--<span class="dbfen_price">-->
-<!--<span class="u">￥</span>-->
-<!--<span class="n">178</span>-->
-<!--起-->
-<!--</span>-->
-<!--<a href="#">清远飞来湖公园、新银盏温泉纯玩一日游</a>清远-->
-<!--</li>-->
-<!--<li>-->
-<!--<span class="dbfen_price">-->
-<!--<span class="u">￥</span>-->
-<!--<span class="n">418</span>-->
-<!--起-->
-<!--</span>-->
-<!--<a href="#">清远两天品质汽车团</a>清远-->
-<!--</li>-->
-<!--<li>-->
-<!--<span class="dbfen_price">-->
-<!--<span class="u">￥</span>-->
-<!--<span class="n">479</span>-->
-<!--起-->
-<!--</span>-->
-<!--<a href="#">清远连州特色汽车两天团</a>清远-->
-<!--</li>-->
-<!--<li>-->
-<!--<span class="dbfen_price">-->
-<!--<span class="u">￥</span>-->
-<!--<span class="n">528</span>-->
-<!--起-->
-<!--</span>-->
-<!--<a href="#">新丰云髻山、云天海温泉、龙门蓝田瑶族风情园</a>韶关-->
-<!--</li>-->
-
-
-<!--</ul>-->
-<!--<div class="clear"></div>-->
-
-<!--<div class="showLine">-->
-<!--<a href="#"><img data-original="../images/1-130PQG522.jpg" width="180" height="135" src="../images/grey.gif"></a>-->
-
-<!--<div>-->
-<!--<p><a href="#">清远黄腾峡漂流汽车一天</a></p>-->
-
-<!--<p>-->
-<!--<span><b>￥148</b>起</span>-->
-<!--<del>原价：3398</del>-->
-<!--</p>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--</div>-->
-
-<!--<div class="newChannel_list" id="gd_div3">-->
-<!--<ul>-->
-<!--<li>-->
-<!--<span class="dbfen_price">-->
-<!--<span class="u">￥</span>-->
-<!--<span class="n">488</span>-->
-<!--起-->
-<!--</span>-->
-<!--<a href="#">阳江海陵岛、开平影视基地、五星阳江温泉两日</a>阳江-->
-<!--</li>-->
-<!--<li>-->
-<!--<span class="dbfen_price">-->
-<!--<span class="u">￥</span>-->
-<!--<span class="n">438</span>-->
-<!--起-->
-<!--</span>-->
-<!--<a href="#">潮州开元寺、江滨长廊、韩文公祠、龙泉岩美食</a>潮汕-->
-<!--</li>-->
-<!--<li>-->
-<!--<span class="dbfen_price">-->
-<!--<span class="u">￥</span>-->
-<!--<span class="n"></span>-->
-<!--起-->
-<!--</span>-->
-<!--<a href="#">梅州雁南飞、客家围龙屋二日客家文化游</a>梅州-->
-<!--</li>-->
-<!--<li>-->
-<!--<span class="dbfen_price">-->
-<!--<span class="u">￥</span>-->
-<!--<span class="n">440</span>-->
-<!--起-->
-<!--</span>-->
-<!--<a href="#">阳江海陵岛、南海一号博物馆、北峰山漂流二日</a>阳江-->
-<!--</li>-->
-<!--<li>-->
-<!--<span class="dbfen_price">-->
-<!--<span class="u">￥</span>-->
-<!--<span class="n">470</span>-->
-<!--起-->
-<!--</span>-->
-<!--<a href="#">汕尾红海湾、京明温泉、黄满祭瀑布群二日游</a>潮汕-->
-<!--</li>-->
-
-
-<!--</ul>-->
-<!--<div class="clear"></div>-->
-
-<!--<div class="showLine">-->
-<!--<a href="#"><img data-original="../images/1-130PGA210.jpg" width="180" height="135" src="../images/grey.gif"></a>-->
-
-<!--<div>-->
-<!--<p><a href="#">梅州雁南飞、客家围龙屋</a></p>-->
-
-<!--<p>-->
-<!--<span><b>￥</b>起</span>-->
-<!--<del>原价：3250</del>-->
-<!--</p>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--</div>-->
-
-<!--<div class="newChannel_list" id="gd_div4">-->
-<!--<ul>-->
-<!--<li>-->
-<!--<span class="dbfen_price">-->
-<!--<span class="u">￥</span>-->
-<!--<span class="n">458</span>-->
-<!--起-->
-<!--</span>-->
-<!--<a href="#">肇庆七星岩、鼎湖山、白沙龙母庙、白石端砚村</a>肇庆-->
-<!--</li>-->
-<!--<li>-->
-<!--<span class="dbfen_price">-->
-<!--<span class="u">￥</span>-->
-<!--<span class="n">468</span>-->
-<!--起-->
-<!--</span>-->
-<!--<a href="#">德庆盘龙峡彩虹花田、森林温矿泉、黄金沟二日</a>肇庆-->
-<!--</li>-->
-<!--<li>-->
-<!--<span class="dbfen_price">-->
-<!--<span class="u">￥</span>-->
-<!--<span class="n">898</span>-->
-<!--起-->
-<!--</span>-->
-<!--<a href="#">恩平温泉乐园、湖光岩、红嘴鸥游船三日游</a>湛江-->
-<!--</li>-->
-<!--<li>-->
-<!--<span class="dbfen_price">-->
-<!--<span class="u">￥</span>-->
-<!--<span class="n">798</span>-->
-<!--起-->
-<!--</span>-->
-<!--<a href="#">恩平温泉乐园、海滨小城-湛江、红嘴鸥游船三日</a>湛江-->
-<!--</li>-->
-<!--<li>-->
-<!--<span class="dbfen_price">-->
-<!--<span class="u">￥</span>-->
-<!--<span class="n">678</span>-->
-<!--起-->
-<!--</span>-->
-<!--<a href="#">肇庆七星岩、鼎湖山休闲美食优质二天团</a>肇庆-->
-<!--</li>-->
-
-
-<!--</ul>-->
-<!--<div class="clear"></div>-->
-
-<!--<div class="showLine">-->
-<!--<a href="#">-->
-<!--<img data-original="../images/130807/1-130PG54534.jpg" width="180" height="135" src="../images/grey.gif"></a>-->
-
-<!--<div>-->
-<!--<p><a href="http://www.xkcits.com/guangdong/2134.html">恩平温泉乐园、海滨小城</a></p>-->
-
-<!--<p>-->
-<!--<span><b>￥798</b>起</span>-->
-<!--<del>原价：4048</del>-->
-<!--</p>-->
-<!--</div>-->
-<!--</div>-->
-
-<!--</div>-->
-<!--</div>-->
-
-<!--<div class="clear"></div>-->
-<!--</div>-->
-
-<!--</div>-->
-<!--</div>-->
-
-
-<div class="center">
-  <div class="travel_fxb">
-    <h2 class="travel_Hd">
-      <span class="travel_Hd_type travel_gt_type">旅游风向标</span>
-      <span class="travel_Hd_msg">看看大家都去哪儿！</span>
-    </h2>
-
-    <ul class="Towhere">
-
-      <li class="Towhere1">
-        <div class="Towhere_img">
-          <img src="../images/i1.jpg" data-original="/pics/i1.jpg" alt="王牌品质-热情泰国" width="350px" height="150px">
-
-          <p>王牌品质-热情泰国</p>
-        </div>
-
-        <a class="Towhere_jieshao" href="#" target="_blank">
-          <span class="Towhere_title">泰国海洋之梦六天豪华美食游</span>
-          <span class="Towhere_msg">推荐理由：全程当地精选酒店，无强迫自费，无强迫购物，品质保证！带你领略微笑国度的千姿百“泰”！</span>
-                    <span class="Towhere_price">
-                    	<span>3199</span>元/人起
-                        <i>点击查看&gt;&gt;</i>
-                    </span>
-        </a>
-
-      </li>
-
-      <li class="Towhere2">
-        <div class="Towhere_img">
-          <img src="../images/i2.jpg" data-original="/pics/i2.jpg" alt="特惠10月-港澳四日游" width="282px" height="303px">
-
-          <p> 特惠10月-港澳四日游</p>
-        </div>
-
-        <a class="Towhere_jieshao" href="#" target="_blank">
-          <span class="Towhere_title"> 特惠10月-港澳四日游</span>
-          <span class="Towhere_msg">推荐理由：游港澳诚信线路,送香港手机卡200元{含200元话费}，2人送一张电话卡，4人以上送两张,4人以上价格可优惠洽谈协商；2人报名送深圳一间酒店住宿，4人以上送两间；每逢节假日加房差</span>
-                    <span class="Towhere_price">
-                    	<span>1000</span>元/人起
-                    </span>
-
-          <span class="Towhere_more">点击查看&gt;&gt;</span>
-        </a>
-
-      </li>
-
-      <li class="Towhere3">
-        <div class="Towhere_img">
-          <img src="../images/i3.jpg" data-original="pics/i3.jpg" alt="绝色长滩-浪漫风帆" width="173px" height="148px">
-
-          <p>绝色长滩-浪漫风帆</p>
-        </div>
-
-        <a class="Towhere_jieshao" href="#" target="_blank">
-          <span class="Towhere_title">长滩岛浪漫豪华五日游</span>
-          <span class="Towhere_price"><span>3999</span>元/人起</span>
-          <span class="Towhere_more">点击查看&gt;&gt;</span>
-        </a>
-
-      </li>
-
-      <li class="Towhere4">
-        <div class="Towhere_img">
-          <img src="../images/i4.jpg" data-original="/pics/i4.jpg" alt="厦门鼓浪屿三日游" width="173px" height="148px">
-
-          <p>厦门鼓浪屿三日游</p>
-        </div>
-
-        <a class="Towhere_jieshao" href="#" target="_blank">
-          <span class="Towhere_title">厦门鼓浪屿三日游</span>
-                    <span class="Towhere_price">
-                    	<span>378</span>元/人起
-                    </span>
-          <span class="Towhere_more">点击查看&gt;&gt;</span>
-        </a>
-
-      </li>
-
-      <li class="Towhere5">
-        <div class="Towhere_img J-Towhere_img">
-          <img src="../images/i5.jpg" data-original="/pics/i5.jpg" alt="桂林山水之乐双飞四天休闲游" width="173px" height="148px">
-
-          <p>桂林山水休闲游</p>
-        </div>
-
-        <a class="Towhere_jieshao" href="#" target="_blank">
-          <span class="Towhere_title">桂林山水之乐双飞四天休闲游</span>
-                    <span class="Towhere_price">
-                    	<span>1468</span>元/人起
-                    </span>
-          <span class="Towhere_more">点击查看&gt;&gt;</span>
-        </a>
-
-      </li>
-
-      <li class="Towhere6">
-        <div class="Towhere_img">
-          <img src="../images/i6.jpg" data-original="/pics/i6.jpg" alt="美丽三亚 浪漫天涯" width="173px" height="148px">
-
-          <p>美丽三亚 浪漫天涯</p>
-        </div>
-
-        <a class="Towhere_jieshao" href="#" target="_blank">
-          <span class="Towhere_title">三亚非诚勿扰海景酒店度假团四日游</span>
-                    <span class="Towhere_price">
-                    	<span>2340</span>元/人起
-                    </span>
-          <span class="Towhere_more">点击查看&gt;&gt;</span>
-        </a>
-
-      </li>
-
-      <li class="Towhere7">
-        <div class="Towhere_img">
-          <img src="../images/i7.jpg" data-original="/pics/i7.jpg" alt="浪漫海岛-蜜月之旅" width="350px" height="150px">
-
-          <p>马尔代夫-蜜月之旅</p>
-        </div>
-
-        <a class="Towhere_jieshao" href="#" target="_blank">
-          <span class="Towhere_title">马尔代夫港丽岛6天4晚奢华游</span>
-          <span class="Towhere_msg">推荐理由：面朝大海，执子之手；全球11大蜜月度假胜地精选，一起相约海滨，踏上一段梦幻的蜜月之旅，找一个浪漫的地方见证爱情。</span>
-                    <span class="Towhere_price">
-                    	<span>11300</span>元/人起
-                        <i>点击查看&gt;&gt;</i>
-                    </span>
-        </a>
-
-      </li>
-
-    </ul>
-  </div>
-</div>
+<!--------------------------------- 风向标 ----------------------------------->
+<%= render "comment/fxb" %>
+<!--------------------------------- 风向标end ----------------------------------->
 <script type="text/javascript" src="../javascripts/default.js"></script>
 <%= render "comment/footer" %>
