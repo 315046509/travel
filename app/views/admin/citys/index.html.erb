@@ -31,10 +31,9 @@
           <th>分类</th>
           <th>城市</th>
           <th>特价旅游</th>
-          <th>最新攻略动态</th>
-          <th>出境热门旅游推荐</th>
+          <th>热门旅游推荐</th>
           <th>跟团游热门地区</th>
-          <th>出境自由行</th>
+          <th>自由行</th>
           <th>删除</th>
         </tr>
         </thead>
@@ -45,10 +44,9 @@
               <td><%= q.question_category_name %></td>
               <td><%= q.title %></td>
               <td><%= link_to '特价旅游', admin_city_tejia_path(q), :class => "btn btn-primary" %></td>
-              <td><%= link_to '最新攻略动态', admin_city_raiders_path(q), :class => "btn btn-primary" %></td>
-              <td><%= link_to '出境热门旅游推荐', admin_city_recommends_path(q), :class => "btn btn-primary" %></td>
+              <td><%= link_to '热门旅游推荐', admin_city_recommends_path(q), :class => "btn btn-primary" %></td>
               <td><%= link_to '跟团游热门地区', admin_city_gentuans_path(q), :class => "btn btn-primary" %></td>
-              <td><%= link_to '出境自由行', admin_city_freelines_path(q), :class => "btn btn-primary" %></td>
+              <td><%= link_to '自由行', admin_city_freelines_path(q), :class => "btn btn-primary" %></td>
               <td><%= link_to '删除', admin_city_path(q), :class => "btn btn-primary", :method => :delete, :confirm => "您确定要删除吗?" %></td>
             </tr>
         <% end %>

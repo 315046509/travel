@@ -7,38 +7,67 @@ class DestinationThreeController < ApplicationController
     # 特价旅游
     @lunbos = Tejia.order("id desc").page(params[:page]).per(3)
 
-    # 城市
+    # 港澳旅游
     @category_1_name = City.question_category_name(1)
     @category_1_city = City.where({:question_category_id => 1}, "title <> ''")
-    @category_2_name = City.question_category_name(2)
-    @category_2_city = City.where({:question_category_id => 2}, "title <> ''")
-    @category_3_name = City.question_category_name(3)
-    @category_3_city = City.where({:question_category_id => 3}, "title <> ''")
 
     # 攻略
-    @jobs = Raider.order_ct_desc.page(params[:page]).per(9)
+    @gonglues = Raider.order_ct_desc.page(params[:page]).per(8)
 
-    # 推荐
-    @recommend1 = Recommend.where(:city_id => 1).order("id desc").page(params[:page]).per(6)
-    @recommend2 = Recommend.where(:city_id => 2).order("id desc").page(params[:page]).per(6)
-    @recommend3 = Recommend.where(:city_id => 3).order("id desc").page(params[:page]).per(6)
-    @recommend4 = Recommend.where(:city_id => 4).order("id desc").page(params[:page]).per(6)
-    @recommend5 = Recommend.where(:city_id => 5).order("id desc").page(params[:page]).per(6)
-    @recommend6 = Recommend.where(:city_id => 6).order("id desc").page(params[:page]).per(6)
-    @recommend7 = Recommend.where(:city_id => 7).order("id desc").page(params[:page]).per(6)
-    @recommend8 = Recommend.where(:city_id => 8).order("id desc").page(params[:page]).per(6)
+    # 热门国内
+    @recommend = Recommend.order_ct_desc.page(params[:page]).per(5)
+    @recommend15 = Recommend.where(:city_id => 15).order("id desc").page(params[:page]).per(5)
+    @recommend16 = Recommend.where(:city_id => 16).order("id desc").page(params[:page]).per(5)
+    @recommend17 = Recommend.where(:city_id => 17).order("id desc").page(params[:page]).per(5)
+    @recommend18 = Recommend.where(:city_id => 18).order("id desc").page(params[:page]).per(5)
+    @recommend19 = Recommend.where(:city_id => 19).order("id desc").page(params[:page]).per(5)
+    @recommend20 = Recommend.where(:city_id => 20).order("id desc").page(params[:page]).per(5)
+    @recommend21 = Recommend.where(:city_id => 21).order("id desc").page(params[:page]).per(5)
     # 跟团
-    @gentuan1 = Gentuan.where(:city_id => 1).order("id desc").page(params[:page]).per(6)
-    @gentuan2 = Gentuan.where(:city_id => 2).order("id desc").page(params[:page]).per(6)
-    @gentuan3 = Gentuan.where(:city_id => 3).order("id desc").page(params[:page]).per(6)
-    @gentuan4 = Gentuan.where(:city_id => 4).order("id desc").page(params[:page]).per(6)
-    @gentuan5 = Gentuan.where(:city_id => 5).order("id desc").page(params[:page]).per(6)
-    @gentuan6 = Gentuan.where(:city_id => 6).order("id desc").page(params[:page]).per(6)
+    @gentuan15 = Gentuan.where(:city_id => 15).order("id desc").page(params[:page]).per(5)
+    @gentuan16 = Gentuan.where(:city_id => 16).order("id desc").page(params[:page]).per(5)
+    @gentuan17 = Gentuan.where(:city_id => 17).order("id desc").page(params[:page]).per(5)
+    @gentuan18 = Gentuan.where(:city_id => 18).order("id desc").page(params[:page]).per(5)
+    @gentuan19 = Gentuan.where(:city_id => 19).order("id desc").page(params[:page]).per(5)
+    @gentuan20 = Gentuan.where(:city_id => 20).order("id desc").page(params[:page]).per(5)
     # 自由行
-    @freeline1 = Freeline.where(:city_id => 1).order("id desc").page(params[:page]).per(6)
-    @freeline2 = Freeline.where(:city_id => 2).order("id desc").page(params[:page]).per(6)
-    @freeline3 = Freeline.where(:city_id => 3).order("id desc").page(params[:page]).per(6)
-    @freeline4 = Freeline.where(:city_id => 4).order("id desc").page(params[:page]).per(6)
-    @freeline5 = Freeline.where(:city_id => 5).order("id desc").page(params[:page]).per(6)
+    @freeline15 = Freeline.where(:city_id => 15).order("id desc").page(params[:page]).per(6)
+    @freeline16 = Freeline.where(:city_id => 16).order("id desc").page(params[:page]).per(6)
+    @freeline17 = Freeline.where(:city_id => 17).order("id desc").page(params[:page]).per(6)
+    @freeline18 = Freeline.where(:city_id => 18).order("id desc").page(params[:page]).per(6)
+    @freeline19 = Freeline.where(:city_id => 19).order("id desc").page(params[:page]).per(6)
+  end
+
+  def gangao
+    # 最新公告
+    @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
+    # 热门显示页
+    @hotdoor = Recommend.find params[:id]
+    # 热门显示页列表
+    @hotdoors = Recommend.order_ct_desc.page(params[:page]).per(8)
+    # 攻略
+    @gonglues = Raider.order_ct_desc.page(params[:page]).per(8)
+  end
+
+  def gentuan
+    # 最新公告
+    @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
+    # 热门显示页
+    @hotdoor = Gentuan.find params[:id]
+    # 热门显示页列表
+    @hotdoors = Gentuan.order_ct_desc.page(params[:page]).per(8)
+    # 攻略
+    @gonglues = Raider.order_ct_desc.page(params[:page]).per(8)
+  end
+
+  def ziyouxing
+    # 最新公告
+    @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
+    # 热门显示页
+    @hotdoor = Freeline.find params[:id]
+    # 热门显示页列表
+    @hotdoors = Freeline.order_ct_desc.page(params[:page]).per(8)
+    # 攻略
+    @gonglues = Raider.order_ct_desc.page(params[:page]).per(8)
   end
 end

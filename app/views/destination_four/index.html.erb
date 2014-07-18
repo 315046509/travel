@@ -2,7 +2,7 @@
 <div class="center">
 <div class="channel_side fn-left">
   <div class="side_hot">
-    <h3 class="side_title"> 美国游导航</h3>
+    <h3 class="side_title"> 港澳游导航</h3>
 
     <div class="line_list">
       <!-- 分类一 -->
@@ -12,33 +12,7 @@
         </dt>
         <% @category_1_city.each do |q| %>
             <dd class="dd">
-              <a target="_blank" href="http://www.xkcits.com/chujing/riben" title="<%= q.title %>"><%= q.title %></a>
-            </dd>
-        <% end %>
-      </dl>
-      <br/><br/>
-
-      <!-- 分类二 -->
-      <dl>
-        <dt class="t">
-          <a title="出境旅游">出境旅游</a>
-        </dt>
-        <% @category_2_city.each do |q| %>
-            <dd class="dd">
-              <a target="_blank" href="http://www.xkcits.com/chujing/riben" title="<%= q.title %>"><%= q.title %></a>
-            </dd>
-        <% end %>
-      </dl>
-      <br/><br/>
-
-      <!-- 分类三 -->
-      <dl>
-        <dt class="t">
-          <a title="国内旅游">国内旅游</a>
-        </dt>
-        <% @category_3_city.each do |q| %>
-            <dd class="dd">
-              <a target="_blank" href="http://www.xkcits.com/chujing/riben" title="<%= q.title %>"><%= q.title %></a>
+              <a><%= q.title %></a>
             </dd>
         <% end %>
       </dl>
@@ -58,35 +32,20 @@
       <a href="#"><img src="../images/gongl2.gif" data-original="/pics/gongl2.gif" style="display: inline;"></a>
     </div>
 
-    <% @jobs.each do |q| %>
+    <% @gonglues.each do |q| %>
         <ul class="gonglue_list">
-          <li>・ <a href="#"><%= q.title %></a></li>
+          <li>・ <a href="<%= show_raider_main_path(q) %>"><%= q.title %></a></li>
         </ul>
     <% end %>
   </div>
 </div>
 
 <div class="side_right fn-right">
-<div class="play_img">
-  <a href="http://www.xkcits.com/chujing/4763.html">
-    <img alt="游泰国1988元" class="all_imgs" id="img_1" src="../images/1402907041.jpg" style="display: none;">
-  </a>
-
-  <a href="http://www.xkcits.com/chujing/4765.html">
-    <img alt="巴厘岛6天4晚乐享休闲游" class="all_imgs" id="img_2" src="../images/1395648557.jpg" style="display: inline;">
-  </a>
-  <a href="http://www.xkcits.com/chujing/4762.html">
-    <img alt="美景新马泰十日品质游" class="all_imgs" id="img_3" src="../images/1395648685.jpg" style="display: none;">
-  </a>
-  <a href="http://www.xkcits.com/chujing/4764.html">
-    <img alt="新马5日游" class="all_imgs" id="img_4" src="../images/1395648945.jpg" style="display: none;">
-  </a>
-</div>
+<img alt="美景新马泰十日品质游" class="all_imgs" id="img_3" src="../images/1395648685.jpg">
 
 <div class="travel_sale" style="height:auto; padding-bottom:10px;">
   <h2 class="travel_Hd">
-    <a title="更多旅游特价" target="_blank" href="http://www.xkcits.com/chujing/dongnanya/">更多旅游特价&gt;&gt;</a>
-    <span class="travel_Hd_type travel_tj_type">特价旅游</span>
+    <span class="travel_Hd_type travel_tj_type">海外特价旅游</span>
     <span class="travel_Hd_msg">特实惠，真低价！</span>
   </h2>
 
@@ -94,15 +53,15 @@
     <ul class="cj_tj_list cfix">
       <% @lunbos.each do |q| %>
           <li>
-            <a target="_blank" href="http://www.xkcits.com/chujing/4737.html" title="<%= q.title %>">
+            <a target="_blank" href="" title="<%= q.title %>">
               <%= image_tag q.avatar.url(:index) %>
             </a>
 
-            <h3><a href="http://www.xkcits.com/chujing/4737.html"><%= q.title %></a></h3>
+            <h3><a href="<%= show_tejia_main_path(q) %>"><%= q.title %></a></h3>
 
             <div class="cj_tj_price">
               <span><i>￥<em><%= q.price %></em></i>/人起</span>
-              <a href="http://www.xkcits.com/chujing/4737.html"></a>
+              <a href="<%= show_tejia_main_path(q) %>"></a>
             </div>
             <div class="cj_tj_yh"><span>限时特价</span></div>
           </li>
@@ -113,7 +72,7 @@
 
 <div class="hk_hot">
 <h2 class="travel_Hd">
-  <span class="travel_Hd_type travel_gt_type">出境热门旅游推荐</span>
+  <span class="travel_Hd_type travel_gt_type">港澳台热门旅游推荐</span>
   <span class="travel_Hd_msg">豪华出境 专业无忧！</span>
 </h2>
 
@@ -121,28 +80,28 @@
 
 <div class="newChannel_right">
 <ul class="newChannel_tab">
-  <li class="cur" id="hk_li1">热门出境</li>
-  <li id="hk_li2">热门海岛</li>
-  <li id="hk_li3">东南亚</li>
-  <li id="hk_li4">亚洲</li>
-  <li id="hk_li5">欧洲</li>
-  <li id="hk_li6">美洲</li>
-  <li id="hk_li7">中东非洲</li>
-  <li id="hk_li8" style="margin:0; width:84px;">澳洲</li>
+  <li class="cur" id="hk_li1">热门港澳台</li>
+  <li id="hk_li2">澳门</li>
+  <li id="hk_li3">香港</li>
+  <li id="hk_li4">台湾</li>
+  <li id="hk_li5">未知</li>
+  <li id="hk_li6">未知</li>
+  <li id="hk_li7">未知</li>
+  <li id="hk_li8" style="margin:0; width:84px;">未知</li>
 </ul>
 
 <div class="newChannel_list visible" id="hk_div1">
-  <% @recommend1.each do |q| %>
+  <% @recommend.each do |q| %>
       <ul>
         <li class="lineitem">
           <div class="img fn-left">
-            <a title="<%= q.title %>" target="_blank" href="#">
+            <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
               <%= image_tag q.avatar.url(:index) %>
             </a>
           </div>
           <dl class="info fn-left">
             <dt class="t">
-              <a title="<%= q.title %>" target="_blank" href="#">
+              <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
                 <%= q.title %>
               </a>
             </dt>
@@ -169,17 +128,17 @@
   <% end %>
 </div>
 <div class="newChannel_list" id="hk_div2">
-  <% @recommend2.each do |q| %>
+  <% @recommend22.each do |q| %>
       <ul>
         <li class="lineitem">
           <div class="img fn-left">
-            <a title="<%= q.title %>" target="_blank" href="#">
+            <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
               <%= image_tag q.avatar.url(:index) %>
             </a>
           </div>
           <dl class="info fn-left">
             <dt class="t">
-              <a title="<%= q.title %>" target="_blank" href="#">
+              <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
                 <%= q.title %>
               </a>
             </dt>
@@ -207,17 +166,17 @@
 </div>
 
 <div class="newChannel_list" id="hk_div3">
-  <% @recommend3.each do |q| %>
+  <% @recommend23.each do |q| %>
       <ul>
         <li class="lineitem">
           <div class="img fn-left">
-            <a title="<%= q.title %>" target="_blank" href="#">
+            <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
               <%= image_tag q.avatar.url(:index) %>
             </a>
           </div>
           <dl class="info fn-left">
             <dt class="t">
-              <a title="<%= q.title %>" target="_blank" href="#">
+              <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
                 <%= q.title %>
               </a>
             </dt>
@@ -245,17 +204,17 @@
 </div>
 
 <div class="newChannel_list" id="hk_div4">
-  <% @recommend4.each do |q| %>
+  <% @recommend24.each do |q| %>
       <ul>
         <li class="lineitem">
           <div class="img fn-left">
-            <a title="<%= q.title %>" target="_blank" href="#">
+            <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
               <%= image_tag q.avatar.url(:index) %>
             </a>
           </div>
           <dl class="info fn-left">
             <dt class="t">
-              <a title="<%= q.title %>" target="_blank" href="#">
+              <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
                 <%= q.title %>
               </a>
             </dt>
@@ -283,23 +242,23 @@
 </div>
 
 <div class="newChannel_list" id="hk_div5">
-  <% @recommend5.each do |q| %>
+  <% @recommend25.each do |q| %>
       <ul>
         <li class="lineitem">
           <div class="img fn-left">
-            <a title="<%= q.title %>" target="_blank" href="#">
+            <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
               <%= image_tag q.avatar.url(:index) %>
             </a>
           </div>
           <dl class="info fn-left">
             <dt class="t">
-              <a title="<%= q.title %>" target="_blank" href="#">
+              <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
                 <%= q.title %>
               </a>
             </dt>
             <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
             <dd class="moredesc">
-              <span>满意度：<span class="n">98%</span></span>
+              <span>满意度：<span class="n">99%</span></span>
               <span class="pin"><span class="n">5012</span>人赞</span>
               <span>更新时间：<span class="n"><%= my_datetime q.created_at %></span></span>
             </dd>
@@ -321,17 +280,17 @@
 </div>
 
 <div class="newChannel_list" id="hk_div6">
-  <% @recommend6.each do |q| %>
+  <% @recommend26.each do |q| %>
       <ul>
         <li class="lineitem">
           <div class="img fn-left">
-            <a title="<%= q.title %>" target="_blank" href="#">
+            <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
               <%= image_tag q.avatar.url(:index) %>
             </a>
           </div>
           <dl class="info fn-left">
             <dt class="t">
-              <a title="<%= q.title %>" target="_blank" href="#">
+              <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
                 <%= q.title %>
               </a>
             </dt>
@@ -359,17 +318,17 @@
 </div>
 
 <div class="newChannel_list" id="hk_div7">
-  <% @recommend7.each do |q| %>
+  <% @recommend27.each do |q| %>
       <ul>
         <li class="lineitem">
           <div class="img fn-left">
-            <a title="<%= q.title %>" target="_blank" href="#">
+            <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
               <%= image_tag q.avatar.url(:index) %>
             </a>
           </div>
           <dl class="info fn-left">
             <dt class="t">
-              <a title="<%= q.title %>" target="_blank" href="#">
+              <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
                 <%= q.title %>
               </a>
             </dt>
@@ -397,23 +356,23 @@
 </div>
 
 <div class="newChannel_list" id="hk_div8">
-  <% @recommend8.each do |q| %>
+  <% @recommend28.each do |q| %>
       <ul>
         <li class="lineitem">
           <div class="img fn-left">
-            <a title="<%= q.title %>" target="_blank" href="#">
+            <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
               <%= image_tag q.avatar.url(:index) %>
             </a>
           </div>
           <dl class="info fn-left">
             <dt class="t">
-              <a title="<%= q.title %>" target="_blank" href="#">
+              <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
                 <%= q.title %>
               </a>
             </dt>
             <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
             <dd class="moredesc">
-              <span>满意度：<span class="n">98%</span></span>
+              <span>满意度：<span class="n">99%</span></span>
               <span class="pin"><span class="n">5012</span>人赞</span>
               <span>更新时间：<span class="n"><%= my_datetime q.created_at %></span></span>
             </dd>
@@ -450,16 +409,16 @@
   <div class="newChannel_Bd">
     <div class="newChannel_right">
       <ul class="newChannel_tab">
-        <li class="cur" id="tu_li1">美国</li>
-        <li id="tu_li2">法国</li>
-        <li id="tu_li3">泰国</li>
-        <li id="tu_li4">巴厘岛</li>
-        <li id="tu_li5">韩国</li>
-        <li id="tu_li6" style="margin:0;">澳大利亚</li>
+        <li class="cur" id="tu_li1">香港</li>
+        <li id="tu_li2">澳门</li>
+        <li id="tu_li3">台湾</li>
+        <li id="tu_li4">未知</li>
+        <li id="tu_li5">未知</li>
+        <li id="tu_li6" style="margin:0;">未知</li>
       </ul>
 
       <div class="newChannel_list visible" id="tu_div1">
-        <% @gentuan1.each do |q| %>
+        <% @gentuan22.each do |q| %>
             <ul>
               <li>
                                 <span class="dbfen_price">
@@ -467,7 +426,7 @@
                                     <span class="n"><%= q.price %></span>
                                     起
                                 </span>
-                <a href="#"><%= q.title %>（CI）</a>
+                <a href="<%= gentuan_destination_one_path(q) %>"><%= q.title %>（CI）</a>
               </li>
 
 
@@ -475,12 +434,12 @@
             <div class="clear"></div>
 
             <div class="showLine">
-              <a href="http://www.xkcits.com/chujing/5122.html">
+              <a href="<%= gentuan_destination_one_path(q) %>">
                 <%= image_tag q.avatar.url(:index) %>
               </a>
 
               <div>
-                <p><a href="#"><%= q.title %></a></p>
+                <p><a href="<%= gentuan_destination_one_path(q) %>"><%= q.title %></a></p>
 
                 <p>
                   <span><b>￥<%= q.price %></b>起</span>
@@ -493,7 +452,7 @@
       </div>
 
       <div class="newChannel_list" id="tu_div2">
-        <% @gentuan2.each do |q| %>
+        <% @gentuan23.each do |q| %>
             <ul>
               <li>
                                 <span class="dbfen_price">
@@ -501,7 +460,7 @@
                                     <span class="n"><%= q.price %></span>
                                     起
                                 </span>
-                <a href="#"><%= q.title %>（CI）</a>
+                <a href="<%= gentuan_destination_one_path(q) %>"><%= q.title %>（CI）</a>
               </li>
 
 
@@ -509,12 +468,12 @@
             <div class="clear"></div>
 
             <div class="showLine">
-              <a href="http://www.xkcits.com/chujing/5122.html">
+              <a href="<%= gentuan_destination_one_path(q) %>">
                 <%= image_tag q.avatar.url(:index) %>
               </a>
 
               <div>
-                <p><a href="#"><%= q.title %></a></p>
+                <p><a href="<%= gentuan_destination_one_path(q) %>"><%= q.title %></a></p>
 
                 <p>
                   <span><b>￥<%= q.price %></b>起</span>
@@ -527,7 +486,7 @@
       </div>
 
       <div class="newChannel_list" id="tu_div3">
-        <% @gentuan3.each do |q| %>
+        <% @gentuan24.each do |q| %>
             <ul>
               <li>
                                 <span class="dbfen_price">
@@ -535,7 +494,7 @@
                                     <span class="n"><%= q.price %></span>
                                     起
                                 </span>
-                <a href="#"><%= q.title %>（CI）</a>
+                <a href="<%= gentuan_destination_one_path(q) %>"><%= q.title %>（CI）</a>
               </li>
 
 
@@ -543,12 +502,12 @@
             <div class="clear"></div>
 
             <div class="showLine">
-              <a href="http://www.xkcits.com/chujing/5122.html">
+              <a href="<%= gentuan_destination_one_path(q) %>">
                 <%= image_tag q.avatar.url(:index) %>
               </a>
 
               <div>
-                <p><a href="#"><%= q.title %></a></p>
+                <p><a href="<%= gentuan_destination_one_path(q) %>"><%= q.title %></a></p>
 
                 <p>
                   <span><b>￥<%= q.price %></b>起</span>
@@ -561,7 +520,7 @@
       </div>
 
       <div class="newChannel_list" id="tu_div4">
-        <% @gentuan4.each do |q| %>
+        <% @gentuan25.each do |q| %>
             <ul>
               <li>
                                 <span class="dbfen_price">
@@ -569,7 +528,7 @@
                                     <span class="n"><%= q.price %></span>
                                     起
                                 </span>
-                <a href="#"><%= q.title %>（CI）</a>
+                <a href="<%= gentuan_destination_one_path(q) %>"><%= q.title %>（CI）</a>
               </li>
 
 
@@ -577,12 +536,12 @@
             <div class="clear"></div>
 
             <div class="showLine">
-              <a href="http://www.xkcits.com/chujing/5122.html">
+              <a href="<%= gentuan_destination_one_path(q) %>">
                 <%= image_tag q.avatar.url(:index) %>
               </a>
 
               <div>
-                <p><a href="#"><%= q.title %></a></p>
+                <p><a href="<%= gentuan_destination_one_path(q) %>"><%= q.title %></a></p>
 
                 <p>
                   <span><b>￥<%= q.price %></b>起</span>
@@ -595,7 +554,7 @@
       </div>
 
       <div class="newChannel_list" id="tu_div5">
-        <% @gentuan5.each do |q| %>
+        <% @gentuan26.each do |q| %>
             <ul>
               <li>
                                 <span class="dbfen_price">
@@ -603,7 +562,7 @@
                                     <span class="n"><%= q.price %></span>
                                     起
                                 </span>
-                <a href="#"><%= q.title %>（CI）</a>
+                <a href="<%= gentuan_destination_one_path(q) %>"><%= q.title %>（CI）</a>
               </li>
 
 
@@ -611,7 +570,7 @@
             <div class="clear"></div>
 
             <div class="showLine">
-              <a href="http://www.xkcits.com/chujing/5122.html">
+              <a href="<%= gentuan_destination_one_path(q) %>">
                 <%= image_tag q.avatar.url(:index) %>
               </a>
 
@@ -639,35 +598,38 @@
 
 <div class="ziyou_hot dbfen">
   <h2 class="travel_Hd">
-    <span class="travel_Hd_type travel_gt_type">出境自由行</span>
+    <span class="travel_Hd_type travel_gt_type">港澳台自由行</span>
     <span class="travel_Hd_msg">机票+酒店，行程自由安排！</span>
   </h2>
 
   <div class="newChannel_Bd">
     <div class="newChannel_right">
       <ul class="newChannel_tab">
-        <li class="cur" id="zy_li1">马尔代夫</li>
-        <li id="zy_li2">迪拜</li>
-        <li id="zy_li3">巴沙</li>
-        <li id="zy_li4">德国</li>
-        <li id="zy_li5" style="margin:0; width:139px;">南非</li>
+        <li class="cur" id="zy_li1">香港</li>
+        <li id="zy_li2">澳门</li>
+        <li id="zy_li3">台湾</li>
+        <li id="zy_li4">未知</li>
+        <li id="zy_li5" style="margin:0; width:139px;">未知</li>
       </ul>
 
 
       <div class="newChannel_list visible" id="zy_div1">
-        <% @freeline1.each do |q| %>
+        <% @freeline22.each do |q| %>
             <ul>
               <li>
                 <span class="dbfen_price">
                   <span class="u">￥</span><span class="n"><%= q.price %></span>起
                 </span>
-                <a href="#"><%= q.title %></a>
+                <a href="<%= ziyouxing_destination_one_path(q) %>"><%= q.title %></a>
               </li>
             </ul>
             <div class="showLine">
-              <%= image_tag q.avatar.url(:index) %>
+              <a href="<%= ziyouxing_destination_one_path(q) %>">
+                <%= image_tag q.avatar.url(:index) %>
+              </a>
+
               <div>
-                <p><a href="#"><%= q.title %></a></p>
+                <p><a href="<%= ziyouxing_destination_one_path(q) %>"><%= q.title %></a></p>
 
                 <p>
                   <span><b>￥<%= q.price %></b>起</span>
@@ -680,19 +642,22 @@
 
 
       <div class="newChannel_list" id="zy_div2">
-        <% @freeline2.each do |q| %>
+        <% @freeline23.each do |q| %>
             <ul>
               <li>
                 <span class="dbfen_price">
                   <span class="u">￥</span><span class="n"><%= q.price %></span>起
                 </span>
-                <a href="#"><%= q.title %></a>
+                <a href="<%= ziyouxing_destination_one_path(q) %>"><%= q.title %></a>
               </li>
             </ul>
             <div class="showLine">
-              <%= image_tag q.avatar.url(:index) %>
+              <a href="<%= ziyouxing_destination_one_path(q) %>">
+                <%= image_tag q.avatar.url(:index) %>
+              </a>
+
               <div>
-                <p><a href="#"><%= q.title %></a></p>
+                <p><a href="<%= ziyouxing_destination_one_path(q) %>"><%= q.title %></a></p>
 
                 <p>
                   <span><b>￥<%= q.price %></b>起</span>
@@ -704,19 +669,22 @@
       </div>
 
       <div class="newChannel_list" id="zy_div3">
-        <% @freeline3.each do |q| %>
+        <% @freeline24.each do |q| %>
             <ul>
               <li>
                 <span class="dbfen_price">
                   <span class="u">￥</span><span class="n"><%= q.price %></span>起
                 </span>
-                <a href="#"><%= q.title %></a>
+                <a href="<%= ziyouxing_destination_one_path(q) %>"><%= q.title %></a>
               </li>
             </ul>
             <div class="showLine">
-              <%= image_tag q.avatar.url(:index) %>
+              <a href="<%= ziyouxing_destination_one_path(q) %>">
+                <%= image_tag q.avatar.url(:index) %>
+              </a>
+
               <div>
-                <p><a href="#"><%= q.title %></a></p>
+                <p><a href="<%= ziyouxing_destination_one_path(q) %>"><%= q.title %></a></p>
 
                 <p>
                   <span><b>￥<%= q.price %></b>起</span>
@@ -728,19 +696,22 @@
       </div>
 
       <div class="newChannel_list" id="zy_div4">
-        <% @freeline4.each do |q| %>
+        <% @freeline25.each do |q| %>
             <ul>
               <li>
                 <span class="dbfen_price">
                   <span class="u">￥</span><span class="n"><%= q.price %></span>起
                 </span>
-                <a href="#"><%= q.title %></a>
+                <a href="<%= ziyouxing_destination_one_path(q) %>"><%= q.title %></a>
               </li>
             </ul>
             <div class="showLine">
-              <%= image_tag q.avatar.url(:index) %>
+              <a href="<%= ziyouxing_destination_one_path(q) %>">
+                <%= image_tag q.avatar.url(:index) %>
+              </a>
+
               <div>
-                <p><a href="#"><%= q.title %></a></p>
+                <p><a href="<%= ziyouxing_destination_one_path(q) %>"><%= q.title %></a></p>
 
                 <p>
                   <span><b>￥<%= q.price %></b>起</span>
@@ -752,19 +723,22 @@
       </div>
 
       <div class="newChannel_list" id="zy_div5">
-        <% @freeline5.each do |q| %>
+        <% @freeline26.each do |q| %>
             <ul>
               <li>
                 <span class="dbfen_price">
                   <span class="u">￥</span><span class="n"><%= q.price %></span>起
                 </span>
-                <a href="#"><%= q.title %></a>
+                <a href="<%= ziyouxing_destination_one_path(q) %>"><%= q.title %></a>
               </li>
             </ul>
             <div class="showLine">
-              <%= image_tag q.avatar.url(:index) %>
+              <a href="<%= ziyouxing_destination_one_path(q) %>">
+                <%= image_tag q.avatar.url(:index) %>
+              </a>
+
               <div>
-                <p><a href="#"><%= q.title %></a></p>
+                <p><a href="<%= ziyouxing_destination_one_path(q) %>"><%= q.title %></a></p>
 
                 <p>
                   <span><b>￥<%= q.price %></b>起</span>

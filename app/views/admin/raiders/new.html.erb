@@ -9,10 +9,7 @@
       <a href="#">Home</a> <span class="divider">/</span>
     </li>
     <li>
-      <a href="<%= admin_citys_path %>"> 世界游管理</a> <span class="divider">/</span>
-    </li>
-    <li>
-      <a href="<%= admin_city_raiders_path %>">攻略管理</a> <span class="divider">/</span>
+      <a href="<%= admin_raiders_path %>">攻略管理</a> <span class="divider">/</span>
     </li>
     <li>
       新建攻略
@@ -25,9 +22,8 @@
       <h2><i class="icon-edit"></i> 新建攻略</h2>
     </div>
     <div class="box-content">
-      <%= form_for(:raider, :url => admin_city_raiders_path, :method => :post, :html => {:id => "verifytitle"}) do |f| %>
+      <%= form_for(:raider, :url => admin_raiders_path, :method => :post, :html => {:id => "verifytitle"}) do |f| %>
           <legend>新建攻略</legend>
-          <%= hidden_field_tag :city_id, @parent_id%>
           <%= f.label "攻略：" %>
           <%= f.text_field :title %>
           <%= f.label "攻略内容：" %>

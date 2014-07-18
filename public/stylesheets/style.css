@@ -1499,8 +1499,8 @@ _ background-image: none; /* IE6 */ }
 
 .sliderInfo { width: 709px;height: 260px; padding-bottom:5px; }
 .sliderInfo .leftSlider {width: 709px; }
-.sliderInfo .bigImg { float: left; height: 250px; width: 360px; }
-.sliderInfo .imgList { float: left; width: 349px; }
+.sliderInfo .bigImg { float: left; height: 709px; width: 360px; }
+.sliderInfo .imgList { float: left; width: 709px; }
 .sliderInfo .imgList li { cursor: pointer; float: left; margin: 0 0 10px 10px; overflow: hidden; }
 .sliderInfo .imgList li.w180 { height: 120px; width: 180px; }
 .sliderInfo .imgList li.w150 { height: 120px; width: 149px; }

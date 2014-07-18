@@ -11,6 +11,7 @@ Travel::Application.routes.draw do
       get 'show_classic'
       get 'show_chujing'
       get 'show_domestic'
+      get 'show_raider'
     end
     collection do
       post 'user_create'
@@ -20,16 +21,60 @@ Travel::Application.routes.draw do
   end
   resources :destination_one do
     member do
-      delete 'tejia_show'
+      get 'gangao'
+      get 'gentuan'
+      get 'ziyouxing'
     end
   end
-  resources :destination_two
-  resources :destination_three
-  resources :destination_four
-  resources :destination_five
-  resources :destination_six
-  resources :destination_seven
-  resources :destination_eight
+  resources :destination_two do
+    member do
+      get 'gangao'
+      get 'gentuan'
+      get 'ziyouxing'
+    end
+  end
+  resources :destination_three do
+    member do
+      get 'gangao'
+      get 'gentuan'
+      get 'ziyouxing'
+    end
+  end
+  resources :destination_four do
+    member do
+      get 'gangao'
+      get 'gentuan'
+      get 'ziyouxing'
+    end
+  end
+  resources :destination_five do
+    member do
+      get 'gangao'
+      get 'gentuan'
+      get 'ziyouxing'
+    end
+  end
+  resources :destination_six do
+    member do
+      get 'gangao'
+      get 'gentuan'
+      get 'ziyouxing'
+    end
+  end
+  resources :destination_seven do
+    member do
+      get 'gangao'
+      get 'gentuan'
+      get 'ziyouxing'
+    end
+  end
+  resources :destination_eight do
+    member do
+      get 'gangao'
+      get 'gentuan'
+      get 'ziyouxing'
+    end
+  end
   # admin
   namespace :admin do
     match '' => 'accounts#index', :via => :get
@@ -50,6 +95,9 @@ Travel::Application.routes.draw do
 
     # 最新公告
     resources :announcements
+
+    # 攻略
+    resources :raiders
 
     # 导航栏一
     resources :one_cities do
@@ -89,6 +137,12 @@ Travel::Application.routes.draw do
       resources :three_gentuans
       # 跟团
       resources :three_freelines
+    end
+
+    # 酒店
+    resources :hotels do
+      # 酒店
+      resources :occupancy_hotels
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

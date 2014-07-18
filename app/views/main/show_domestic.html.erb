@@ -72,7 +72,7 @@
       </div>
       <% @gonglues.each do |q| %>
           <ul class="gonglue_list">
-            <li>・ <a href="/guide/3512.html"><%= q.title %></a></li>
+            <li>・ <a href="<%= show_raider_main_path(q) %>"><%= q.title %></a></li>
           </ul>
       <% end %>
     </div>

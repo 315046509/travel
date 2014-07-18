@@ -5,14 +5,26 @@ class MainController < ApplicationController
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 特价旅游
-    @lunbos = Tejia.order_ct_desc.page(params[:page]).per(3)
+    @lunbos = Tejia.order_ct_desc.page(params[:page]).per(4)
+
     # 城市
-    @category_1_name = City.question_category_name(1)
-    @category_1_city = City.where({:question_category_id => 1}, "title <> ''")
-    @category_2_name = City.question_category_name(2)
-    @category_2_city = City.where({:question_category_id => 2}, "title <> ''")
-    @category_3_name = City.question_category_name(3)
-    @category_3_city = City.where({:question_category_id => 3}, "title <> ''")
+    @category_1_name = OneCity.question_category_name(1)
+    @category_1_city = OneCity.where({:question_category_id => 1}, "title <> ''")
+
+    @category_2_name = OneCity.question_category_name(2)
+    @category_2_city = OneCity.where({:question_category_id => 2}, "title <> ''")
+
+    @category_3_name = OneCity.question_category_name(3)
+    @category_3_city = OneCity.where({:question_category_id => 3}, "title <> ''")
+
+    @category_4_name = OneCity.question_category_name(4)
+    @category_4_city = OneCity.where({:question_category_id => 4}, "title <> ''")
+
+    @category_5_name = OneCity.question_category_name(5)
+    @category_5_city = OneCity.where({:question_category_id => 5}, "title <> ''")
+
+    @category_6_name = OneCity.question_category_name(6)
+    @category_6_city = OneCity.where({:question_category_id => 6}, "title <> ''")
 
     # 港澳热门
     @hotdoor1 = Hotdoor.where(:one_city_id => 1).order("id desc").page(params[:page]).per(5)
@@ -33,13 +45,12 @@ class MainController < ApplicationController
     @exithot4 = Exithot.where(:one_city_id => 4).order("id desc").page(params[:page]).per(5)
 
     # 国内
-    @onecities = OneCity.all
-    @domestic1 = Domestic.where(:one_city_id => 1).order("id desc").page(params[:page]).per(5)
-    @domestic2 = Domestic.where(:one_city_id => 2).order("id desc").page(params[:page]).per(5)
-    @domestic3 = Domestic.where(:one_city_id => 3).order("id desc").page(params[:page]).per(5)
-    @domestic4 = Domestic.where(:one_city_id => 4).order("id desc").page(params[:page]).per(5)
-    @domestic5 = Domestic.where(:one_city_id => 5).order("id desc").page(params[:page]).per(5)
-    @domestic6 = Domestic.where(:one_city_id => 6).order("id desc").page(params[:page]).per(5)
+    @domestic1 = Domestic.where(:one_city_id => 4).order("id desc").page(params[:page]).per(5)
+    @domestic2 = Domestic.where(:one_city_id => 5).order("id desc").page(params[:page]).per(5)
+    @domestic3 = Domestic.where(:one_city_id => 6).order("id desc").page(params[:page]).per(5)
+    @domestic4 = Domestic.where(:one_city_id => 7).order("id desc").page(params[:page]).per(5)
+    @domestic5 = Domestic.where(:one_city_id => 8).order("id desc").page(params[:page]).per(5)
+    @domestic6 = Domestic.where(:one_city_id => 9).order("id desc").page(params[:page]).per(5)
 
     # 经典
     @jingdians1 = Jingdian.where(:one_city_id => 1).order("id desc").page(params[:page]).per(4)
@@ -48,9 +59,39 @@ class MainController < ApplicationController
     @jingdians4 = Jingdian.where(:one_city_id => 4).order("id desc").page(params[:page]).per(4)
     @jingdians5 = Jingdian.where(:one_city_id => 5).order("id desc").page(params[:page]).per(4)
     @jingdians6 = Jingdian.where(:one_city_id => 6).order("id desc").page(params[:page]).per(4)
-
+    # 攻略
+    @gonglues = Raider.order_ct_desc.page(params[:page]).per(8)
   end
 
+  # 城市显示页
+  def show
+    # 最新公告
+    @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
+    # 城市
+    @category_1_name = City.question_category_name(1)
+    @category_1_city = City.where({:question_category_id => 1}, "title <> ''")
+
+    @category_2_name = City.question_category_name(2)
+    @category_2_city = City.where({:question_category_id => 2}, "title <> ''")
+
+    @category_3_name = City.question_category_name(3)
+    @category_3_city = City.where({:question_category_id => 3}, "title <> ''")
+
+    @category_4_name = City.question_category_name(4)
+    @category_4_city = City.where({:question_category_id => 4}, "title <> ''")
+
+    @category_5_name = City.question_category_name(5)
+    @category_5_city = City.where({:question_category_id => 5}, "title <> ''")
+
+    @category_6_name = City.question_category_name(6)
+    @category_6_city = City.where({:question_category_id => 6}, "title <> ''")
+
+    # 产品列表
+    @lunbos = Tejia.all
+    # 攻略
+    @gonglues = Raider.order_ct_desc.page(params[:page]).per(8)
+
+  end
   # 特价显示页
   def show_tejia
     # 最新公告
@@ -59,6 +100,8 @@ class MainController < ApplicationController
     @tejia = Tejia.find params[:id]
     # 特价列表
     @lunbos = Tejia.order_ct_desc.page(params[:page]).per(12)
+    # 攻略
+    @gonglues = Raider.order_ct_desc.page(params[:page]).per(8)
   end
 
   # 热门旅游
@@ -109,6 +152,15 @@ class MainController < ApplicationController
     @gonglues = Raider.order_ct_desc.page(params[:page]).per(8)
   end
 
+  # 最新攻略
+  def show_raider
+    # 最新公告
+    @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
+    # 攻略
+    @gonglues = Raider.find params[:id]
+    # 攻略
+    @raiders = Raider.order_ct_desc.page(params[:page]).per(8)
+  end
   # 登录页
   def login;
   end
