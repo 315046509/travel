@@ -39,26 +39,26 @@ class MainController < ApplicationController
     @recommend4 = Recommend.where(:city_id => 4).order("id desc").page(params[:page]).per(5)
 
     # 出境
-    @exithot1 = Exithot.where(:one_city_id => 1).order("id desc").page(params[:page]).per(5)
-    @exithot2 = Exithot.where(:one_city_id => 2).order("id desc").page(params[:page]).per(5)
-    @exithot3 = Exithot.where(:one_city_id => 3).order("id desc").page(params[:page]).per(5)
-    @exithot4 = Exithot.where(:one_city_id => 4).order("id desc").page(params[:page]).per(5)
+    @exithot1 = Exithot.where(:one_city_id => 5).order("id desc").page(params[:page]).per(5)
+    @exithot2 = Exithot.where(:one_city_id => 6).order("id desc").page(params[:page]).per(5)
+    @exithot3 = Exithot.where(:one_city_id => 7).order("id desc").page(params[:page]).per(5)
+    @exithot4 = Exithot.where(:one_city_id => 8).order("id desc").page(params[:page]).per(5)
 
     # 国内
-    @domestic1 = Domestic.where(:one_city_id => 4).order("id desc").page(params[:page]).per(5)
-    @domestic2 = Domestic.where(:one_city_id => 5).order("id desc").page(params[:page]).per(5)
-    @domestic3 = Domestic.where(:one_city_id => 6).order("id desc").page(params[:page]).per(5)
-    @domestic4 = Domestic.where(:one_city_id => 7).order("id desc").page(params[:page]).per(5)
-    @domestic5 = Domestic.where(:one_city_id => 8).order("id desc").page(params[:page]).per(5)
-    @domestic6 = Domestic.where(:one_city_id => 9).order("id desc").page(params[:page]).per(5)
+    @domestic1 = Domestic.where(:one_city_id => 9).order("id desc").page(params[:page]).per(5)
+    @domestic2 = Domestic.where(:one_city_id => 10).order("id desc").page(params[:page]).per(5)
+    @domestic3 = Domestic.where(:one_city_id => 11).order("id desc").page(params[:page]).per(5)
+    @domestic4 = Domestic.where(:one_city_id => 12).order("id desc").page(params[:page]).per(5)
+    @domestic5 = Domestic.where(:one_city_id => 13).order("id desc").page(params[:page]).per(5)
+    @domestic6 = Domestic.where(:one_city_id => 14).order("id desc").page(params[:page]).per(5)
 
     # 经典
-    @jingdians1 = Jingdian.where(:one_city_id => 1).order("id desc").page(params[:page]).per(4)
-    @jingdians2 = Jingdian.where(:one_city_id => 2).order("id desc").page(params[:page]).per(4)
-    @jingdians3 = Jingdian.where(:one_city_id => 3).order("id desc").page(params[:page]).per(4)
-    @jingdians4 = Jingdian.where(:one_city_id => 4).order("id desc").page(params[:page]).per(4)
-    @jingdians5 = Jingdian.where(:one_city_id => 5).order("id desc").page(params[:page]).per(4)
-    @jingdians6 = Jingdian.where(:one_city_id => 6).order("id desc").page(params[:page]).per(4)
+    #@jingdians1 = Jingdian.where(:one_city_id => 1).order("id desc").page(params[:page]).per(4)
+    #@jingdians2 = Jingdian.where(:one_city_id => 2).order("id desc").page(params[:page]).per(4)
+    #@jingdians3 = Jingdian.where(:one_city_id => 3).order("id desc").page(params[:page]).per(4)
+    #@jingdians4 = Jingdian.where(:one_city_id => 4).order("id desc").page(params[:page]).per(4)
+    #@jingdians5 = Jingdian.where(:one_city_id => 5).order("id desc").page(params[:page]).per(4)
+    #@jingdians6 = Jingdian.where(:one_city_id => 6).order("id desc").page(params[:page]).per(4)
     # 攻略
     @gonglues = Raider.order_ct_desc.page(params[:page]).per(8)
   end
