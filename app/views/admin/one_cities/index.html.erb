@@ -1,3 +1,4 @@
+
 <script>
     <% if flash[:note]%>
     alert('<%=flash[:note]%>');
@@ -30,7 +31,7 @@
           <th>ID</th>
           <th>分类</th>
           <th>城市</th>
-          <th>海外板块旅游</th>
+          <!--<th>海外板块旅游</th>-->
           <th>港澳热门旅游</th>
           <th>出境热门旅游</th>
           <th>国内热门旅游</th>
@@ -43,7 +44,7 @@
               <td><%= q.id %></td>
               <td><%= q.question_category_name %></td>
               <td><%= q.title %></td>
-              <td><%= link_to '海外板块旅游', admin_one_city_jingdians_path(q), :class => "btn btn-primary" %></td>
+              <!--<td><%#= link_to '海外板块旅游', admin_one_city_jingdians_path(q), :class => "btn btn-primary" %></td>-->
               <td><%= link_to '港澳热门旅游', admin_one_city_hotdoors_path(q), :class => "btn btn-primary" %></td>
               <td><%= link_to '出境热门旅游', admin_one_city_exithots_path(q), :class => "btn btn-primary" %></td>
               <td><%= link_to '国内热门旅游', admin_one_city_domestics_path(q), :class => "btn btn-primary" %></td>
