@@ -34,7 +34,7 @@
           <th>热门旅游推荐</th>
           <th>跟团游热门地区</th>
           <th>自由行</th>
-          <th>删除</th>
+          <th>修改</th>
         </tr>
         </thead>
         <tbody>
@@ -47,7 +47,7 @@
               <td><%= link_to '热门旅游推荐', admin_city_recommends_path(q), :class => "btn btn-primary" %></td>
               <td><%= link_to '跟团游热门地区', admin_city_gentuans_path(q), :class => "btn btn-primary" %></td>
               <td><%= link_to '自由行', admin_city_freelines_path(q), :class => "btn btn-primary" %></td>
-              <td><%= link_to '删除', admin_city_path(q), :class => "btn btn-primary", :method => :delete, :confirm => "您确定要删除吗?" %></td>
+              <td><%= link_to '修改名称', edit_admin_city_path(q), :class => "btn btn-primary" %></td>
             </tr>
         <% end %>
         </tbody>

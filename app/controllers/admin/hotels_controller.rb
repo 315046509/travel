@@ -23,6 +23,23 @@ class Admin::HotelsController < Admin::MainController
     end
   end
 
+  def edit
+    @job = Hotel.find(params[:id])
+  end
+
+  def update
+    @category = Hotel.find(params[:id])
+    update_category = @category.update_attributes(
+        :title => params[:hotel][:title]
+    )
+    if update_category
+      respond_to do |category|
+        category.html {
+          redirect_to admin_hotels_path and return
+        }
+      end
+    end
+  end
   #   删除
   def destroy
     @job = Hotel.find(params[:id])

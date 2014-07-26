@@ -35,7 +35,7 @@
           <th>港澳热门旅游</th>
           <th>出境热门旅游</th>
           <th>国内热门旅游</th>
-          <th>删除</th>
+          <th>修改</th>
         </tr>
         </thead>
         <tbody>
@@ -48,7 +48,7 @@
               <td><%= link_to '港澳热门旅游', admin_one_city_hotdoors_path(q), :class => "btn btn-primary" %></td>
               <td><%= link_to '出境热门旅游', admin_one_city_exithots_path(q), :class => "btn btn-primary" %></td>
               <td><%= link_to '国内热门旅游', admin_one_city_domestics_path(q), :class => "btn btn-primary" %></td>
-              <td><%= link_to '删除', admin_one_city_path(q), :class => "btn btn-primary", :method => :delete, :confirm => "您确定要删除吗?" %></td>
+              <td><%= link_to '修改名称', edit_admin_one_city_path(q), :class => "btn btn-primary" %></td>
             </tr>
         <% end %>
         </tbody>
