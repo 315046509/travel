@@ -103,18 +103,19 @@
         <span>香港酒店</span>
       </h2>
 
-      <% @hotels1.each do |q| %>
-          <div class="hotels">
+      <div class="hotels">
+        <% @hotels1.each do |q| %>
             <div class="one_hotel">
               <a href="<%= destination_eight_path(q) %>">
                 <%= image_tag q.avatar.url(:index) %>
               </a>
+
               <p><a href="<%= destination_eight_path(q) %>"><%= q.name %></a></p>
               <span>￥<%= q.price %></span>
             </div>
-            <div class="clear"></div>
-          </div>
-      <% end %>
+        <% end %>
+        <div class="clear"></div>
+      </div>
     </div>
 
     <div class="hotel_list">
@@ -122,18 +123,19 @@
         <span>国内酒店</span>
       </h2>
 
-      <% @hotels4.each do |q| %>
-          <div class="hotels">
+      <div class="hotels">
+        <% @hotels4.each do |q| %>
             <div class="one_hotel">
               <a href="<%= destination_eight_path(q) %>">
                 <%= image_tag q.avatar.url(:index) %>
               </a>
+
               <p><a href="<%= destination_eight_path(q) %>"><%= q.name %></a></p>
               <span>￥<%= q.price %></span>
             </div>
-            <div class="clear"></div>
-          </div>
-      <% end %>
+        <% end %>
+        <div class="clear"></div>
+      </div>
     </div>
 
     <div class="hotel_list" style="margin:0;">
@@ -141,18 +143,19 @@
         <span>国际酒店</span>
       </h2>
 
-      <% @hotels3.each do |q| %>
-          <div class="hotels">
+      <div class="hotels">
+        <% @hotels3.each do |q| %>
             <div class="one_hotel">
               <a href="<%= destination_eight_path(q) %>">
                 <%= image_tag q.avatar.url(:index) %>
               </a>
+
               <p><a href="<%= destination_eight_path(q) %>"><%= q.name %></a></p>
               <span>￥<%= q.price %></span>
             </div>
-            <div class="clear"></div>
-          </div>
-      <% end %>
+        <% end %>
+        <div class="clear"></div>
+      </div>
     </div>
   </div>
   <div class="clear"></div>
