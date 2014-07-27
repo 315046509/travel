@@ -42,9 +42,6 @@
           <th>酒店早餐</th>
           <th>酒店日均价</th>
           <th>创建时间</th>
-          <th>浏览</th>
-          <th>修改</th>
-          <th>删除</th>
         </tr>
         </thead>
         <tbody>
@@ -58,11 +55,7 @@
               <td><%= q.bed_type %></td>
               <td><%= q.breakfast %></td>
               <td><%= q.average %></td>
-              <td class="center"><%= my_datetime_format q.created_at %></td>
-              <td class="center"><%= link_to "浏览", admin_hotel_occupancy_hotel_path(params[:hotel_id],q) %></td>
-              <td><%= link_to '修改', edit_admin_hotel_occupancy_hotel_path(params[:hotel_id],q) %></td>
-              <td><%= link_to '删除', admin_hotel_occupancy_hotel_path(params[:hotel_id],q), :method => :delete, :confirm => "您确定要删除吗?" %></td>
-            </tr>
+              <td class="center"><%= my_datetime_format q.created_at %></td> </tr>
         <% end %>
         </tbody>
       </table>
