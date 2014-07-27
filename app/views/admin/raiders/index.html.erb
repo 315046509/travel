@@ -32,6 +32,7 @@
         <tr>
           <th>ID</th>
           <th>攻略</th>
+          <th>修改</th>
           <th>删除</th>
         </tr>
         </thead>
@@ -40,6 +41,7 @@
             <tr>
               <td><%= q.id %></td>
               <td><%= q.title %></td>
+              <td><%= link_to '修改', edit_admin_raider_path(q), :class => "btn btn-primary" %></td>
               <td><%= link_to '删除', admin_raider_path(q), :method => :delete, :confirm => "您确定要删除吗?" %></td>
             </tr>
         <% end %>
