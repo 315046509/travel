@@ -91,7 +91,7 @@
       </div>
       <% @gonglues.each do |q| %>
           <ul class="gonglue_list">
-            <li>・ <a href="<%= show_raider_main_path(q) %>"><%= q.title %></a></li>
+            <li>・ <a href="<%= show_raider_main_path(q) %>"><%= truncate_u(q.title, 12) %></a></li>
           </ul>
       <% end %>
     </div>
@@ -110,7 +110,7 @@
                 <%= image_tag q.avatar.url(:index) %>
               </a>
 
-              <p><a href="<%= destination_eight_path(q) %>"><%= q.name %></a></p>
+              <p><a href="<%= destination_eight_path(q) %>"><%= truncate_u(q.name, 10) %></a></p>
               <span>￥<%= q.price %></span>
             </div>
         <% end %>
@@ -130,7 +130,7 @@
                 <%= image_tag q.avatar.url(:index) %>
               </a>
 
-              <p><a href="<%= destination_eight_path(q) %>"><%= q.name %></a></p>
+              <p><a href="<%= destination_eight_path(q) %>"><%= truncate_u(q.name, 10) %></a></p>
               <span>￥<%= q.price %></span>
             </div>
         <% end %>
@@ -150,7 +150,7 @@
                 <%= image_tag q.avatar.url(:index) %>
               </a>
 
-              <p><a href="<%= destination_eight_path(q) %>"><%= q.name %></a></p>
+              <p><a href="<%= destination_eight_path(q) %>"><%= truncate_u(q.name, 10) %></a></p>
               <span>￥<%= q.price %></span>
             </div>
         <% end %>
