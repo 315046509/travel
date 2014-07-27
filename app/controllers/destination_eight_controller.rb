@@ -8,13 +8,12 @@ class DestinationEightController < ApplicationController
     @lunbos = Tejia.order("id desc").page(params[:page]).per(3)
 
     # 城市
-    @category_1_name = City.question_category_name(1)
-    @category_1_city = City.where({:question_category_id => 1}, "title <> ''")
-    @category_2_name = City.question_category_name(2)
-    @category_2_city = City.where({:question_category_id => 2}, "title <> ''")
-    @category_3_name = City.question_category_name(3)
-    @category_3_city = City.where({:question_category_id => 3}, "title <> ''")
-
+    @category_1_name = Hotel.question_category_name(1)
+    @category_1_city = Hotel.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+    @category_2_name = Hotel.question_category_name(2)
+    @category_2_city = Hotel.where({:question_category_id => 2}, "title <> ''").page(params[:page]).per(10)
+    @category_3_name = Hotel.question_category_name(3)
+    @category_3_city = Hotel.where({:question_category_id => 3}, "title <> ''").page(params[:page]).per(10)
 
     # 攻略
     @gonglues = Raider.order_ct_desc.page(params[:page]).per(8)

@@ -11,7 +11,7 @@
           </dt>
           <% @category_1_city.each do |q| %>
               <dd class="dd">
-                <a title="<%= q.title %>"><%= q.title %></a>
+                <a href="<%= destination_eight_path(q) %>" title="<%= q.title %>"><%= truncate_u(q.title, 4) %></a>
               </dd>
           <% end %>
           <div class="clear"></div>
@@ -23,7 +23,7 @@
           </dt>
           <% @category_2_city.each do |q| %>
               <dd class="dd">
-                <a title="<%= q.title %>"><%= q.title %></a>
+                <a href="<%= destination_eight_path(q) %>" title="<%= q.title %>"><%= truncate_u(q.title, 4) %></a>
               </dd>
           <% end %>
           <div class="clear"></div>
@@ -35,7 +35,7 @@
           </dt>
           <% @category_3_city.each do |q| %>
               <dd class="dd">
-                <a title="<%= q.title %>"><%= q.title %></a>
+                <a href="<%= destination_eight_path(q) %>" title="<%= q.title %>"><%= truncate_u(q.title, 4) %></a>
               </dd>
           <% end %>
           <div class="clear"></div>
