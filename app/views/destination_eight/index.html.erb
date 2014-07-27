@@ -9,9 +9,9 @@
           <dt class="t">
             <a title="港澳旅游">香港酒店</a>
           </dt>
-          <% @category_1_city.each do |q| %>
+          <% @hotels1.each do |q| %>
               <dd class="dd">
-                <a href="<%= destination_eight_path(q) %>" title="<%= q.title %>"><%= truncate_u(q.title, 4) %></a>
+                <a href="<%= destination_eight_path(q) %>" title="<%= q.name %>"><%= truncate_u(q.name, 4) %></a>
               </dd>
           <% end %>
           <div class="clear"></div>
@@ -21,9 +21,9 @@
           <dt class="t">
             <a title="出境旅游酒店">国内酒店</a>
           </dt>
-          <% @category_2_city.each do |q| %>
+          <% @hotels2.each do |q| %>
               <dd class="dd">
-                <a href="<%= destination_eight_path(q) %>" title="<%= q.title %>"><%= truncate_u(q.title, 4) %></a>
+                <a href="<%= destination_eight_path(q) %>" title="<%= q.name %>"><%= truncate_u(q.name, 4) %></a>
               </dd>
           <% end %>
           <div class="clear"></div>
@@ -33,9 +33,9 @@
           <dt class="t">
             <a title="国际酒店">国际酒店</a>
           </dt>
-          <% @category_3_city.each do |q| %>
+          <% @hotels3.each do |q| %>
               <dd class="dd">
-                <a href="<%= destination_eight_path(q) %>" title="<%= q.title %>"><%= truncate_u(q.title, 4) %></a>
+                <a href="<%= destination_eight_path(q) %>" title="<%= q.name %>"><%= truncate_u(q.name, 4) %></a>
               </dd>
           <% end %>
           <div class="clear"></div>
