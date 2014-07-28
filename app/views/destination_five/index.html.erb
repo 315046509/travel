@@ -1,757 +1,580 @@
+<script>
+    <% if flash[:note]%>
+    alert('<%=flash[:note]%>');
+    <% end%>
+</script>
 <%= render "comment/hear" %>
 <div class="center">
 <div class="channel_side fn-left">
-  <div class="side_hot">
-    <h3 class="side_title"> 港澳游导航</h3>
-
-    <div class="line_list">
-      <!-- 分类一 -->
-      <dl>
-        <dt class="t">
-          <a title="港澳旅游">港澳旅游</a>
-        </dt>
-        <% @category_1_city.each do |q| %>
-            <dd class="dd">
-              <a><%= q.title %></a>
-            </dd>
-        <% end %>
-      </dl>
-      <br/><br/>
-    </div>
-  </div>
-
-  <div class="little_banner">
-    <img src="../images/cj_xiaotu.gif" data-original="/pics/cj_xiaotu.gif" width="270" height="96" style="display: inline;">
-  </div>
-
-  <div class="new_gonglue">
-    <h3>最新攻略动态</h3>
-
-    <div class="gonglue_img">
-      <a href="#"><img src="../images/gongl1.gif" data-original="/pics/gongl1.gif" style="display: inline;"></a>
-      <a href="#"><img src="../images/gongl2.gif" data-original="/pics/gongl2.gif" style="display: inline;"></a>
-    </div>
-
-    <% @gonglues.each do |q| %>
-        <ul class="gonglue_list">
-          <li>・ <a href="<%= show_raider_main_path(q) %>"><%= q.title %></a></li>
-        </ul>
+  <div class="tuan_online">
+    <h2 class="tuan_title">在线定制包团</h2>
+    <%= form_tag(user_create_destination_five_index_path, :method => :post, :id => "formT") do %>
+        <table>
+          <tbody>
+          <tr>
+            <td class="prev_td">*公司名称：</td>
+            <td><input type="text" name="customized[company_name]" id="company_name" value=""></td>
+          </tr>
+          <tr>
+            <td class="prev_td">*联系人：</td>
+            <td><input type="text" name="customized[name]" id="name"></td>
+          </tr>
+          <tr>
+            <td class="prev_td">*联系手机：</td>
+            <td><input type="text" name="customized[tell]" id="tell"></td>
+          </tr>
+          <tr>
+            <td class="prev_td">*包团电话：</td>
+            <td><input type="text" name="customized[caltel]" id="caltel"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="submit" value="确认提交" class="submit_tuan"></td>
+          </tr>
+          </tbody>
+        </table>
     <% end %>
+    <script language="javascript">
+        $("#formT").submit(function () {
+            if ($("#company_name").val() == '') {
+                alert("公司名称不能为空！");
+                return false;
+            }
+            if ($("#name").val() == '') {
+                alert("联系人不能为空！");
+                return false;
+            }
+
+            if ($("#tell").val().length <= 0) {
+                alert("联系电话不能为空！");
+                return false;
+            }
+            if ($("#caltel").val().length <= 0) {
+                alert("请填写包团电话");
+                return false;
+            }
+            if (egrMobileCheck($("#tell").val()) == false) {
+                alert("请填写11位有效手机号码");
+                return false;
+            }
+
+        });
+        /* 手机校验 */
+        function egrMobileCheck(in_mobile) {
+            var reg = new RegExp(/^1[3,5,8]\d{9}$/ig);
+            if (!reg.test(in_mobile)) {
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <div class="write_xq">
+      <a><img src="../images/gongsi/gongsi1.gif" width="260" height="61"></a>
+    </div>
   </div>
+
+  <div class="our_tel">
+    <div class="company_tel"></div>
+    <div class="tuan_guwen">
+      <ul>
+        <li><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank"></a></li>
+        <li><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank"></a></li>
+        <li><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank"></a></li>
+        <li><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank"></a></li>
+        <li><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank"></a></li>
+        <li><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank"></a></li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+
+    <div class="change_reason">
+      <h2>选择理由</h2>
+
+      <p>1.可信赖：</p>
+      <span>国家旅游局指定出境组团社</span>
+
+      <p>2.经验足：</p>
+      <span>十八年专业包团旅游经验。超过1300家企业的不二选择。</span>
+
+      <p>3.一对一：</p>
+      <span>线上即可预订，专属客服一对一随时应对。个性化方案量身定做。</span>
+
+      <p>4.服务优：</p>
+      <span>长期与高级供应商合作，最优价格同时保证最优服务。</span>
+
+      <p>5.高质量：</p>
+      <span>完善的监控机制与淘汰体制。保证出游质量。</span>
+
+      <p>6.辐射广：</p>
+      <span>辐射国家200多个，自有线路1000多条，包揽各大洲大多数景点，超多选择。</span>
+
+    </div>
+  </div>
+
+
+  <div class="new_book hk_new_book" style=" height:100px; ">
+    <h3>企业用户预订动态</h3>
+
+    <ul class="book_list">
+
+      <li>
+        <p><span>[28分钟前]</span>客户 1868***7818 预订了</p>
+        <a href="">香港一日游（维多利亚游轮）品质纯玩团...</a>
+      </li>
+
+      <li>
+        <p><span>[29分钟前]</span>客户 1597***0098 预订了</p>
+        <a href="">港澳五日游（海洋+迪+杜莎+澳门）品质纯...</a>
+      </li>
+      <li>
+        <p><span>[42分钟前]</span>客户 1332***8109 预订了</p>
+        <a href="">港澳四日游（优质诚信品质游）海洋公园...</a>
+      </li>
+      <li>
+        <p><span>[10分钟前]</span>客户 1397***9003 预订了</p>
+        <a href="">香港三日游（海洋+迪士尼+自由）品质纯...</a>
+      </li>
+      <li>
+        <p><span>[46分钟前]</span>客户 1397***9003 预订了</p>
+        <a href="">香港三日游（海洋+迪士尼+自由）品质纯...</a>
+      </li>
+      <li>
+        <p><span>[31分钟前]</span>客户 1348***9143 预订了</p>
+        <a href="">香港三日游（海洋+迪士尼+自由）品质纯...</a>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+
+<div class="side_right fn-right">
+  <div class="big_banner" style="margin:0;">
+    <img src="../images/gongsi/gongsi3.gif">
+  </div>
+
+  <div class="travel_company">
+    <p class="cpy_p">
+      业务范围
+      <span>公司旅游 商务会所新体验</span>
+    </p>
+
+    <div class="company_travels">
+
+      <div class="one_CpyTravel">
+        <img src="../images/gongsi/gongsi4-1.jpg" width="270" height="159">
+
+        <h2>员工奖励旅行</h2>
+        <span>卓越员工奖励旅游将以旅游活动为媒介，通过旅游加深员工团队精神，弘扬企业文化，增强管理者和企业亲和力。</span>
+
+        <p><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank">咨询包团客服&gt;&gt;</a></p>
+      </div>
+
+      <div class="one_CpyTravel">
+        <img src="../images/gongsi/gongsi4-2.jpg" width="270" height="159">
+
+        <h2>团队拓展培训</h2>
+        <span>通过卓越团队拓展培训，增加企业凝聚力，树立团队精神，改善人际关系。形成积极向上的企业氛围，挖掘员工的内在潜能。</span>
+
+        <p><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank">咨询包团客服&gt;&gt;</a></p>
+      </div>
+
+      <div class="one_CpyTravel">
+        <img src="../images/gongsi/gongsi4-3.jpg" width="270" height="159">
+
+        <h2>商务会议旅游</h2>
+        <span>行程策划量身定做。专业团队提供一站式全方位服务。酒店、机票、签证、旅游、门票等一站采购。</span>
+
+        <p><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank">咨询包团客服&gt;&gt;</a></p>
+      </div>
+
+      <div class="one_CpyTravel">
+        <img src="../images/gongsi/gongsi4-4.jpg" width="270" height="159">
+
+        <h2>企业活动年会</h2>
+        <span>提供策划、场馆预定、布置、交通、住宿等全方位服务。无限创意，细节至上，海量成功案例，品牌保证。</span>
+
+        <p><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank">咨询包团客服&gt;&gt;</a></p>
+      </div>
+
+      <div class="clear"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="clear"></div>
+</div>
+<div class="center" style=" margin:10px auto;">
+  <img src="../images/gongsi/gongsi5.jpg" width="990">
+</div>
+<div class="center">
+<div class="channel_side fn-left">
+
+  <div class="dp_business">
+    <h3>企业用户点评</h3>
+
+    <ul class="business_dpList">
+
+      <li>
+        <div class="business_left">
+          <p>满意度</p>
+          <span>99%</span>
+        </div>
+        <div class="business_right">
+          <p><i>2014-04-21</i>周小姐</p>
+          <span> 服务行程都很不错 ...</span>
+        </div>
+
+        <div class="clear"></div>
+      </li>
+      <li>
+        <div class="business_left">
+          <p>满意度</p>
+          <span>98%</span>
+        </div>
+        <div class="business_right">
+          <p><i>2014-05-01</i>徐先生</p>
+          <span> 行程很不错，玩的很好，不过导游的服务还可以更好 ...</span>
+        </div>
+
+        <div class="clear"></div>
+      </li>
+      <li>
+        <div class="business_left">
+          <p>满意度</p>
+          <span>98%</span>
+        </div>
+        <div class="business_right">
+          <p><i>2014-05-05</i>程女士</p>
+          <span>服务非常不错，挺好的...</span>
+        </div>
+
+        <div class="clear"></div>
+      </li>
+      <li>
+        <div class="business_left">
+          <p>满意度</p>
+          <span>100%</span>
+        </div>
+        <div class="business_right">
+          <p><i>2014-07-01</i>程先生</p>
+          <span>非常满意哈 下次有时间旅游再联系你们...</span>
+        </div>
+
+        <div class="clear"></div>
+      </li>
+    </ul>
+  </div>
+  <div class="our_client">
+    <h3>我们的客户</h3>
+    <ul class="client_list">
+      <li><img src="../images/gongsi/0_07.jpg"></li>
+      <li><img src="../images/gongsi/0_09.jpg"></li>
+      <li><img src="../images/gongsi/0_17.jpg"></li>
+      <li><img src="../images/gongsi/0_19.jpg"></li>
+      <li><img src="../images/gongsi/0_27.jpg"></li>
+      <li><img src="../images/gongsi/0_29.jpg"></li>
+      <li><img src="../images/gongsi/0_37.jpg"></li>
+      <li><img src="../images/gongsi/0_39.jpg"></li>
+      <li><img src="../images/gongsi/0_47.jpg"></li>
+      <li><img src="../images/gongsi/0_49.jpg"></li>
+    </ul>
+    <div class="clear"></div>
+  </div>
+
 </div>
 
 <div class="side_right fn-right">
-<img alt="新马5日游" class="all_imgs" id="img_4" src="../images/1395648945.jpg" >
-<div class="travel_sale" style="height:auto; padding-bottom:10px;">
-  <h2 class="travel_Hd">
-    <span class="travel_Hd_type travel_tj_type">特价旅游</span>
-    <span class="travel_Hd_msg">特实惠，真低价！</span>
-  </h2>
-
-  <div class="tj_chujing">
-    <ul class="cj_tj_list cfix">
-      <% @lunbos.each do |q| %>
-          <li>
-            <a target="_blank" href="" title="<%= q.title %>">
-              <%= image_tag q.avatar.url(:index) %>
-            </a>
-
-            <h3><a href="<%= show_tejia_main_path(q) %>"><%= q.title %></a></h3>
-
-            <div class="cj_tj_price">
-              <span><i>￥<em><%= q.price %></em></i>/人起</span>
-              <a href="<%= show_tejia_main_path(q) %>"></a>
-            </div>
-            <div class="cj_tj_yh"><span>限时特价</span></div>
-          </li>
-      <% end %>
-    </ul>
-  </div>
-</div>
-
-<div class="hk_hot">
+<div class="company_hot">
 <h2 class="travel_Hd">
-  <span class="travel_Hd_type travel_gt_type">港澳台热门旅游推荐</span>
-  <span class="travel_Hd_msg">豪华出境 专业无忧！</span>
+            	<span class="float_tel">更多推荐线路请致电：<i>0000-
+
+                  00000000</i></span>
+  <span class="travel_Hd_type" style="padding:0;">当季热卖线路</span>
 </h2>
 
-<div class="newChannel_Bd">
+<div class="newChannel_Bd" style=" width:707px; border-left:none; ">
 
 <div class="newChannel_right">
-<ul class="newChannel_tab">
-  <li class="cur" id="hk_li1">热门港澳台</li>
-  <li id="hk_li2">澳门</li>
-  <li id="hk_li3">香港</li>
-  <li id="hk_li4">台湾</li>
-  <li id="hk_li5">未知</li>
-  <li id="hk_li6">未知</li>
-  <li id="hk_li7">未知</li>
-  <li id="hk_li8" style="margin:0; width:84px;">未知</li>
+
+<div class="newChannel_list visible">
+<ul>
+<li class="lineitem">
+  <div class="img fn-left">
+    <a title="普吉岛SPA五日游(无自费)香港往返" target="_blank" href="/chujing/1720.html">
+      <img alt="" src="../images/gongsi/1-130PQ13023.jpg" style="display: inline;">
+    </a>
+
+    <div class="prd_num">产品编号：SHS1720</div>
+  </div>
+
+  <dl class="info fn-left">
+    <dt class="t">
+      <a title="普吉岛SPA五日游(无自费)香港往返" target="_blank" href="/chujing/1720.html">普吉岛SPA五日游(无自费)香港往返</a>
+    </dt>
+    <dd class="desc">全程不以任何形式推荐最费节目（水上活动除外），太过全程温</dd>
+
+    <dd class="moredesc">
+      <span>
+        满意度：
+        <span class="n">98%</span>
+      </span>
+      <span class="pin">
+        <span class="n">106</span>
+        人点评
+      </span>
+    </dd>
+  </dl>
+
+  <div class="detail fn-right">
+    <span class="sup">双重优惠</span>
+
+    <p class="price">
+      <span class="u">￥</span>
+      <span class="n">4299</span>
+      起
+    </p>
+    <span class="d">
+      <em class="dsnum">50</em>
+    </span>
+    <span class="s">
+      <em class="dsnum">200</em>
+    </span>
+  </div>
+
+  <div class="clear"></div>
+</li>
+<li class="lineitem">
+  <div class="img fn-left">
+    <a title="泰国品质六日游(自费版)香港往返" target="_blank" href="/chujing/1719.html">
+      <img alt="" src="../images/gongsi/1-130PQ13147.jpg" style="display: inline;">
+    </a>
+
+    <div class="prd_num">产品编号：SHS1719</div>
+  </div>
+
+  <dl class="info fn-left">
+    <dt class="t">
+      <a title="泰国品质六日游(自费版)香港往返" target="_blank" href="/chujing/1719.html">泰国品质六日游(自费版)香港往返</a>
+    </dt>
+    <dd class="desc">泰国完全自愿自费，如有强迫一赔十，泰国全程温馨酒店，安全</dd>
+
+    <dd class="moredesc">
+      <span>
+        满意度：
+        <span class="n">98%</span>
+      </span>
+      <span class="pin">
+        <span class="n">106</span>
+        人点评
+      </span>
+    </dd>
+  </dl>
+
+  <div class="detail fn-right">
+    <span class="sup">双重优惠</span>
+
+    <p class="price">
+      <span class="u">￥</span>
+      <span class="n">2299</span>
+      起
+    </p>
+    <span class="d">
+      <em class="dsnum">50</em>
+    </span>
+    <span class="s">
+      <em class="dsnum">200</em>
+    </span>
+  </div>
+
+  <div class="clear"></div>
+</li>
+<li class="lineitem">
+  <div class="img fn-left">
+    <a title="泰国美食五日游(无自费)香港往返" target="_blank" href="/chujing/1718.html">
+      <img alt="" src="../images/gongsi/1-130PQ13342.jpg" style="display: inline;">
+    </a>
+
+    <div class="prd_num">产品编号：SHS1718</div>
+  </div>
+
+  <dl class="info fn-left">
+    <dt class="t">
+      <a title="泰国美食五日游(无自费)香港往返" target="_blank" href="/chujing/1718.html">泰国美食五日游(无自费)香港往返</a>
+    </dt>
+    <dd class="desc">全程不以任何形式推荐最费节目（水上活动除外），太过全程温</dd>
+
+    <dd class="moredesc">
+      <span>
+        满意度：
+        <span class="n">98%</span>
+      </span>
+      <span class="pin">
+        <span class="n">106</span>
+        人点评
+      </span>
+    </dd>
+  </dl>
+
+  <div class="detail fn-right">
+    <span class="sup">双重优惠</span>
+
+    <p class="price">
+      <span class="u">￥</span>
+      <span class="n">2699</span>
+      起
+    </p>
+    <span class="d">
+      <em class="dsnum">50</em>
+    </span>
+    <span class="s">
+      <em class="dsnum">200</em>
+    </span>
+  </div>
+
+  <div class="clear"></div>
+</li>
+<li class="lineitem">
+  <div class="img fn-left">
+    <a title="新马泰完美十日游（无自费）香港往返" target="_blank" href="/chujing/1704.html">
+      <img alt="" src="../images/gongsi/1-130PQ31912.jpg" style="display: inline;">
+    </a>
+
+    <div class="prd_num">产品编号：SHS1704</div>
+  </div>
+
+  <dl class="info fn-left">
+    <dt class="t">
+      <a title="新马泰完美十日游（无自费）香港往返" target="_blank" href="/chujing/1704.html">新马泰完美十日游（无自费）香港往返</a>
+    </dt>
+    <dd class="desc">全程不以任何形式推荐自费节目（水上活动除外）； 泰国酒店当</dd>
+
+    <dd class="moredesc">
+      <span>
+        满意度：
+        <span class="n">98%</span>
+      </span>
+      <span class="pin">
+        <span class="n">106</span>
+        人点评
+      </span>
+    </dd>
+  </dl>
+
+  <div class="detail fn-right">
+    <span class="sup">双重优惠</span>
+
+    <p class="price">
+      <span class="u">￥</span>
+      <span class="n">5499</span>
+      起
+    </p>
+    <span class="d">
+      <em class="dsnum">50</em>
+    </span>
+    <span class="s">
+      <em class="dsnum">200</em>
+    </span>
+  </div>
+
+  <div class="clear"></div>
+</li>
+<li class="lineitem">
+  <div class="img fn-left">
+    <a title="新马缤纷五日游(无自费)香港往返" target="_blank" href="/chujing/1721.html">
+      <img alt="" src="../images/gongsi/1-130PQ12556.jpg" style="display: inline;">
+    </a>
+
+    <div class="prd_num">产品编号：SHS1721</div>
+  </div>
+
+  <dl class="info fn-left">
+    <dt class="t">
+      <a title="新马缤纷五日游(无自费)香港往返" target="_blank" href="/chujing/1721.html">新马缤纷五日游(无自费)香港往返</a>
+    </dt>
+    <dd class="desc">全程不以任何形式推荐自费节目，新马全程温馨酒店，安全舒适</dd>
+
+    <dd class="moredesc">
+      <span>
+        满意度：
+        <span class="n">98%</span>
+      </span>
+      <span class="pin">
+        <span class="n">106</span>
+        人点评
+      </span>
+    </dd>
+  </dl>
+
+  <div class="detail fn-right">
+    <span class="sup">双重优惠</span>
+
+    <p class="price">
+      <span class="u">￥</span>
+      <span class="n">3199</span>
+      起
+    </p>
+    <span class="d">
+      <em class="dsnum">50</em>
+    </span>
+    <span class="s">
+      <em class="dsnum">200</em>
+    </span>
+  </div>
+
+  <div class="clear"></div>
+</li>
+<li class="lineitem">
+  <div class="img fn-left">
+    <a title="马来西亚、新加坡五天品质团" target="_blank" href="/chujing/911.html">
+      <img alt="" src="../images/gongsi/1-130PQA017.jpg" style="display: inline;">
+    </a>
+
+    <div class="prd_num">产品编号：SHS911</div>
+  </div>
+
+  <dl class="info fn-left">
+    <dt class="t">
+      <a title="马来西亚、新加坡五天品质团" target="_blank" href="/chujing/911.html">马来西亚、新加坡五天品质团</a>
+    </dt>
+    <dd class="desc">★ 航班：全程搭乘国泰航空，新进马出不走回头路； ★ 餐食：</dd>
+
+    <dd class="moredesc">
+      <span>
+        满意度：
+        <span class="n">98%</span>
+      </span>
+      <span class="pin">
+        <span class="n">106</span>
+        人点评
+      </span>
+    </dd>
+  </dl>
+
+  <div class="detail fn-right">
+    <span class="sup">双重优惠</span>
+
+    <p class="price">
+      <span class="u">￥</span>
+      <span class="n">3980</span>
+      起
+    </p>
+    <span class="d">
+      <em class="dsnum">50</em>
+    </span>
+    <span class="s">
+      <em class="dsnum">200</em>
+    </span>
+  </div>
+  <div class="clear"></div>
+</li>
 </ul>
-
-<div class="newChannel_list visible" id="hk_div1">
-  <% @recommend.each do |q| %>
-      <ul>
-        <li class="lineitem">
-          <div class="img fn-left">
-            <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
-              <%= image_tag q.avatar.url(:index) %>
-            </a>
-          </div>
-          <dl class="info fn-left">
-            <dt class="t">
-              <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
-                <%= q.title %>
-              </a>
-            </dt>
-            <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
-            <dd class="moredesc">
-              <span>满意度：<span class="n">98%</span></span>
-              <span class="pin"><span class="n">5012</span>人赞</span>
-              <span>更新时间：<span class="n"><%= my_datetime q.created_at %></span></span>
-            </dd>
-          </dl>
-
-          <div class="detail fn-right">
-            <span class="sup">双重优惠</span>
-
-            <p class="price">
-              <span class="u">￥</span>
-              <span class="n"><%= q.price %></span>起
-            </p>
-            <span class="d"><em class="dsnum">50</em></span>
-            <span class="s"><em class="dsnum">200</em></span>
-          </div>
-        </li>
-      </ul>
-  <% end %>
-</div>
-<div class="newChannel_list" id="hk_div2">
-  <% @recommend29.each do |q| %>
-      <ul>
-        <li class="lineitem">
-          <div class="img fn-left">
-            <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
-              <%= image_tag q.avatar.url(:index) %>
-            </a>
-          </div>
-          <dl class="info fn-left">
-            <dt class="t">
-              <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
-                <%= q.title %>
-              </a>
-            </dt>
-            <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
-            <dd class="moredesc">
-              <span>满意度：<span class="n">98%</span></span>
-              <span class="pin"><span class="n">5012</span>人赞</span>
-              <span>更新时间：<span class="n"><%= my_datetime q.created_at %></span></span>
-            </dd>
-          </dl>
-
-          <div class="detail fn-right">
-            <span class="sup">双重优惠</span>
-
-            <p class="price">
-              <span class="u">￥</span>
-              <span class="n"><%= q.price %></span>起
-            </p>
-            <span class="d"><em class="dsnum">50</em></span>
-            <span class="s"><em class="dsnum">200</em></span>
-          </div>
-        </li>
-      </ul>
-  <% end %>
-</div>
-
-<div class="newChannel_list" id="hk_div3">
-  <% @recommend30.each do |q| %>
-      <ul>
-        <li class="lineitem">
-          <div class="img fn-left">
-            <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
-              <%= image_tag q.avatar.url(:index) %>
-            </a>
-          </div>
-          <dl class="info fn-left">
-            <dt class="t">
-              <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
-                <%= q.title %>
-              </a>
-            </dt>
-            <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
-            <dd class="moredesc">
-              <span>满意度：<span class="n">98%</span></span>
-              <span class="pin"><span class="n">5012</span>人赞</span>
-              <span>更新时间：<span class="n"><%= my_datetime q.created_at %></span></span>
-            </dd>
-          </dl>
-
-          <div class="detail fn-right">
-            <span class="sup">双重优惠</span>
-
-            <p class="price">
-              <span class="u">￥</span>
-              <span class="n"><%= q.price %></span>起
-            </p>
-            <span class="d"><em class="dsnum">50</em></span>
-            <span class="s"><em class="dsnum">200</em></span>
-          </div>
-        </li>
-      </ul>
-  <% end %>
-</div>
-
-<div class="newChannel_list" id="hk_div4">
-  <% @recommend31.each do |q| %>
-      <ul>
-        <li class="lineitem">
-          <div class="img fn-left">
-            <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
-              <%= image_tag q.avatar.url(:index) %>
-            </a>
-          </div>
-          <dl class="info fn-left">
-            <dt class="t">
-              <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
-                <%= q.title %>
-              </a>
-            </dt>
-            <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
-            <dd class="moredesc">
-              <span>满意度：<span class="n">98%</span></span>
-              <span class="pin"><span class="n">5012</span>人赞</span>
-              <span>更新时间：<span class="n"><%= my_datetime q.created_at %></span></span>
-            </dd>
-          </dl>
-
-          <div class="detail fn-right">
-            <span class="sup">双重优惠</span>
-
-            <p class="price">
-              <span class="u">￥</span>
-              <span class="n"><%= q.price %></span>起
-            </p>
-            <span class="d"><em class="dsnum">50</em></span>
-            <span class="s"><em class="dsnum">200</em></span>
-          </div>
-        </li>
-      </ul>
-  <% end %>
-</div>
-
-<div class="newChannel_list" id="hk_div5">
-  <% @recommend32.each do |q| %>
-      <ul>
-        <li class="lineitem">
-          <div class="img fn-left">
-            <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
-              <%= image_tag q.avatar.url(:index) %>
-            </a>
-          </div>
-          <dl class="info fn-left">
-            <dt class="t">
-              <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
-                <%= q.title %>
-              </a>
-            </dt>
-            <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
-            <dd class="moredesc">
-              <span>满意度：<span class="n">99%</span></span>
-              <span class="pin"><span class="n">5012</span>人赞</span>
-              <span>更新时间：<span class="n"><%= my_datetime q.created_at %></span></span>
-            </dd>
-          </dl>
-
-          <div class="detail fn-right">
-            <span class="sup">双重优惠</span>
-
-            <p class="price">
-              <span class="u">￥</span>
-              <span class="n"><%= q.price %></span>起
-            </p>
-            <span class="d"><em class="dsnum">50</em></span>
-            <span class="s"><em class="dsnum">200</em></span>
-          </div>
-        </li>
-      </ul>
-  <% end %>
-</div>
-
-<div class="newChannel_list" id="hk_div6">
-  <% @recommend33.each do |q| %>
-      <ul>
-        <li class="lineitem">
-          <div class="img fn-left">
-            <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
-              <%= image_tag q.avatar.url(:index) %>
-            </a>
-          </div>
-          <dl class="info fn-left">
-            <dt class="t">
-              <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
-                <%= q.title %>
-              </a>
-            </dt>
-            <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
-            <dd class="moredesc">
-              <span>满意度：<span class="n">98%</span></span>
-              <span class="pin"><span class="n">5012</span>人赞</span>
-              <span>更新时间：<span class="n"><%= my_datetime q.created_at %></span></span>
-            </dd>
-          </dl>
-
-          <div class="detail fn-right">
-            <span class="sup">双重优惠</span>
-
-            <p class="price">
-              <span class="u">￥</span>
-              <span class="n"><%= q.price %></span>起
-            </p>
-            <span class="d"><em class="dsnum">50</em></span>
-            <span class="s"><em class="dsnum">200</em></span>
-          </div>
-        </li>
-      </ul>
-  <% end %>
-</div>
-
-<div class="newChannel_list" id="hk_div7">
-  <% @recommend34.each do |q| %>
-      <ul>
-        <li class="lineitem">
-          <div class="img fn-left">
-            <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
-              <%= image_tag q.avatar.url(:index) %>
-            </a>
-          </div>
-          <dl class="info fn-left">
-            <dt class="t">
-              <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
-                <%= q.title %>
-              </a>
-            </dt>
-            <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
-            <dd class="moredesc">
-              <span>满意度：<span class="n">98%</span></span>
-              <span class="pin"><span class="n">5012</span>人赞</span>
-              <span>更新时间：<span class="n"><%= my_datetime q.created_at %></span></span>
-            </dd>
-          </dl>
-
-          <div class="detail fn-right">
-            <span class="sup">双重优惠</span>
-
-            <p class="price">
-              <span class="u">￥</span>
-              <span class="n"><%= q.price %></span>起
-            </p>
-            <span class="d"><em class="dsnum">50</em></span>
-            <span class="s"><em class="dsnum">200</em></span>
-          </div>
-        </li>
-      </ul>
-  <% end %>
-</div>
-
-<div class="newChannel_list" id="hk_div8">
-  <% @recommend35.each do |q| %>
-      <ul>
-        <li class="lineitem">
-          <div class="img fn-left">
-            <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
-              <%= image_tag q.avatar.url(:index) %>
-            </a>
-          </div>
-          <dl class="info fn-left">
-            <dt class="t">
-              <a title="<%= q.title %>" target="_blank" href="<%= gangao_destination_one_path(q) %>">
-                <%= q.title %>
-              </a>
-            </dt>
-            <dd class="desc"><%= truncate_u(q.description, 20).html_safe %></dd>
-            <dd class="moredesc">
-              <span>满意度：<span class="n">99%</span></span>
-              <span class="pin"><span class="n">5012</span>人赞</span>
-              <span>更新时间：<span class="n"><%= my_datetime q.created_at %></span></span>
-            </dd>
-          </dl>
-
-          <div class="detail fn-right">
-            <span class="sup">双重优惠</span>
-
-            <p class="price">
-              <span class="u">￥</span>
-              <span class="n"><%= q.price %></span>起
-            </p>
-            <span class="d"><em class="dsnum">50</em></span>
-            <span class="s"><em class="dsnum">200</em></span>
-          </div>
-        </li>
-      </ul>
-  <% end %>
-</div>
-
 </div>
 </div>
-
-<div class="big_banner">
-  <img src="../images/cj_banner.jpg" data-original="/pics/cj_banner.jpg" style="display: inline;">
+<div class="clear"></div>
 </div>
-
-<div class="tuan_hot dbfen">
-  <h2 class="travel_Hd">
-    <span class="travel_Hd_type travel_gt_type">跟团游热门地区</span>
-    <span class="travel_Hd_msg">精挑细选，让您轻松出游！</span>
-  </h2>
-
-  <div class="newChannel_Bd">
-    <div class="newChannel_right">
-      <ul class="newChannel_tab">
-        <li class="cur" id="tu_li1">香港</li>
-        <li id="tu_li2">澳门</li>
-        <li id="tu_li3">台湾</li>
-        <li id="tu_li4">未知</li>
-        <li id="tu_li5">未知</li>
-        <li id="tu_li6" style="margin:0;">未知</li>
-      </ul>
-
-      <div class="newChannel_list visible" id="tu_div1">
-        <% @gentuan29.each do |q| %>
-            <ul>
-              <li>
-                                <span class="dbfen_price">
-                                    <span class="u">￥</span>
-                                    <span class="n"><%= q.price %></span>
-                                    起
-                                </span>
-                <a href="<%= gentuan_destination_one_path(q) %>"><%= q.title %>（CI）</a>
-              </li>
-
-
-            </ul>
-            <div class="clear"></div>
-
-            <div class="showLine">
-              <a href="<%= gentuan_destination_one_path(q) %>">
-                <%= image_tag q.avatar.url(:index) %>
-              </a>
-
-              <div>
-                <p><a href="<%= gentuan_destination_one_path(q) %>"><%= q.title %></a></p>
-
-                <p>
-                  <span><b>￥<%= q.price %></b>起</span>
-                  <del>原价：11799</del>
-                </p>
-              </div>
-
-            </div>
-        <% end %>
-      </div>
-
-      <div class="newChannel_list" id="tu_div2">
-        <% @gentuan30.each do |q| %>
-            <ul>
-              <li>
-                                <span class="dbfen_price">
-                                    <span class="u">￥</span>
-                                    <span class="n"><%= q.price %></span>
-                                    起
-                                </span>
-                <a href="<%= gentuan_destination_one_path(q) %>"><%= q.title %>（CI）</a>
-              </li>
-
-
-            </ul>
-            <div class="clear"></div>
-
-            <div class="showLine">
-              <a href="<%= gentuan_destination_one_path(q) %>">
-                <%= image_tag q.avatar.url(:index) %>
-              </a>
-
-              <div>
-                <p><a href="<%= gentuan_destination_one_path(q) %>"><%= q.title %></a></p>
-
-                <p>
-                  <span><b>￥<%= q.price %></b>起</span>
-                  <del>原价：11799</del>
-                </p>
-              </div>
-
-            </div>
-        <% end %>
-      </div>
-
-      <div class="newChannel_list" id="tu_div3">
-        <% @gentuan31.each do |q| %>
-            <ul>
-              <li>
-                                <span class="dbfen_price">
-                                    <span class="u">￥</span>
-                                    <span class="n"><%= q.price %></span>
-                                    起
-                                </span>
-                <a href="<%= gentuan_destination_one_path(q) %>"><%= q.title %>（CI）</a>
-              </li>
-
-
-            </ul>
-            <div class="clear"></div>
-
-            <div class="showLine">
-              <a href="<%= gentuan_destination_one_path(q) %>">
-                <%= image_tag q.avatar.url(:index) %>
-              </a>
-
-              <div>
-                <p><a href="<%= gentuan_destination_one_path(q) %>"><%= q.title %></a></p>
-
-                <p>
-                  <span><b>￥<%= q.price %></b>起</span>
-                  <del>原价：11799</del>
-                </p>
-              </div>
-
-            </div>
-        <% end %>
-      </div>
-
-      <div class="newChannel_list" id="tu_div4">
-        <% @gentuan32.each do |q| %>
-            <ul>
-              <li>
-                                <span class="dbfen_price">
-                                    <span class="u">￥</span>
-                                    <span class="n"><%= q.price %></span>
-                                    起
-                                </span>
-                <a href="<%= gentuan_destination_one_path(q) %>"><%= q.title %>（CI）</a>
-              </li>
-
-
-            </ul>
-            <div class="clear"></div>
-
-            <div class="showLine">
-              <a href="<%= gentuan_destination_one_path(q) %>">
-                <%= image_tag q.avatar.url(:index) %>
-              </a>
-
-              <div>
-                <p><a href="<%= gentuan_destination_one_path(q) %>"><%= q.title %></a></p>
-
-                <p>
-                  <span><b>￥<%= q.price %></b>起</span>
-                  <del>原价：11799</del>
-                </p>
-              </div>
-
-            </div>
-        <% end %>
-      </div>
-
-      <div class="newChannel_list" id="tu_div5">
-        <% @gentuan33.each do |q| %>
-            <ul>
-              <li>
-                                <span class="dbfen_price">
-                                    <span class="u">￥</span>
-                                    <span class="n"><%= q.price %></span>
-                                    起
-                                </span>
-                <a href="<%= gentuan_destination_one_path(q) %>"><%= q.title %>（CI）</a>
-              </li>
-
-
-            </ul>
-            <div class="clear"></div>
-
-            <div class="showLine">
-              <a href="<%= gentuan_destination_one_path(q) %>">
-                <%= image_tag q.avatar.url(:index) %>
-              </a>
-
-              <div>
-                <p><a href="#"><%= q.title %></a></p>
-
-                <p>
-                  <span><b>￥<%= q.price %></b>起</span>
-                  <del>原价：11799</del>
-                </p>
-              </div>
-
-            </div>
-        <% end %>
-      </div>
-
-      <div class="newChannel_list" id="tu_div6">
-
-      </div>
-    </div>
-    <div class="clear"></div>
-  </div>
-</div>
-
-
-<div class="ziyou_hot dbfen">
-  <h2 class="travel_Hd">
-    <span class="travel_Hd_type travel_gt_type">港澳台自由行</span>
-    <span class="travel_Hd_msg">机票+酒店，行程自由安排！</span>
-  </h2>
-
-  <div class="newChannel_Bd">
-    <div class="newChannel_right">
-      <ul class="newChannel_tab">
-        <li class="cur" id="zy_li1">香港</li>
-        <li id="zy_li2">澳门</li>
-        <li id="zy_li3">台湾</li>
-        <li id="zy_li4">未知</li>
-        <li id="zy_li5" style="margin:0; width:139px;">未知</li>
-      </ul>
-
-
-      <div class="newChannel_list visible" id="zy_div1">
-        <% @freeline29.each do |q| %>
-            <ul>
-              <li>
-                <span class="dbfen_price">
-                  <span class="u">￥</span><span class="n"><%= q.price %></span>起
-                </span>
-                <a href="<%= ziyouxing_destination_one_path(q) %>"><%= q.title %></a>
-              </li>
-            </ul>
-            <div class="showLine">
-              <a href="<%= ziyouxing_destination_one_path(q) %>">
-                <%= image_tag q.avatar.url(:index) %>
-              </a>
-
-              <div>
-                <p><a href="<%= ziyouxing_destination_one_path(q) %>"><%= q.title %></a></p>
-
-                <p>
-                  <span><b>￥<%= q.price %></b>起</span>
-                  <del>原价：16400</del>
-                </p>
-              </div>
-            </div>
-        <% end %>
-      </div>
-
-
-      <div class="newChannel_list" id="zy_div2">
-        <% @freeline30.each do |q| %>
-            <ul>
-              <li>
-                <span class="dbfen_price">
-                  <span class="u">￥</span><span class="n"><%= q.price %></span>起
-                </span>
-                <a href="<%= ziyouxing_destination_one_path(q) %>"><%= q.title %></a>
-              </li>
-            </ul>
-            <div class="showLine">
-              <a href="<%= ziyouxing_destination_one_path(q) %>">
-                <%= image_tag q.avatar.url(:index) %>
-              </a>
-
-              <div>
-                <p><a href="<%= ziyouxing_destination_one_path(q) %>"><%= q.title %></a></p>
-
-                <p>
-                  <span><b>￥<%= q.price %></b>起</span>
-                  <del>原价：16400</del>
-                </p>
-              </div>
-            </div>
-        <% end %>
-      </div>
-
-      <div class="newChannel_list" id="zy_div3">
-        <% @freeline31.each do |q| %>
-            <ul>
-              <li>
-                <span class="dbfen_price">
-                  <span class="u">￥</span><span class="n"><%= q.price %></span>起
-                </span>
-                <a href="<%= ziyouxing_destination_one_path(q) %>"><%= q.title %></a>
-              </li>
-            </ul>
-            <div class="showLine">
-              <a href="<%= ziyouxing_destination_one_path(q) %>">
-                <%= image_tag q.avatar.url(:index) %>
-              </a>
-
-              <div>
-                <p><a href="<%= ziyouxing_destination_one_path(q) %>"><%= q.title %></a></p>
-
-                <p>
-                  <span><b>￥<%= q.price %></b>起</span>
-                  <del>原价：16400</del>
-                </p>
-              </div>
-            </div>
-        <% end %>
-      </div>
-
-      <div class="newChannel_list" id="zy_div4">
-        <% @freeline32.each do |q| %>
-            <ul>
-              <li>
-                <span class="dbfen_price">
-                  <span class="u">￥</span><span class="n"><%= q.price %></span>起
-                </span>
-                <a href="<%= ziyouxing_destination_one_path(q) %>"><%= q.title %></a>
-              </li>
-            </ul>
-            <div class="showLine">
-              <a href="<%= ziyouxing_destination_one_path(q) %>">
-                <%= image_tag q.avatar.url(:index) %>
-              </a>
-
-              <div>
-                <p><a href="<%= ziyouxing_destination_one_path(q) %>"><%= q.title %></a></p>
-
-                <p>
-                  <span><b>￥<%= q.price %></b>起</span>
-                  <del>原价：16400</del>
-                </p>
-              </div>
-            </div>
-        <% end %>
-      </div>
-
-      <div class="newChannel_list" id="zy_div5">
-        <% @freeline33.each do |q| %>
-            <ul>
-              <li>
-                <span class="dbfen_price">
-                  <span class="u">￥</span><span class="n"><%= q.price %></span>起
-                </span>
-                <a href="<%= ziyouxing_destination_one_path(q) %>"><%= q.title %></a>
-              </li>
-            </ul>
-            <div class="showLine">
-              <a href="<%= ziyouxing_destination_one_path(q) %>">
-                <%= image_tag q.avatar.url(:index) %>
-              </a>
-
-              <div>
-                <p><a href="<%= ziyouxing_destination_one_path(q) %>"><%= q.title %></a></p>
-
-                <p>
-                  <span><b>￥<%= q.price %></b>起</span>
-                  <del>原价：16400</del>
-                </p>
-              </div>
-            </div>
-        <% end %>
-      </div>
-    </div>
-    <div class="clear"></div>
-  </div>
-</div>
-
 </div>
 </div>
 <div class="clear"></div>

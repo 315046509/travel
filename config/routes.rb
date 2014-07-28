@@ -47,27 +47,20 @@ Travel::Application.routes.draw do
       get 'ziyouxing'
     end
   end
+  # 公司旅游
   resources :destination_five do
-    member do
-      get 'gangao'
-      get 'gentuan'
-      get 'ziyouxing'
+    collection do
+      post 'user_create'
     end
   end
-  resources :destination_six do
-    member do
-      get 'gangao'
-      get 'gentuan'
-      get 'ziyouxing'
-    end
-  end
-  resources :destination_seven do
-    member do
-      get 'gangao'
-      get 'gentuan'
-      get 'ziyouxing'
-    end
-  end
+
+  # 泰国旅游
+  resources :destination_six
+
+  # 香港印象
+  resources :destination_seven
+
+  # 酒店管理
   resources :destination_eight do
     member do
       get 'gangao'
@@ -138,7 +131,13 @@ Travel::Application.routes.draw do
       # 跟团
       resources :three_freelines
     end
-
+    # 公司旅游
+    resources :companies do
+      collection do
+        get 'hotline'
+        get 'customized_packages'
+      end
+    end
     # 酒店
     resources :hotels do
       # 酒店

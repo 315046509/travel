@@ -2,7 +2,7 @@ class OneCity < ActiveRecord::Base
   scope :order_ct_desc, lambda { order("created_at DESC") }
   validates :title, :presence => {:message => "城市名称不能为空"}
 
-  QUESTION_CATEGORYS = [["未分类", 0], ["港澳旅游", 1], ["出境旅游", 2], ["国内旅游", 3], ["长春旅游", 4], ["泰国旅游", 5]]
+  QUESTION_CATEGORYS = [["未分类", 0], ["港澳旅游", 1], ["出境旅游", 2], ["国内旅游", 3], ["长春旅游", 4]]
 
   has_many :exithots
   has_many :domestics
