@@ -1097,7 +1097,7 @@ _ background-image: none; /* IE6 */ }
 .qz_info{ margin-left:15px; padding-bottom:15px; }
 .qz_img{ float:left; }
 .qz_img img{ width:120px; height:74px; }
-.qz_msg{ float:left; margin-left:15px; width:540px; }
+.qz_msg{ float:left; margin-left:15px; width:650px; }
 .qz_msg p{ height:23px; line-height:23px; }
 .qz_msg p i{ float:right; font-style:normal; }
 .qz_msg p em{ color:#ff6900; } 

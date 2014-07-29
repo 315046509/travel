@@ -12,11 +12,13 @@ Travel::Application.routes.draw do
       get 'show_chujing'
       get 'show_domestic'
       get 'show_raider'
+      get 'visa_show'
     end
     collection do
       post 'user_create'
       post 'login_check'
       get 'check_login'
+      get 'visa'
     end
   end
   resources :destination_one do
@@ -138,11 +140,17 @@ Travel::Application.routes.draw do
         get 'customized_packages'
       end
     end
+    # 泰国旅游
+    resources :taiguos
+
     # 酒店
     resources :hotels do
       # 酒店
       resources :occupancy_hotels
     end
+
+    # 签证
+    resources :visas
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -27,19 +27,59 @@
     </div>
     <ul class="toolNav">
       <li id="itineraries">
-        <a>港澳旅游</a>
+        <a href="<%= root_path %>">旅游路线</a>
       </li>
       <li id="travelGuide">
-        <a>出境旅游</a>
+        <a class="">旅游攻略</a>
+        <ul class="subNav" style="display: none;">
+          <% @gonglues.each do |q| %>
+              <li>
+                <a href="<%= show_raider_main_path(q) %>"><%= q.title %></a>
+              </li>
+          <% end %>
+        </ul>
       </li>
       <li id="touristAttractions">
-        <a>国内旅游</a>
+        <a class="">旅游景点</a>
+        <ul class="subNav" style="display: none;">
+          <li>
+            <h6><a>国内</a></h6>
+            <a href="/photo/beijing/" target="_blank" class="">北京</a>
+          </li>
+
+          <li>
+            <h6><a>亚洲</a></h6>
+            <a href="/photo/riben/" target="_blank" class="">日本</a>
+          </li>
+
+          <li>
+            <h6><a>欧洲</a></h6>
+            <a href="/photo/faguo/" target="_blank" class="">法国</a>
+          </li>
+          <li>
+            <h6><a>非洲</a></h6>
+            <a href="/photo/yiselie/" target="_blank" class="">以色列</a>
+          </li>
+          <li>
+            <h6><a>美洲</a></h6>
+            <a href="/photo/moxige/" target="_blank" class="">墨西哥</a>
+          </li>
+        </ul>
       </li>
       <li id="landscapePictures">
         <a>风景图片</a>
       </li>
       <li id="businessTravelServices">
-        <a>商务服务</a>
+        <a href="<%= visa_main_index_path %>" class="">商务服务</a>
+        <ul class="subNav" style="display: none;">
+          <li>
+            <a>亚洲签证</a>
+            <a>欧洲签证</a>
+            <a>非洲签证</a>
+            <a>澳洲签证</a>
+            <a>美洲签证</a>
+          </li>
+        </ul>
       </li>
       <li id="conferenceTourism">
         <a href="<%= destination_eight_index_path %>">酒店展示</a>

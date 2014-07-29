@@ -9,29 +9,26 @@
       <a href="#">Home</a> <span class="divider">/</span>
     </li>
     <li>
-      <a href="<%= admin_one_cities_path %>"> 世界游管理</a> <span class="divider">/</span>
+      <a href="<%= admin_taiguos_path %>">泰国旅游管理</a> <span class="divider">/</span>
     </li>
     <li>
-      <a href="<%= hotline_admin_companies_path %>">公司旅游路线管理</a> <span class="divider">/</span>
-    </li>
-    <li>
-      新建公司旅游路线
+      新建泰国旅游
     </li>
   </ul>
 </div>
 <div class="row-fluid sortable ui-sortable">
   <div class="box span12">
     <div class="box-header well" data-original-title="">
-      <h2><i class="icon-edit"></i> 新建公司旅游路线</h2>
+      <h2><i class="icon-edit"></i> 新建泰国旅游</h2>
     </div>
     <div class="box-content">
-      <%= form_for(:hotline, :url => admin_companies_path, :method => :post, :html => {:id => "verifytitle"}) do |f| %>
-          <legend>新建公司旅游路线</legend>
+      <%= form_for(:taiguo, :url => admin_taiguos_path, :method => :post, :html => {:id => "verifytitle"}) do |f| %>
+          <legend>新建泰国旅游</legend>
           <h1><%= f.label "旅游标题：" %></h1>
           <%= f.text_field :title %>
           <br/>
 
-          <h1><%= f.label "包团价格：" %></h1>
+          <h1><%= f.label "旅游价格：" %></h1>
           <%= f.text_field :price %>
           <br/>
 
@@ -76,32 +73,32 @@
         $(function () {
             $("#verifytitle").validate({
                 rules: {
-                    "hotline[title]": {
+                    "taiguo[title]": {
                         required: true
                     },
-                    "hotline[price]": {
+                    "taiguo[price]": {
                         required: true
                     },
-                    "hotline[avatar]": {
+                    "taiguo[avatar]": {
                         required: true,
                         accept: "jpg|png"
                     },
-                    "hotline[description]": {
+                    "taiguo[description]": {
                         required: true
                     }
                 },
                 messages: {
-                    "hotline[title]": {
+                    "taiguo[title]": {
                         required: "“请填写标题”"
                     },
-                    "hotline[price]": {
+                    "taiguo[price]": {
                         required: "“请填写价格”"
                     },
-                    "hotline[avatar]": {
+                    "taiguo[avatar]": {
                         required: "“请上传图片”",
                         accept: "图片类型必须是png或jpg"
                     },
-                    "hotline[description]": {
+                    "taiguo[description]": {
                         required: "“请填写内容”"
                     }
                 },

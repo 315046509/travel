@@ -1,10 +1,11 @@
 <%= render "comment/hear" %>
 <div class="banner"><img src="../images/taiguo/banner.jpg" width="990" height="260"></div>
 <div class="linejpg">
-  <a href="/chujing/4763.html" target="_blank"><img src="../images/taiguo/tgline.jpg" width="990" height="48"></a></div>
+  <a><img src="../images/taiguo/tgline.jpg" width="990" height="48"></a></div>
 <div class="main_box">
   <div class="hot_line">
-    <dl class="line_l"><a href="/chujing/4763.html" target="_blank"><img src="../images/taiguo/hot_line.jpg" width="639"></a>
+    <dl class="line_l">
+      <a><img src="../images/taiguo/hot_line.jpg" width="639"></a>
     </dl>
     <dl class="line_r">
       <dt>
@@ -12,116 +13,36 @@
       <dd>
         <p class="line_t">推荐理由</p>
 
-        <p class="line_d">由于次价格由卓越网站进行补贴，爆款冲量，不计成本。往返豪华航班，全程五晚精品酒店！目前位置，已经超过3000人选择这个惠旅团！真真正正完全五自费！数量有限！机会瞬息万变！</p>
+        <p class="line_d">爆款冲量，不计成本。往返豪华航班，全程五晚精品酒店！目前位置，已经超过3000人选择这个惠旅团！真真正正完全无自费！数量有限！机会瞬息万变！</p>
 
-        <p class="hot_tel">旅游热线：<span> 0755-86178888</span></p>
+        <p class="hot_tel">旅游热线：<span> 0000-00000000</span></p>
       </dd>
       <div class="price">￥<span>1988</span></div>
-      <span class="buy"><a href="/chujing/4763.html" target="_blank">立即抢购</a></span>
+      <span class="buy"><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank">热线咨询</a></span>
     </dl>
   </div>
   <div class="clearfloat"></div>
-  <div class="path"><p>热门线路推荐</p><span><a href="/chujing/taiguo/" target="_blank">更多路线&gt;&gt;</a></span></div>
+  <div class="path"><span><h2>热门线路推荐</h2></span></div>
   <div class="main2">
     <ul>
-      <li>
-        <a href="/chujing/4847.html" target="_blank"><img src="../images/taiguo/1-14032G51J2.jpg" width="322" height="223"></a>
+      <% @hl.each do |q| %>
+          <li>
+            <%= image_tag q.avatar.url(:index) %>
 
-        <p class="line-t"><a href="/chujing/4847.html" target="_blank">【深起港止】最美普吉椰子岛五天四晚豪华之旅</a></p>
+            <p class="line-t"><a href="/chujing/4847.html" target="_blank"><%= q.title %></a></p>
 
-        <div class="line-price">
-          <span class="price_1"><i>￥</i>3380</span>
-          <span class="price_2"><a href="/chujing/4847.html" target="_blank">立即抢购</a></span>
-        </div>
-      </li>
-      <li>
-        <a href="/chujing/1704.html" target="_blank"><img src="../images/taiguo/1-130PQ31912.jpg" width="322" height="223"></a>
-
-        <p class="line-t"><a href="/chujing/1704.html" target="_blank">【深起港止】新马泰完美十日游（无自费）香港往返</a></p>
-
-        <div class="line-price">
-          <span class="price_1"><i>￥</i>5499</span>
-          <span class="price_2"><a href="/chujing/1704.html" target="_blank">立即抢购</a></span>
-        </div>
-      </li>
-      <li>
-        <a href="/chujing/1718.html" target="_blank"><img src="../images/taiguo/1-130PQ13342.jpg" width="322" height="223"></a>
-
-        <p class="line-t"><a href="/chujing/1718.html" target="_blank">【深起港止】泰国美食五日游(无自费)香港往返</a></p>
-
-        <div class="line-price">
-          <span class="price_1"><i>￥</i>2699</span>
-          <span class="price_2"><a href="/chujing/1718.html" target="_blank">立即抢购</a></span>
-        </div>
-      </li>
-      <li>
-        <a href="/chujing/1719.html" target="_blank"><img src="../images/taiguo/1-130PQ13147.jpg" width="322" height="223"></a>
-
-        <p class="line-t"><a href="/chujing/1719.html" target="_blank">【深起港止】泰国品质六日游(自费版)香港往返</a></p>
-
-        <div class="line-price">
-          <span class="price_1"><i>￥</i>2299</span>
-          <span class="price_2"><a href="/chujing/1719.html" target="_blank">立即抢购</a></span>
-        </div>
-      </li>
-      <li>
-        <a href="/chujing/2128.html" target="_blank"><img src="../images/taiguo/1-130PG60512.jpg" width="322" height="223"></a>
-
-        <p class="line-t"><a href="/chujing/2128.html" target="_blank">【深起港止】泰尚品动情六日深度豪华游-浪漫旅游线路</a></p>
-
-        <div class="line-price">
-          <span class="price_1"><i>￥</i>2680</span>
-          <span class="price_2"><a href="/chujing/2128.html" target="_blank">立即抢购</a></span>
-        </div>
-      </li>
-      <li>
-        <a href="/chujing/4715.html" target="_blank"><img src="../images/taiguo/366-140211092353.jpg" width="322" height="223"></a>
-
-        <p class="line-t"><a href="/chujing/4715.html" target="_blank">【深起港止】泰国完美六日游·三钻 深起港止2免1</a></p>
-
-        <div class="line-price">
-          <span class="price_1"><i>￥</i>2899</span>
-          <span class="price_2"><a href="/chujing/4715.html" target="_blank">立即抢购</a></span>
-        </div>
-      </li>
-      <li>
-        <a href="/chujing/4283.html" target="_blank"><img src="../images/taiguo/366-13112QPI3.png" width="322" height="223"></a>
-
-        <p class="line-t"><a href="/chujing/4283.html" target="_blank">【深起港止】纯玩泰国无购物无自费五星6天豪华团</a></p>
-
-        <div class="line-price">
-          <span class="price_1"><i>￥</i></span>
-          <span class="price_2"><a href="/chujing/4283.html" target="_blank">立即抢购</a></span>
-        </div>
-      </li>
-      <li>
-        <a href="/chujing/4284.html" target="_blank"><img src="../images/taiguo/366-13112QPT3.jpg" width="322" height="223"></a>
-
-        <p class="line-t"><a href="/chujing/4284.html" target="_blank">【深起港止】金品质泰国海洋之梦无自费六天美食团</a></p>
-
-        <div class="line-price">
-          <span class="price_1"><i>￥</i>4199</span>
-          <span class="price_2"><a href="/chujing/4284.html" target="_blank">立即抢购</a></span>
-        </div>
-      </li>
-      <li>
-        <a href="/chujing/4285.html" target="_blank"><img src="../images/taiguo/366-13112GJ411.jpg" width="322" height="223"></a>
-
-        <p class="line-t"><a href="/chujing/4285.html" target="_blank">【深起港止】【耀泰钻品-A线】曼谷芭提雅六天透明纯玩团</a></p>
-
-        <div class="line-price">
-          <span class="price_1"><i>￥</i>4680</span>
-          <span class="price_2"><a href="/chujing/4285.html" target="_blank">立即抢购</a></span>
-        </div>
-      </li>
-
+            <div class="line-price">
+              <span class="price_1"><i>￥</i><%= q.price %></span>
+              <span class="price_2"><a href="http://wpa.qq.com/msgrd?v=3&uin=315046509&site=qq&menu=yes" target="_blank">热线咨询</a></span>
+            </div>
+          </li>
+      <% end %>
     </ul>
   </div>
 </div>
 <div class="clearfloat"></div>
 <div class="main_box">
-  <div class="path" style="margin-top:0px;"><p>景点风情介绍</p>
-    <span><a href="/chujing/taiguo/" target="_blank">更多路线&gt;&gt;</a></span></div>
+  <div class="path" style="margin-top:0px;"><p>景点风情介绍</p></div>
   <div class="introduce_box">
     <div class="introduce_center">
       <div class="introduce_center_left">
@@ -132,7 +53,7 @@
         </div>
       </div>
       <div class="introduce_pic">
-        <a href="/photo/4589.html" target="_blank"><img src="../images/taiguo/introduce_pic.jpg" width="710" height="264"></a>
+        <a><img src="../images/taiguo/introduce_pic.jpg" width="710" height="264"></a>
       </div>
     </div>
     <div class="introduce_main">
@@ -144,7 +65,7 @@
 
             <p>普吉岛---<span>幽蓝的海</span></p>
           </div>
-          <a target="_blank" href="http://www.xkcits.com/photo/5189.html" class="Towhere_jieshao" style="display: none;">
+          <a class="Towhere_jieshao" style="display: none;">
             <span class="Towhere_title"></span>
             <span class="Towhere_msg">普吉岛(Phuket Island)，泰国南部岛屿，位于泰国南部马来半岛西海岸外的安达曼海(Andaman Sea)，是泰国最大的海岛，也是泰国最小的一个府。</span>
           </a>
@@ -156,7 +77,7 @@
 
             <p class="Towhere_img_p1" style="top:267px; left:140px;">苏梅岛---<span>纯净自然</span></p>
           </div>
-          <a target="_blank" href="http://www.xkcits.com/photo/2360.html" class="Towhere_jieshao" style="display: none;">
+          <a class="Towhere_jieshao" style="display: none;">
             <span class="Towhere_title"></span>
             <span class="Towhere_msg">苏梅岛距曼谷南方相隔约560公里，20年前，没有游人来打搅这里茂密的椰树林和安静的小渔村。直到几个西方游客搭乘从曼谷来此运椰子的木船，苏梅岛拥有美丽海滩的消息才不胫而走...</span>
           </a>
@@ -167,7 +88,7 @@
 
             <p>曼谷---<span>体验水上市场</span></p>
           </div>
-          <a target="_blank" href="http://www.xkcits.com/photo/5167.html" class="Towhere_jieshao" style="display: none;">
+          <a class="Towhere_jieshao" style="display: none;">
             <span class="Towhere_title"></span>
             <span class="Towhere_msg">曼谷位于昭披耶河东岸，近暹罗湾，为泰国的首都和最大城市，为泰国政治、经济、贸易、交通、文化、科技、教育等各方面的中心。曼谷市内的水上交通极其的繁忙，使曼谷有“东方威尼斯...</span>
           </a>
@@ -178,7 +99,7 @@
 
             <p>芭提雅---<span>与鱼儿相约 </span></p>
           </div>
-          <a target="_blank" href="http://www.xkcits.com/photo/5164.html" class="Towhere_jieshao" style="display: none;">
+          <a class="Towhere_jieshao" style="display: none;">
             <span class="Towhere_title"></span>
             <span class="Towhere_msg">位于曼谷南部不远的芭堤雅，素以阳光、沙滩、海鲜、人妖表演名扬世界。特别是距离芭提雅9公里处的珊瑚岛，是芭堤雅海滩外最大的岛，岛的四周有很多沙滩，沙白细棉，水清见底...</span>
           </a>
@@ -189,7 +110,7 @@
 
             <p>华欣---<span>海天一色</span></p>
           </div>
-          <a target="_blank" href="http://www.xkcits.com/photo/5166.html" class="Towhere_jieshao" style="display: none;">
+          <a class="Towhere_jieshao" style="display: none;">
             <span class="Towhere_title"></span>
             <span class="Towhere_msg">华欣(英语：Hua Hin，泰语：หัวหิน)，泰国中部海滨小镇。是泰国最传统的海滨胜地，虽然知名度比不上帕塔亚和普吉岛等热点旅游地区，但其是泰国最早成形的一处海滨度假胜地隶属泰...</span>
           </a>
@@ -200,7 +121,7 @@
 
             <p>清迈---<span>泰北玫瑰</span></p>
           </div>
-          <a class="Towhere_jieshao" style="display: none;" href="http://www.xkcits.com/photo/5165.html" target="_blank">
+          <a class="Towhere_jieshao" style="display: none;">
             <span class="Towhere_title"></span>
             <span class="Towhere_msg">清迈是泰国第二大城市，也是泰国北部政治、经济、文化的中心，其发达程度仅次於首都曼谷。清迈市内风景秀丽，遍植花草，尤以玫瑰花最为著名，有“北国玫瑰”的雅称。</span>
           </a>

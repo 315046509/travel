@@ -92,6 +92,7 @@ class MainController < ApplicationController
     @gonglues = Raider.order_ct_desc.page(params[:page]).per(8)
 
   end
+
   # 特价显示页
   def show_tejia
     # 最新公告
@@ -157,10 +158,51 @@ class MainController < ApplicationController
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
-    @gonglues = Raider.find params[:id]
+    @gonglue = Raider.find params[:id]
     # 攻略
-    @raiders = Raider.order_ct_desc.page(params[:page]).per(8)
+    @gonglues = Raider.order_ct_desc.page(params[:page]).per(8)
   end
+
+  # 签证
+  def visa
+    # 最新公告
+    @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
+    # 攻略
+    @gonglues = Raider.order_ct_desc.page(params[:page]).per(8)
+
+    # 热门显示页列表
+    @hotdoors = Freeline.order_ct_desc.page(params[:page]).per(8)
+
+    # 签证
+    @category_1_name = Visa.question_category_name(1)
+    @category_1_city = Visa.where({:question_category_id => 1}, "title <> ''")
+
+    @category_2_name = Visa.question_category_name(2)
+    @category_2_city = Visa.where({:question_category_id => 2}, "title <> ''")
+
+    @category_3_name = Visa.question_category_name(3)
+    @category_3_city = Visa.where({:question_category_id => 3}, "title <> ''")
+
+    @category_4_name = Visa.question_category_name(4)
+    @category_4_city = Visa.where({:question_category_id => 4}, "title <> ''")
+
+    @category_5_name = Visa.question_category_name(5)
+    @category_5_city = Visa.where({:question_category_id => 5}, "title <> ''")
+  end
+
+  #签证
+  def visa_show
+    # 最新公告
+    @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
+    # 攻略
+    @visa = Visa.find params[:id]
+    # 攻略
+    @gonglues = Raider.order_ct_desc.page(params[:page]).per(8)
+
+    # 热门显示页列表
+    @hotdoors = Freeline.order_ct_desc.page(params[:page]).per(8)
+  end
+
   # 登录页
   def login;
   end

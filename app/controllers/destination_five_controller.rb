@@ -3,7 +3,9 @@ class DestinationFiveController < ApplicationController
   def index
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
-    @hl = Hotline.order_ct_desc.page(params[:page]).per(10)
+    @hl = Hotline.order_ct_desc.page(params[:page]).per(6)
+    # 攻略
+    @gonglues = Raider.order_ct_desc.page(params[:page]).per(8)
   end
 
   def user_create
@@ -31,7 +33,7 @@ class DestinationFiveController < ApplicationController
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
-    @gonglues = Raider.order_ct_desc.page(params[:page]).per(12)
+    @gonglues = Raider.order_ct_desc.page(params[:page]).per(8)
     # 热门列表
     @hotdoors = Announcement.order_ct_desc.page(params[:page]).per(12)
     # 公司旅游

@@ -1,4 +1,4 @@
-class Hotline < ActiveRecord::Base
+class Taiguo < ActiveRecord::Base
   scope :order_ct_desc, lambda { order("created_at DESC") }
 
   validates :title, :presence => {:message => "名称不能为空！"}
@@ -6,7 +6,7 @@ class Hotline < ActiveRecord::Base
   validates :price, :presence => {:message => "价格不能为空！"}
 
   attr_accessor :avatar
-  has_attached_file :avatar, :styles => {:index => "120x75#", :thumb => "68x48#", :show => "373x233#"}, :default_url => "/images/:style/missing.png",
+  has_attached_file :avatar, :styles => {:index => "322x223#", :thumb => "68x48#", :show => "373x233#"}, :default_url => "/images/:style/missing.png",
                     :url => "/tejia/:id_partition/:style/:filename"
   validates_attachment_size :avatar, :less_than => 2.megabytes
   validates_attachment_content_type :avatar, :content_type => ['image/png', 'image/x-png', 'image/jpeg', 'image/pjpeg', 'image/jpg']

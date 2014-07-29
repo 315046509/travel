@@ -1,6 +1,6 @@
-class CreateHotlines < ActiveRecord::Migration
+class CreateTaiguos < ActiveRecord::Migration
   def change
-    create_table :hotlines do |t|
+    create_table :taiguos do |t|
       t.string :title
       t.integer :price
       t.attachment :avatar
@@ -10,7 +10,6 @@ class CreateHotlines < ActiveRecord::Migration
       t.text :feiyongshuoming
       t.text :wenxintishi
       t.text :yudingtishi
-
 
       t.timestamps
     end
