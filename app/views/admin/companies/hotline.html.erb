@@ -40,13 +40,12 @@
         <% @hl.each do |q| %>
             <tr>
               <td><%= q.id %></td>
-              <td><%= q.titel %></td>
+              <td><%= q.title %></td>
               <td><%= q.price %></td>
-              <td><%= q.avatar %></td>
+              <td><%= image_tag q.avatar.url(:thumb) %></td>
               <td class="center"><%= my_datetime_format q.created_at %></td>
               <td><%= link_to '浏览', admin_company_path(q), :class => "btn btn-primary" %></td>
               <td><%= link_to '修改', edit_admin_company_path(q), :class => "btn btn-primary" %></td>
-
             </tr>
         <% end %>
         </tbody>
