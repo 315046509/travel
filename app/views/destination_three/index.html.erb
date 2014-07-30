@@ -5,18 +5,116 @@
     <h3 class="side_title"> 国内游导航</h3>
 
     <div class="line_list">
-      <!-- 分类一 -->
       <dl>
         <dt class="t">
-          <a title="港澳旅游">国内旅游</a>
+          <a title="热门国内">热门国内</a>
         </dt>
+
         <% @category_1_city.each do |q| %>
             <dd class="dd">
               <a><%= q.title %></a>
             </dd>
         <% end %>
+
+        <div class="clear"></div>
       </dl>
-      <br/><br/>
+
+      <dl>
+        <dt class="t">
+          <a title="华南">华南</a>
+        </dt>
+
+        <% @category_2_city.each do |q| %>
+            <dd class="dd">
+              <a><%= q.title %></a>
+            </dd>
+        <% end %>
+
+
+        <div class="clear"></div>
+      </dl>
+
+      <dl>
+        <dt class="t">
+          <a title="西南">西南</a>
+        </dt>
+
+
+        <% @category_3_city.each do |q| %>
+            <dd class="dd">
+              <a><%= q.title %></a>
+            </dd>
+        <% end %>
+
+        <div class="clear"></div>
+      </dl>
+
+      <dl>
+        <dt class="t">
+          <a title="华东">华东</a>
+        </dt>
+
+
+        <% @category_4_city.each do |q| %>
+            <dd class="dd">
+              <a><%= q.title %></a>
+            </dd>
+        <% end %>
+
+        <div class="clear"></div>
+      </dl>
+
+      <dl>
+        <dt class="t">
+          <a title="华中">华中</a>
+        </dt>
+
+        <% @category_5_city.each do |q| %>
+            <dd class="dd">
+              <a><%= q.title %></a>
+            </dd>
+        <% end %>
+        <div class="clear"></div>
+      </dl>
+
+      <dl>
+        <dt class="t">
+          <a title="华北">华北</a>
+        </dt>
+
+        <% @category_6_city.each do |q| %>
+            <dd class="dd">
+              <a><%= q.title %></a>
+            </dd>
+        <% end %>
+        <div class="clear"></div>
+      </dl>
+
+      <dl>
+        <dt class="t">
+          <a title="西部">西部</a>
+        </dt>
+
+        <% @category_7_city.each do |q| %>
+            <dd class="dd">
+              <a><%= q.title %></a>
+            </dd>
+        <% end %>
+        <div class="clear"></div>
+      </dl>
+
+      <dl>
+        <dt class="t">
+          <a title="东北">东北</a>
+        </dt>
+
+        <% @category_8_city.each do |q| %>
+            <dd class="dd">
+              <a><%= q.title %></a>
+            </dd>
+        <% end %>
+        <div class="clear"></div>
+      </dl>
     </div>
   </div>
 

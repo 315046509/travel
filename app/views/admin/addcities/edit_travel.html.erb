@@ -1,0 +1,107 @@
+<script>
+    <% if flash[:note]%>
+    alert('<%=flash[:note]%>');
+    <% end%>
+</script>
+<div>
+  <ul class="breadcrumb">
+    <li>
+      <a href="#">Home</a> <span class="divider">/</span>
+    </li>
+    <li>
+      <a href="<%= travel_admin_addcity_path %>">旅游路线管理</a> <span class="divider">/</span>
+    </li>
+    <li>
+      修改路线内容
+    </li>
+  </ul>
+</div>
+<div class="row-fluid sortable ui-sortable">
+  <div class="box span12">
+    <div class="box-header well" data-original-title="">
+      <h2><i class="icon-edit"></i> 修改路线内容</h2>
+    </div>
+    <div class="box-content">
+      <%= form_tag update_travel_admin_addcity_path, :method => :put, :html => {:id => "verifytitle"} do %>
+          <legend>修改路线内容</legend>
+          <p>
+            <label>旅游标题:</label>
+            <input class="big-input" id="title" name="trave[title]" size="30" type="text" value="<%= @trave.title %>"/>
+          </p>
+
+          <p>
+            <label>旅游价格:</label>
+            <input class="big-input" id="title" name="trave[price]" size="30" type="text" value="<%= @trave.price %>"/>
+          </p>
+
+          <p>
+            <label>旅游内容:</label>
+            <%= text_area_tag :description, @trave.description, :style => "width:99%;height:100px" %>
+          </p>
+
+          <p>
+            <label>参考行程:</label>
+            <%= cktext_area_tag :xingcheng, @trave.xingcheng, :cols => 10, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'} %>
+          </p>
+
+          <p>
+            <label>费用说明:</label>
+            <%= cktext_area_tag :feiyongshuoming, @trave.feiyongshuoming, :cols => 10, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'} %>
+          </p>
+
+          <p>
+            <label>温馨提示:</label>
+            <%= cktext_area_tag :wenxintishi, @trave.wenxintishi, :cols => 10, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'} %>
+          </p>
+
+
+          <p>
+            <label>预订提示:</label>
+            <%= cktext_area_tag :yudingtishi, @trave.yudingtishi, :cols => 10, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'} %>
+          </p>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">完成提交</button>
+          </div>
+      <% end %>
+    </div>
+  </div>
+  <!--/span-->
+</div>
+<script src="/admin/js/jquery.validate.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(function () {
+            $("#verifytitle").validate({
+                rules: {
+                    "trave[title]": {
+                        required: true
+                    }
+                },
+                messages: {
+                    "trave[title]": {
+                        required: "“请填写标题”"
+                    }
+                },
+                errorClass: "error",
+                highlight: function (element, errorClass) {
+                    $(element).parent().parent().addClass(errorClass);
+                },
+                unhighlight: function (element, errorClass) {
+                    $(element).parent().parent().removeClass(errorClass);
+                },
+                errorPlacement: function (error, element) {
+                    error.appendTo(element.parent());
+                },
+                errorElement: "span"
+            });
+        });
+    });
+    $(document).ready(function () {
+        $('form[data-remote]').bind('ajax:before', function () {
+            for (instance in CKEDITOR.instances) {
+                CKEDITOR.instances[instance].updateElement();
+            }
+        });
+    });
+</script>

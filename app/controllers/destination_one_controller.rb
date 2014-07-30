@@ -8,8 +8,8 @@ class DestinationOneController < ApplicationController
     @lunbos = Tejia.order("id desc").page(params[:page]).per(3)
 
     # 港澳旅游
-    @category_1_name = City.question_category_name(1)
-    @category_1_city = City.where({:question_category_id => 1}, "title <> ''")
+    @category_1_name = Addcity.question_category_name(1)
+    @category_1_city = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(3)
 
     # 攻略
     @gonglues = Raider.order_ct_desc.page(params[:page]).per(8)

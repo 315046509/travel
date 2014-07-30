@@ -8,23 +8,29 @@ class MainController < ApplicationController
     @lunbos = Tejia.order_ct_desc.page(params[:page]).per(4)
 
     # 城市
-    @category_1_name = OneCity.question_category_name(1)
-    @category_1_city = OneCity.where({:question_category_id => 1}, "title <> ''")
+    @category_1_name = Addcity.question_category_name(1)
+    @category_1_city = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
 
-    @category_2_name = OneCity.question_category_name(2)
-    @category_2_city = OneCity.where({:question_category_id => 2}, "title <> ''")
+    @category_2_name = Addcity.question_category_name(2)
+    @category_2_city = Addcity.where({:question_category_id => 101}, "title <> ''").page(params[:page]).per(9)
 
-    @category_3_name = OneCity.question_category_name(3)
-    @category_3_city = OneCity.where({:question_category_id => 3}, "title <> ''")
+    @category_3_name = Addcity.question_category_name(3)
+    @category_3_city = Addcity.where({:question_category_id => 102}, "title <> ''").page(params[:page]).per(9)
 
-    @category_4_name = OneCity.question_category_name(4)
-    @category_4_city = OneCity.where({:question_category_id => 4}, "title <> ''")
+    @category_4_name = Addcity.question_category_name(4)
+    @category_4_city = Addcity.where({:question_category_id => 4}, "title <> ''").page(params[:page]).per(6)
 
-    @category_5_name = OneCity.question_category_name(5)
-    @category_5_city = OneCity.where({:question_category_id => 5}, "title <> ''")
+    @category_5_name = Addcity.question_category_name(5)
+    @category_5_city = Addcity.where({:question_category_id => 103}, "title <> ''").page(params[:page]).per(6)
 
-    @category_6_name = OneCity.question_category_name(6)
-    @category_6_city = OneCity.where({:question_category_id => 6}, "title <> ''")
+    @category_6_name = Addcity.question_category_name(6)
+    @category_6_city = Addcity.where({:question_category_id => 6}, "title <> ''").page(params[:page]).per(6)
+
+    @category_7_name = Addcity.question_category_name(7)
+    @category_7_city = Addcity.where({:question_category_id => 8}, "title <> ''").page(params[:page]).per(6)
+
+    @category_8_name = Addcity.question_category_name(7)
+    @category_8_city = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(30)
 
     # 港澳热门
     @hotdoor1 = Hotdoor.where(:one_city_id => 1).order("id desc").page(params[:page]).per(5)

@@ -8,8 +8,29 @@ class DestinationTwoController < ApplicationController
     @lunbos = Tejia.order("id desc").page(params[:page]).per(3)
 
     # 出境旅游
-    @category_2_name = City.question_category_name(2)
-    @category_2_city = City.where({:question_category_id => 2}, "title <> ''")
+    @category_1_name = Addcity.question_category_name(1)
+    @category_1_city = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(30)
+
+    @category_2_name = Addcity.question_category_name(2)
+    @category_2_city = Addcity.where({:question_category_id => 2}, "title <> ''").page(params[:page]).per(30)
+
+    @category_3_name = Addcity.question_category_name(3)
+    @category_3_city = Addcity.where({:question_category_id => 3}, "title <> ''").page(params[:page]).per(30)
+
+    @category_4_name = Addcity.question_category_name(4)
+    @category_4_city = Addcity.where({:question_category_id => 4}, "title <> ''").page(params[:page]).per(30)
+
+    @category_5_name = Addcity.question_category_name(5)
+    @category_5_city = Addcity.where({:question_category_id => 5}, "title <> ''").page(params[:page]).per(30)
+
+    @category_6_name = Addcity.question_category_name(6)
+    @category_6_city = Addcity.where({:question_category_id => 6}, "title <> ''").page(params[:page]).per(30)
+
+    @category_7_name = Addcity.question_category_name(7)
+    @category_7_city = Addcity.where({:question_category_id => 7}, "title <> ''").page(params[:page]).per(30)
+
+    @category_8_name = Addcity.question_category_name(8)
+    @category_8_city = Addcity.where({:question_category_id => 8}, "title <> ''").page(params[:page]).per(30)
 
     # 攻略
     @gonglues = Raider.order_ct_desc.page(params[:page]).per(8)

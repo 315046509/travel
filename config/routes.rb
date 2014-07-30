@@ -151,6 +151,18 @@ Travel::Application.routes.draw do
 
     # 签证
     resources :visas
+
+    # 旅游管理
+    resources :addcities do
+      collection do
+      end
+      member do
+        post 'create_travel'
+        get 'add_travel'
+        get 'travel'
+        get 'show_travel'
+      end
+    end
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -5,18 +5,116 @@
     <h3 class="side_title"> 出境游导航</h3>
 
     <div class="line_list">
-      <!-- 分类一 -->
       <dl>
         <dt class="t">
-          <a title="出境旅游">出境旅游</a>
+          <a target="_blank" href="#" title="热门出境">热门出境</a>
         </dt>
+
+        <% @category_1_city.each do |q| %>
+            <dd class="dd">
+              <a><%= q.title %></a>
+            </dd>
+        <% end %>
+
+        <div class="clear"></div>
+      </dl>
+
+      <dl>
+        <dt class="t">
+          <a target="_blank" href="#" title="热门海岛">热门海岛</a>
+        </dt>
+
         <% @category_2_city.each do |q| %>
             <dd class="dd">
               <a><%= q.title %></a>
             </dd>
         <% end %>
+
+
+        <div class="clear"></div>
       </dl>
-      <br/><br/>
+
+      <dl>
+        <dt class="t">
+          <a target="_blank" href="#" title="东南亚">东南亚</a>
+        </dt>
+
+
+        <% @category_3_city.each do |q| %>
+            <dd class="dd">
+              <a><%= q.title %></a>
+            </dd>
+        <% end %>
+
+        <div class="clear"></div>
+      </dl>
+
+      <dl>
+        <dt class="t">
+          <a target="_blank" href="#" title="亚洲">亚洲</a>
+        </dt>
+
+
+        <% @category_4_city.each do |q| %>
+            <dd class="dd">
+              <a><%= q.title %></a>
+            </dd>
+        <% end %>
+
+        <div class="clear"></div>
+      </dl>
+
+      <dl>
+        <dt class="t">
+          <a target="_blank" href="#" title="欧洲">欧洲</a>
+        </dt>
+
+        <% @category_5_city.each do |q| %>
+            <dd class="dd">
+              <a><%= q.title %></a>
+            </dd>
+        <% end %>
+        <div class="clear"></div>
+      </dl>
+
+      <dl>
+        <dt class="t">
+          <a target="_blank" href="#" title="美洲">美洲</a>
+        </dt>
+
+        <% @category_6_city.each do |q| %>
+            <dd class="dd">
+              <a><%= q.title %></a>
+            </dd>
+        <% end %>
+        <div class="clear"></div>
+      </dl>
+
+      <dl>
+        <dt class="t">
+          <a target="_blank" href="#" title="中东非洲">中东非洲</a>
+        </dt>
+
+        <% @category_7_city.each do |q| %>
+            <dd class="dd">
+              <a><%= q.title %></a>
+            </dd>
+        <% end %>
+        <div class="clear"></div>
+      </dl>
+
+      <dl>
+        <dt class="t">
+          <a target="_blank" href="#" title="澳洲">澳洲</a>
+        </dt>
+
+        <% @category_8_city.each do |q| %>
+            <dd class="dd">
+              <a><%= q.title %></a>
+            </dd>
+        <% end %>
+        <div class="clear"></div>
+      </dl>
     </div>
   </div>
 
@@ -42,6 +140,7 @@
 
 <div class="side_right fn-right">
 <img alt="游泰国1988元" class="all_imgs" id="img_1" src="../images/1402907041.jpg">
+
 <div class="travel_sale" style="height:auto; padding-bottom:10px;">
   <h2 class="travel_Hd">
     <span class="travel_Hd_type travel_tj_type">特价旅游</span>

@@ -137,7 +137,7 @@
 <div class="center">
 <div class="hk_hot">
 <h2 class="travel_Hd">
-  <span class="travel_Hd_type travel_gt_type">港澳台热门旅游</span>
+  <span class="travel_Hd_type travel_gt_type">港澳热门旅游</span>
   <span class="travel_Hd_msg">品质港澳 超游特惠!</span>
 </h2>
 
@@ -145,9 +145,28 @@
 <div class="newChannel_left">
   <dl>
     <dt>
-      <a>港澳台游</a>
+      <a>香港游</a>
     </dt>
     <% @category_1_city.each do |q| %>
+        <dd class="dd">
+          <a><%= q.title %></a>
+        </dd>
+    <% end %>
+    <div class="clear"></div>
+    <dt>
+      <a>澳门游</a>
+    </dt>
+    <% @category_2_city.each do |q| %>
+        <dd class="dd">
+          <a><%= q.title %></a>
+        </dd>
+    <% end %>
+    <div class="clear"></div>
+
+    <dt>
+      <a>港澳游</a>
+    </dt>
+    <% @category_3_city.each do |q| %>
         <dd class="dd">
           <a><%= q.title %></a>
         </dd>
@@ -404,13 +423,13 @@
 
 <!-- 这里后加一栏 -->
 <!--<div class="center">-->
-  <!--<div class="gd_hot dbfen">-->
-    <!--<h2 class="travel_Hd">-->
-      <!--<span class="travel_Hd_type travel_gt_type">特别板块</span>-->
-      <!--<span class="travel_Hd_msg">海外特别板块!</span>-->
-    <!--</h2>-->
-    <!--<%#= render "comment/newlan" %>-->
-  <!--</div>-->
+<!--<div class="gd_hot dbfen">-->
+<!--<h2 class="travel_Hd">-->
+<!--<span class="travel_Hd_type travel_gt_type">特别板块</span>-->
+<!--<span class="travel_Hd_msg">海外特别板块!</span>-->
+<!--</h2>-->
+<!--<%#= render "comment/newlan" %>-->
+<!--</div>-->
 <!--</div>-->
 
 <!-- 这里后加一栏 -->
@@ -433,9 +452,42 @@
   <div class="newChannel_left">
     <dl>
       <dt>
-        <a>出境热门旅游</a>
+        <a>亚洲</a>
       </dt>
-      <% @category_2_city.each do |q| %>
+      <% @category_4_city.each do |q| %>
+          <dd class="dd">
+            <a><%= q.title %></a>
+          </dd>
+      <% end %>
+
+      <div class="clear"></div>
+
+      <dt>
+        <a>非洲</a>
+      </dt>
+      <% @category_5_city.each do |q| %>
+          <dd class="dd">
+            <a><%= q.title %></a>
+          </dd>
+      <% end %>
+
+      <div class="clear"></div>
+
+      <dt>
+        <a>美洲</a>
+      </dt>
+      <% @category_6_city.each do |q| %>
+          <dd class="dd">
+            <a><%= q.title %></a>
+          </dd>
+      <% end %>
+
+      <div class="clear"></div>
+
+      <dt>
+        <a>澳洲</a>
+      </dt>
+      <% @category_7_city.each do |q| %>
           <dd class="dd">
             <a><%= q.title %></a>
           </dd>
@@ -618,7 +670,7 @@
     <dt>
       <a target="_blank" href="#">国内热门旅游目的地</a>
     </dt>
-    <% @category_3_city.each do |q| %>
+    <% @category_8_city.each do |q| %>
         <dd>
           <a><%= q.title %></a>
         </dd>
