@@ -5,7 +5,7 @@
     <ul>
 
       <% if @member_curr %>
-          <font color="#FF0000">会员：《<%= @member_curr.name %>》，欢迎您来到海外旅行社，祝您旅途愉快</font>
+          <font color="#FF0000">会员：《<%= @member_curr.name %>》，欢迎来到海外旅行社，祝您旅途愉快</font>
           <a href="<%= logout_path %>">【退出】</a>
       <% else %>
           <li><a href="<%= signup_path %>">注册</a></li>
@@ -41,43 +41,43 @@
       </li>
       <li id="touristAttractions">
         <a class="">旅游景点</a>
-        <ul class="subNav" style="display: none;">
-          <li>
-            <h6><a>国内</a></h6>
-            <a href="/photo/beijing/" target="_blank" class="">北京</a>
-          </li>
+        <!--<ul class="subNav" style="display: none;">-->
+        <!--<li>-->
+        <!--<h6><a>国内</a></h6>-->
+        <!--<a href="/photo/beijing/" target="_blank" class="">北京</a>-->
+        <!--</li>-->
 
-          <li>
-            <h6><a>亚洲</a></h6>
-            <a href="/photo/riben/" target="_blank" class="">日本</a>
-          </li>
+        <!--<li>-->
+        <!--<h6><a>亚洲</a></h6>-->
+        <!--<a href="/photo/riben/" target="_blank" class="">日本</a>-->
+        <!--</li>-->
 
-          <li>
-            <h6><a>欧洲</a></h6>
-            <a href="/photo/faguo/" target="_blank" class="">法国</a>
-          </li>
-          <li>
-            <h6><a>非洲</a></h6>
-            <a href="/photo/yiselie/" target="_blank" class="">以色列</a>
-          </li>
-          <li>
-            <h6><a>美洲</a></h6>
-            <a href="/photo/moxige/" target="_blank" class="">墨西哥</a>
-          </li>
-        </ul>
+        <!--<li>-->
+        <!--<h6><a>欧洲</a></h6>-->
+        <!--<a href="/photo/faguo/" target="_blank" class="">法国</a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<h6><a>非洲</a></h6>-->
+        <!--<a href="/photo/yiselie/" target="_blank" class="">以色列</a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<h6><a>美洲</a></h6>-->
+        <!--<a href="/photo/moxige/" target="_blank" class="">墨西哥</a>-->
+        <!--</li>-->
+        <!--</ul>-->
       </li>
       <li id="landscapePictures">
         <a>风景图片</a>
       </li>
       <li id="businessTravelServices">
-        <a href="<%= visa_main_index_path %>" class="">商务服务</a>
+        <a href="<%= visa_main_index_path %>" target="_blank" class="">商务服务</a>
         <ul class="subNav" style="display: none;">
           <li>
-            <a>亚洲签证</a>
-            <a>欧洲签证</a>
-            <a>非洲签证</a>
-            <a>澳洲签证</a>
-            <a>美洲签证</a>
+            <a href="<%= visa_main_index_path %>" target="_blank">亚洲签证</a>
+            <a href="<%= visa_main_index_path %>" target="_blank">欧洲签证</a>
+            <a href="<%= visa_main_index_path %>" target="_blank">非洲签证</a>
+            <a href="<%= visa_main_index_path %>" target="_blank">澳洲签证</a>
+            <a href="<%= visa_main_index_path %>" target="_blank">美洲签证</a>
           </li>
         </ul>
       </li>
