@@ -3,20 +3,20 @@
 <div class="channel_side fn-left">
   <div class="side_hot">
     <h3 class="side_title"> 港澳游导航</h3>
-
     <div class="line_list">
-      <!-- 分类一 -->
       <dl>
         <dt class="t">
           <a title="港澳旅游">港澳旅游</a>
         </dt>
+
         <% @category_1_city.each do |q| %>
             <dd class="dd">
               <a><%= q.title %></a>
             </dd>
         <% end %>
+
+        <div class="clear"></div>
       </dl>
-      <br/><br/>
     </div>
   </div>
 
