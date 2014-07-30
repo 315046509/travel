@@ -9,7 +9,7 @@ class DestinationOneController < ApplicationController
 
     # 港澳旅游
     @category_1_name = Addcity.question_category_name(1)
-    @category_1_city = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(3)
+    @category_1_city = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(30)
 
     # 攻略
     @gonglues = Raider.order_ct_desc.page(params[:page]).per(8)
