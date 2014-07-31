@@ -1285,8 +1285,8 @@ _ background-image: none; /* IE6 */ }
 
 /*登陆*/
 .login{ width:880px; margin:0 auto; padding-top:35px; padding-bottom:45px; }
-.login_logo{ height:77px; width:350px; background:url(../images/gongsi/login.gif) no-repeat 0 0; }
-.reg_logo{ height:77px; width:350px; background:url(../images/gongsi/reg.gif) no-repeat 0 0; }
+.login_logo{ height:77px; width:400px; background:url(../images/gongsi/login.gif) no-repeat 0 0; }
+.reg_logo{ height:77px; width:400px; background:url(../images/gongsi/reg.gif) no-repeat 0 0; }
 .usercenter_logo{ height:77px; width:350px; background:url(../images/gongsi/usercenter.gif) no-repeat 0 0; }
 .login_tel{ background:url(../images/gongsi/login.gif) no-repeat right top; height:77px; width:350px; }
 .login_main{ padding-top:40px; }
