@@ -7,12 +7,12 @@
     <div class="line_list">
       <dl>
         <dt class="t">
-          <a target="_blank" href="#" title="热门出境">热门出境</a>
+          <a href="<%= remenchujing_cities_path %>" target="_blank" title="热门出境">热门出境</a>
         </dt>
 
         <% @category_1_city.each do |q| %>
             <dd class="dd">
-              <a href="<%= xianggang_cities_path %>"><%= q.title %></a>
+              <a href="<%= remenchujing_cities_path %>" target="_blank" ><%= q.title %></a>
             </dd>
         <% end %>
 
@@ -21,12 +21,12 @@
 
       <dl>
         <dt class="t">
-          <a target="_blank" href="#" title="热门海岛">热门海岛</a>
+          <a href="<%= remenhaidao_cities_path %>" target="_blank" title="热门海岛">热门海岛</a>
         </dt>
 
         <% @category_2_city.each do |q| %>
             <dd class="dd">
-              <a><%= q.title %></a>
+              <a href="<%= remenhaidao_cities_path %>" target="_blank"><%= q.title %></a>
             </dd>
         <% end %>
 
@@ -36,13 +36,13 @@
 
       <dl>
         <dt class="t">
-          <a target="_blank" href="#" title="东南亚">东南亚</a>
+          <a href="<%= dongnanya_cities_path %>" target="_blank" title="东南亚">东南亚</a>
         </dt>
 
 
         <% @category_3_city.each do |q| %>
             <dd class="dd">
-              <a><%= q.title %></a>
+              <a href="<%= dongnanya_cities_path %>" target="_blank" ><%= q.title %></a>
             </dd>
         <% end %>
 
@@ -51,13 +51,13 @@
 
       <dl>
         <dt class="t">
-          <a target="_blank" href="#" title="亚洲">亚洲</a>
+          <a href="<%= yazhou_cities_path %>" target="_blank" title="亚洲">亚洲</a>
         </dt>
 
 
         <% @category_4_city.each do |q| %>
             <dd class="dd">
-              <a><%= q.title %></a>
+              <a href="<%= yazhou_cities_path %>" target="_blank" ><%= q.title %></a>
             </dd>
         <% end %>
 
@@ -66,12 +66,12 @@
 
       <dl>
         <dt class="t">
-          <a target="_blank" href="#" title="欧洲">欧洲</a>
+          <a href="<%= ouzhou_cities_path %>" target="_blank" title="欧洲">欧洲</a>
         </dt>
 
         <% @category_5_city.each do |q| %>
             <dd class="dd">
-              <a><%= q.title %></a>
+              <a href="<%= ouzhou_cities_path %>" target="_blank" ><%= q.title %></a>
             </dd>
         <% end %>
         <div class="clear"></div>
@@ -79,12 +79,12 @@
 
       <dl>
         <dt class="t">
-          <a target="_blank" href="#" title="美洲">美洲</a>
+          <a href="<%= meizhou_cities_path %>" target="_blank" title="美洲">美洲</a>
         </dt>
 
         <% @category_6_city.each do |q| %>
             <dd class="dd">
-              <a><%= q.title %></a>
+              <a href="<%= meizhou_cities_path %>" target="_blank"><%= q.title %></a>
             </dd>
         <% end %>
         <div class="clear"></div>
@@ -92,12 +92,12 @@
 
       <dl>
         <dt class="t">
-          <a target="_blank" href="#" title="中东非洲">中东非洲</a>
+          <a href="<%= zhongdongfeizhou_cities_path %>" target="_blank" title="中东非洲">中东非洲</a>
         </dt>
 
         <% @category_7_city.each do |q| %>
             <dd class="dd">
-              <a><%= q.title %></a>
+              <a href="<%= zhongdongfeizhou_cities_path %>" target="_blank"><%= q.title %></a>
             </dd>
         <% end %>
         <div class="clear"></div>
@@ -105,12 +105,12 @@
 
       <dl>
         <dt class="t">
-          <a target="_blank" href="#" title="澳洲">澳洲</a>
+          <a href="<%= aozhou_cities_path %>" target="_blank" title="澳洲">澳洲</a>
         </dt>
 
         <% @category_8_city.each do |q| %>
             <dd class="dd">
-              <a><%= q.title %></a>
+              <a href="<%= aozhou_cities_path %>" target="_blank"><%= q.title %></a>
             </dd>
         <% end %>
         <div class="clear"></div>

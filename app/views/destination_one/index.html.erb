@@ -7,12 +7,12 @@
     <div class="line_list">
       <dl>
         <dt class="t">
-          <a title="港澳旅游">港澳旅游</a>
+          <a href="<%= xianggang_cities_path %>" target="_blank" title="港澳旅游">港澳旅游</a>
         </dt>
 
         <% @category_1_city.each do |q| %>
             <dd class="dd">
-              <a href="<%= xianggang_cities_path %>"><%= q.title %></a>
+              <a href="<%= xianggang_cities_path %>" target="_blank" ><%= q.title %></a>
             </dd>
         <% end %>
 

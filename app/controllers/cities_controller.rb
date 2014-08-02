@@ -1,5 +1,18 @@
 class CitiesController < ApplicationController
   def show
+    # 景点
+    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
+
+    @category_9_jingdian = Addcity.question_category_name(9)
+    @category_9_jingdian = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+
+    @category_10_jingdian = Addcity.question_category_name(10)
+    @category_10_jingdian = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(10)
+
+    @category_11_jingdian = Addcity.question_category_name(11)
+    @category_11_jingdian = Addcity.where({:question_category_id => 17}, "title <> ''").page(params[:page]).per(10)
+
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
@@ -12,6 +25,19 @@ class CitiesController < ApplicationController
 
   # 香港游
   def xianggang
+    # 景点
+    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
+
+    @category_9_jingdian = Addcity.question_category_name(9)
+    @category_9_jingdian = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+
+    @category_10_jingdian = Addcity.question_category_name(10)
+    @category_10_jingdian = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(10)
+
+    @category_11_jingdian = Addcity.question_category_name(11)
+    @category_11_jingdian = Addcity.where({:question_category_id => 17}, "title <> ''").page(params[:page]).per(10)
+
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
@@ -26,6 +52,19 @@ class CitiesController < ApplicationController
 
   # 澳门游
   def aomen
+    # 景点
+    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
+
+    @category_9_jingdian = Addcity.question_category_name(9)
+    @category_9_jingdian = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+
+    @category_10_jingdian = Addcity.question_category_name(10)
+    @category_10_jingdian = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(10)
+
+    @category_11_jingdian = Addcity.question_category_name(11)
+    @category_11_jingdian = Addcity.where({:question_category_id => 17}, "title <> ''").page(params[:page]).per(10)
+
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
@@ -41,6 +80,19 @@ class CitiesController < ApplicationController
 
   # 港澳游
   def gangao
+    # 景点
+    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
+
+    @category_9_jingdian = Addcity.question_category_name(9)
+    @category_9_jingdian = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+
+    @category_10_jingdian = Addcity.question_category_name(10)
+    @category_10_jingdian = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(10)
+
+    @category_11_jingdian = Addcity.question_category_name(11)
+    @category_11_jingdian = Addcity.where({:question_category_id => 17}, "title <> ''").page(params[:page]).per(10)
+
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
@@ -55,6 +107,19 @@ class CitiesController < ApplicationController
   end
   # 非洲
   def feizhou
+    # 景点
+    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
+
+    @category_9_jingdian = Addcity.question_category_name(9)
+    @category_9_jingdian = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+
+    @category_10_jingdian = Addcity.question_category_name(10)
+    @category_10_jingdian = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(10)
+
+    @category_11_jingdian = Addcity.question_category_name(11)
+    @category_11_jingdian = Addcity.where({:question_category_id => 17}, "title <> ''").page(params[:page]).per(10)
+
     # 最新公告
 
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
@@ -71,6 +136,19 @@ class CitiesController < ApplicationController
 
   # 热门出境
   def remenchujing
+    # 景点
+    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
+
+    @category_9_jingdian = Addcity.question_category_name(9)
+    @category_9_jingdian = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+
+    @category_10_jingdian = Addcity.question_category_name(10)
+    @category_10_jingdian = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(10)
+
+    @category_11_jingdian = Addcity.question_category_name(11)
+    @category_11_jingdian = Addcity.where({:question_category_id => 17}, "title <> ''").page(params[:page]).per(10)
+
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
@@ -86,6 +164,19 @@ class CitiesController < ApplicationController
 
   # 热门海岛
   def remenhaidao
+    # 景点
+    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
+
+    @category_9_jingdian = Addcity.question_category_name(9)
+    @category_9_jingdian = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+
+    @category_10_jingdian = Addcity.question_category_name(10)
+    @category_10_jingdian = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(10)
+
+    @category_11_jingdian = Addcity.question_category_name(11)
+    @category_11_jingdian = Addcity.where({:question_category_id => 17}, "title <> ''").page(params[:page]).per(10)
+
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
@@ -101,6 +192,19 @@ class CitiesController < ApplicationController
 
   # 东南亚
   def dongnanya
+    # 景点
+    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
+
+    @category_9_jingdian = Addcity.question_category_name(9)
+    @category_9_jingdian = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+
+    @category_10_jingdian = Addcity.question_category_name(10)
+    @category_10_jingdian = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(10)
+
+    @category_11_jingdian = Addcity.question_category_name(11)
+    @category_11_jingdian = Addcity.where({:question_category_id => 17}, "title <> ''").page(params[:page]).per(10)
+
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
@@ -116,6 +220,19 @@ class CitiesController < ApplicationController
 
   # 亚洲
   def yazhou
+    # 景点
+    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
+
+    @category_9_jingdian = Addcity.question_category_name(9)
+    @category_9_jingdian = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+
+    @category_10_jingdian = Addcity.question_category_name(10)
+    @category_10_jingdian = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(10)
+
+    @category_11_jingdian = Addcity.question_category_name(11)
+    @category_11_jingdian = Addcity.where({:question_category_id => 17}, "title <> ''").page(params[:page]).per(10)
+
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
@@ -131,6 +248,19 @@ class CitiesController < ApplicationController
 
   # 欧洲
   def ouzhou
+    # 景点
+    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
+
+    @category_9_jingdian = Addcity.question_category_name(9)
+    @category_9_jingdian = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+
+    @category_10_jingdian = Addcity.question_category_name(10)
+    @category_10_jingdian = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(10)
+
+    @category_11_jingdian = Addcity.question_category_name(11)
+    @category_11_jingdian = Addcity.where({:question_category_id => 17}, "title <> ''").page(params[:page]).per(10)
+
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
@@ -146,6 +276,19 @@ class CitiesController < ApplicationController
 
   # 美洲
   def meizhou
+    # 景点
+    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
+
+    @category_9_jingdian = Addcity.question_category_name(9)
+    @category_9_jingdian = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+
+    @category_10_jingdian = Addcity.question_category_name(10)
+    @category_10_jingdian = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(10)
+
+    @category_11_jingdian = Addcity.question_category_name(11)
+    @category_11_jingdian = Addcity.where({:question_category_id => 17}, "title <> ''").page(params[:page]).per(10)
+
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
@@ -161,6 +304,19 @@ class CitiesController < ApplicationController
 
   # 中东非洲
   def zhongdongfeizhou
+    # 景点
+    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
+
+    @category_9_jingdian = Addcity.question_category_name(9)
+    @category_9_jingdian = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+
+    @category_10_jingdian = Addcity.question_category_name(10)
+    @category_10_jingdian = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(10)
+
+    @category_11_jingdian = Addcity.question_category_name(11)
+    @category_11_jingdian = Addcity.where({:question_category_id => 17}, "title <> ''").page(params[:page]).per(10)
+
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
@@ -176,6 +332,19 @@ class CitiesController < ApplicationController
 
   # 澳洲
   def aozhou
+    # 景点
+    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
+
+    @category_9_jingdian = Addcity.question_category_name(9)
+    @category_9_jingdian = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+
+    @category_10_jingdian = Addcity.question_category_name(10)
+    @category_10_jingdian = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(10)
+
+    @category_11_jingdian = Addcity.question_category_name(11)
+    @category_11_jingdian = Addcity.where({:question_category_id => 17}, "title <> ''").page(params[:page]).per(10)
+
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
@@ -191,6 +360,19 @@ class CitiesController < ApplicationController
 
   # 热门国内
   def remenguonei
+    # 景点
+    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
+
+    @category_9_jingdian = Addcity.question_category_name(9)
+    @category_9_jingdian = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+
+    @category_10_jingdian = Addcity.question_category_name(10)
+    @category_10_jingdian = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(10)
+
+    @category_11_jingdian = Addcity.question_category_name(11)
+    @category_11_jingdian = Addcity.where({:question_category_id => 17}, "title <> ''").page(params[:page]).per(10)
+
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
@@ -206,6 +388,19 @@ class CitiesController < ApplicationController
 
   # 华南
   def huanan
+    # 景点
+    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
+
+    @category_9_jingdian = Addcity.question_category_name(9)
+    @category_9_jingdian = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+
+    @category_10_jingdian = Addcity.question_category_name(10)
+    @category_10_jingdian = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(10)
+
+    @category_11_jingdian = Addcity.question_category_name(11)
+    @category_11_jingdian = Addcity.where({:question_category_id => 17}, "title <> ''").page(params[:page]).per(10)
+
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
@@ -221,6 +416,19 @@ class CitiesController < ApplicationController
 
   # 西南
   def xinan
+    # 景点
+    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
+
+    @category_9_jingdian = Addcity.question_category_name(9)
+    @category_9_jingdian = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+
+    @category_10_jingdian = Addcity.question_category_name(10)
+    @category_10_jingdian = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(10)
+
+    @category_11_jingdian = Addcity.question_category_name(11)
+    @category_11_jingdian = Addcity.where({:question_category_id => 17}, "title <> ''").page(params[:page]).per(10)
+
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
@@ -236,6 +444,19 @@ class CitiesController < ApplicationController
 
   # 华东
   def huadong
+    # 景点
+    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
+
+    @category_9_jingdian = Addcity.question_category_name(9)
+    @category_9_jingdian = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+
+    @category_10_jingdian = Addcity.question_category_name(10)
+    @category_10_jingdian = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(10)
+
+    @category_11_jingdian = Addcity.question_category_name(11)
+    @category_11_jingdian = Addcity.where({:question_category_id => 17}, "title <> ''").page(params[:page]).per(10)
+
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
@@ -251,6 +472,19 @@ class CitiesController < ApplicationController
 
   # 华中
   def huazhong
+    # 景点
+    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
+
+    @category_9_jingdian = Addcity.question_category_name(9)
+    @category_9_jingdian = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+
+    @category_10_jingdian = Addcity.question_category_name(10)
+    @category_10_jingdian = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(10)
+
+    @category_11_jingdian = Addcity.question_category_name(11)
+    @category_11_jingdian = Addcity.where({:question_category_id => 17}, "title <> ''").page(params[:page]).per(10)
+
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
@@ -266,6 +500,19 @@ class CitiesController < ApplicationController
 
   # 华北
   def huabei
+    # 景点
+    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
+
+    @category_9_jingdian = Addcity.question_category_name(9)
+    @category_9_jingdian = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+
+    @category_10_jingdian = Addcity.question_category_name(10)
+    @category_10_jingdian = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(10)
+
+    @category_11_jingdian = Addcity.question_category_name(11)
+    @category_11_jingdian = Addcity.where({:question_category_id => 17}, "title <> ''").page(params[:page]).per(10)
+
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
@@ -281,6 +528,19 @@ class CitiesController < ApplicationController
 
   # 西部
   def xibu
+    # 景点
+    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
+
+    @category_9_jingdian = Addcity.question_category_name(9)
+    @category_9_jingdian = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+
+    @category_10_jingdian = Addcity.question_category_name(10)
+    @category_10_jingdian = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(10)
+
+    @category_11_jingdian = Addcity.question_category_name(11)
+    @category_11_jingdian = Addcity.where({:question_category_id => 17}, "title <> ''").page(params[:page]).per(10)
+
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
@@ -296,6 +556,19 @@ class CitiesController < ApplicationController
 
   # 东北
   def dongbei
+    # 景点
+    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
+
+    @category_9_jingdian = Addcity.question_category_name(9)
+    @category_9_jingdian = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+
+    @category_10_jingdian = Addcity.question_category_name(10)
+    @category_10_jingdian = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(10)
+
+    @category_11_jingdian = Addcity.question_category_name(11)
+    @category_11_jingdian = Addcity.where({:question_category_id => 17}, "title <> ''").page(params[:page]).per(10)
+
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
@@ -311,6 +584,19 @@ class CitiesController < ApplicationController
 
   # 长春
   def changchun
+    # 景点
+    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
+
+    @category_9_jingdian = Addcity.question_category_name(9)
+    @category_9_jingdian = Addcity.where({:question_category_id => 1}, "title <> ''").page(params[:page]).per(10)
+
+    @category_10_jingdian = Addcity.question_category_name(10)
+    @category_10_jingdian = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(10)
+
+    @category_11_jingdian = Addcity.question_category_name(11)
+    @category_11_jingdian = Addcity.where({:question_category_id => 17}, "title <> ''").page(params[:page]).per(10)
+
     # 最新公告
     @announcement = Announcement.order_ct_desc.page(params[:page]).per(1)
     # 攻略
