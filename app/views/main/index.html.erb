@@ -145,30 +145,30 @@
 <div class="newChannel_left">
   <dl>
     <dt>
-      <a>香港游</a>
+      <a href="<%= xianggang_cities_path %>">香港游</a>
     </dt>
     <% @category_1_city.each do |q| %>
         <dd class="dd">
-          <a><%= q.title %></a>
+          <a href="<%= xianggang_cities_path %>"><%= q.title %></a>
         </dd>
     <% end %>
     <div class="clear"></div>
     <dt>
-      <a>澳门游</a>
+      <a href="<%= aomen_cities_path %>">澳门游</a>
     </dt>
     <% @category_2_city.each do |q| %>
         <dd class="dd">
-          <a><%= q.title %></a>
+          <a href="<%= aomen_cities_path %>"><%= q.title %></a>
         </dd>
     <% end %>
     <div class="clear"></div>
 
     <dt>
-      <a>港澳游</a>
+      <a href="<%= gangao_cities_path %>">港澳游</a>
     </dt>
     <% @category_3_city.each do |q| %>
         <dd class="dd">
-          <a><%= q.title %></a>
+          <a href="<%= gangao_cities_path %>"><%= q.title %></a>
         </dd>
     <% end %>
     <div class="clear"></div>
@@ -437,7 +437,7 @@
 </div>
 <center>
   <div class="guanggao">
-    <a href="#"><img alt="游泰国1988元" src="../images/1402908101.jpg" data-original="../images/1402908101.jpg" border="0"></a>
+    <a href="<%= destination_two_index_path %>"><img alt="游泰国1988元" src="../images/1402908101.jpg" data-original="../images/1402908101.jpg" border="0"></a>
   </div>
 </center>
 
@@ -452,44 +452,44 @@
   <div class="newChannel_left">
     <dl>
       <dt>
-        <a>亚洲</a>
+        <a href="<%= yazhou_cities_path %>">亚洲</a>
       </dt>
       <% @category_4_city.each do |q| %>
           <dd class="dd">
-            <a><%= q.title %></a>
+            <a href="<%= yazhou_cities_path %>"><%= q.title %></a>
           </dd>
       <% end %>
 
       <div class="clear"></div>
 
       <dt>
-        <a>非洲</a>
+        <a href="<%= feizhou_cities_path %>">非洲</a>
       </dt>
       <% @category_5_city.each do |q| %>
           <dd class="dd">
-            <a><%= q.title %></a>
+            <a href="<%= feizhou_cities_path %>"><%= q.title %></a>
           </dd>
       <% end %>
 
       <div class="clear"></div>
 
       <dt>
-        <a>美洲</a>
+        <a href="<%= meizhou_cities_path %>">美洲</a>
       </dt>
       <% @category_6_city.each do |q| %>
           <dd class="dd">
-            <a><%= q.title %></a>
+            <a href="<%= meizhou_cities_path %>"><%= q.title %></a>
           </dd>
       <% end %>
 
       <div class="clear"></div>
 
       <dt>
-        <a>澳洲</a>
+        <a href="<%= aozhou_cities_path %>">澳洲</a>
       </dt>
       <% @category_7_city.each do |q| %>
           <dd class="dd">
-            <a><%= q.title %></a>
+            <a href="<%= aozhou_cities_path %>"><%= q.title %></a>
           </dd>
       <% end %>
 
@@ -653,7 +653,7 @@
 
 <center>
   <div class="guanggao">
-    <a href="#"><img alt="港澳同行地接" src="../images/1393816299.jpg" data-original="/uploads/userup/0/1393816299.jpg" border="0"></a>
+    <a href="<%= destination_one_index_path %>"><img alt="港澳同行地接" src="../images/1393816299.jpg" data-original="/uploads/userup/0/1393816299.jpg" border="0"></a>
   </div>
 </center>
 
@@ -668,11 +668,11 @@
 <div class="newChannel_left">
   <dl>
     <dt>
-      <a target="_blank" href="#">国内热门旅游目的地</a>
+      <a target="_blank" href="<%= remenguonei_cities_path %>">国内热门旅游目的地</a>
     </dt>
     <% @category_8_city.each do |q| %>
         <dd>
-          <a><%= q.title %></a>
+          <a href="<%= remenguonei_cities_path %>"><%= q.title %></a>
         </dd>
     <% end %>
     <div class="clear"></div>
@@ -904,7 +904,7 @@
 
 <center>
   <div class="guanggao">
-    <a href="#">
+    <a href="<%= destination_six_index_path %>">
       <img alt="泰国" src="../images/1393816333.jpg" data-original="../images/1393816333.jpg" border="0">
     </a>
   </div>

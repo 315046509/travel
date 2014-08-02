@@ -20,7 +20,7 @@
     </div>
     <div class="form-actions">
       <div style="float: left">
-        <%= link_to '添加旅游路线', add_travel_admin_addcity_path, :class => "btn btn-primary" %>
+        <%= link_to '添加旅游路线', new_admin_addcity_addtravel_path, :class => "btn btn-primary" %>
       </div>
     </div>
     <div class="box-content">
@@ -44,8 +44,8 @@
               <td><%= q.price %></td>
               <td><%= image_tag q.avatar.url(:thumb) %></td>
               <td class="center"><%= my_datetime_format q.created_at %></td>
-              <td><%= link_to '浏览', show_travel_admin_addcity_path(q), :class => "btn btn-primary" %></td>
-              <td><%= link_to '删除', admin_addcity_path(q), :method => "delete", data: {confirm: '确定要删除么？'}, :class => "btn btn-primary" %></td>
+              <td><%= link_to '浏览', admin_addcity_addtravel_path(q, params[:addcity_id]), :class => "btn btn-primary" %></td>
+              <td><%= link_to '删除', admin_addcity_addtravels_path(params[:addcity_id], q), :method => "delete", data: {confirm: '确定要删除么？'}, :class => "btn btn-primary" %></td>
             </tr>
         <% end %>
         </tbody>

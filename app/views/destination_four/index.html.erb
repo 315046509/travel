@@ -8,11 +8,11 @@
       <!-- 分类一 -->
       <dl>
         <dt class="t">
-          <a title="港澳旅游">长春旅游</a>
+          <a href="<%= changchun_cities_path %>" title="港澳旅游">长春旅游</a>
         </dt>
         <% @category_1_city.each do |q| %>
             <dd class="dd">
-              <a><%= q.title %></a>
+              <a href="<%= changchun_cities_path %>"><%= q.title %></a>
             </dd>
         <% end %>
       </dl>
@@ -28,8 +28,8 @@
     <h3>最新攻略动态</h3>
 
     <div class="gonglue_img">
-      <a href="#"><img src="../images/gongl1.gif" data-original="/pics/gongl1.gif" style="display: inline;"></a>
-      <a href="#"><img src="../images/gongl2.gif" data-original="/pics/gongl2.gif" style="display: inline;"></a>
+      <a href="#"><img src="../images/gongl1.gif" data-original="../images/gongl1.gif" style="display: inline;"></a>
+      <a href="#"><img src="../images/gongl2.gif" data-original="../images/gongl2.gif" style="display: inline;"></a>
     </div>
 
     <% @gonglues.each do |q| %>

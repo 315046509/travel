@@ -40,7 +40,7 @@
               <td><%= q.id %></td>
               <td><%= q.question_category_name %></td>
               <td><%= q.title %></td>
-              <td><%= link_to '添加旅游路线', travel_admin_addcity_path(q), :class => "btn btn-primary" %></td>
+              <td><%= link_to '添加旅游路线', admin_addcity_addtravels_path(q), :class => "btn btn-primary" %></td>
               <td><%= link_to '修改', edit_admin_addcity_path(q), :class => "btn btn-primary" %></td>
             </tr>
         <% end %>

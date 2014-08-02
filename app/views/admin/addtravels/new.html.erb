@@ -9,9 +9,6 @@
       <a href="#">Home</a> <span class="divider">/</span>
     </li>
     <li>
-      <a href="<%= travel_admin_addcity_path %>">旅游路线管理</a> <span class="divider">/</span>
-    </li>
-    <li>
       新建旅游内容
     </li>
   </ul>
@@ -22,8 +19,10 @@
       <h2><i class="icon-edit"></i> 新建旅游内容</h2>
     </div>
     <div class="box-content">
-      <%= form_for(:trave, :url => create_travel_admin_addcity_path, :method => :post, :html => {:id => "verifytitle"}) do |f| %>
+      <%= form_for(:trave, :url => admin_addcity_addtravels_path, :method => :post, :html => {:id => "verifytitle"}) do |f| %>
           <legend>新建旅游内容</legend>
+          <%= hidden_field_tag :addcity_id, @parent_id%>
+
           <h1><%= f.label "旅游标题：" %></h1>
           <%= f.text_field :title %>
           <br/>

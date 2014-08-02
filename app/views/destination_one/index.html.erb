@@ -3,6 +3,7 @@
 <div class="channel_side fn-left">
   <div class="side_hot">
     <h3 class="side_title"> 港澳游导航</h3>
+
     <div class="line_list">
       <dl>
         <dt class="t">
@@ -11,7 +12,7 @@
 
         <% @category_1_city.each do |q| %>
             <dd class="dd">
-              <a><%= q.title %></a>
+              <a href="<%= xianggang_cities_path %>"><%= q.title %></a>
             </dd>
         <% end %>
 

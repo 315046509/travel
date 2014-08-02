@@ -7,12 +7,12 @@
     <div class="line_list">
       <dl>
         <dt class="t">
-          <a title="热门国内">热门国内</a>
+          <a href="<%= remenguonei_cities_path %>" title="热门国内">热门国内</a>
         </dt>
 
         <% @category_1_city.each do |q| %>
             <dd class="dd">
-              <a><%= q.title %></a>
+              <a href="<%= remenguonei_cities_path %>"><%= q.title %></a>
             </dd>
         <% end %>
 
@@ -21,12 +21,12 @@
 
       <dl>
         <dt class="t">
-          <a title="华南">华南</a>
+          <a href="<%= huanan_cities_path %>" title="华南">华南</a>
         </dt>
 
         <% @category_2_city.each do |q| %>
             <dd class="dd">
-              <a><%= q.title %></a>
+              <a href="<%= huanan_cities_path %>"><%= q.title %></a>
             </dd>
         <% end %>
 
@@ -36,13 +36,13 @@
 
       <dl>
         <dt class="t">
-          <a title="西南">西南</a>
+          <a href="<%= xinan_cities_path %>" title="西南">西南</a>
         </dt>
 
 
         <% @category_3_city.each do |q| %>
             <dd class="dd">
-              <a><%= q.title %></a>
+              <a href="<%= xinan_cities_path %>"><%= q.title %></a>
             </dd>
         <% end %>
 
@@ -51,13 +51,13 @@
 
       <dl>
         <dt class="t">
-          <a title="华东">华东</a>
+          <a href="<%= huadong_cities_path %>" title="华东">华东</a>
         </dt>
 
 
         <% @category_4_city.each do |q| %>
             <dd class="dd">
-              <a><%= q.title %></a>
+              <a href="<%= huadong_cities_path %>"><%= q.title %></a>
             </dd>
         <% end %>
 
@@ -66,12 +66,12 @@
 
       <dl>
         <dt class="t">
-          <a title="华中">华中</a>
+          <a href="<%= huazhong_cities_path %>" title="华中">华中</a>
         </dt>
 
         <% @category_5_city.each do |q| %>
             <dd class="dd">
-              <a><%= q.title %></a>
+              <a href="<%= huazhong_cities_path %>"><%= q.title %></a>
             </dd>
         <% end %>
         <div class="clear"></div>
@@ -79,12 +79,12 @@
 
       <dl>
         <dt class="t">
-          <a title="华北">华北</a>
+          <a href="<%= huabei_cities_path %>" title="华北">华北</a>
         </dt>
 
         <% @category_6_city.each do |q| %>
             <dd class="dd">
-              <a><%= q.title %></a>
+              <a href="<%= huabei_cities_path %>"><%= q.title %></a>
             </dd>
         <% end %>
         <div class="clear"></div>
@@ -92,12 +92,12 @@
 
       <dl>
         <dt class="t">
-          <a title="西部">西部</a>
+          <a href="<%= xibu_cities_path %>" title="西部">西部</a>
         </dt>
 
         <% @category_7_city.each do |q| %>
             <dd class="dd">
-              <a><%= q.title %></a>
+              <a href="<%= xibu_cities_path %>"><%= q.title %></a>
             </dd>
         <% end %>
         <div class="clear"></div>
@@ -105,12 +105,12 @@
 
       <dl>
         <dt class="t">
-          <a title="东北">东北</a>
+          <a href="<%= dongbei_cities_path %>" title="东北">东北</a>
         </dt>
 
         <% @category_8_city.each do |q| %>
             <dd class="dd">
-              <a><%= q.title %></a>
+              <a href="<%= dongbei_cities_path %>"><%= q.title %></a>
             </dd>
         <% end %>
         <div class="clear"></div>
@@ -119,15 +119,15 @@
   </div>
 
   <div class="little_banner">
-    <img src="../images/cj_xiaotu.gif" data-original="/pics/cj_xiaotu.gif" width="270" height="96" style="display: inline;">
+    <img src="../images/cj_xiaotu.gif" data-original="../images/cj_xiaotu.gif" width="270" height="96" style="display: inline;">
   </div>
 
   <div class="new_gonglue">
     <h3>最新攻略动态</h3>
 
     <div class="gonglue_img">
-      <a href="#"><img src="../images/gongl1.gif" data-original="/pics/gongl1.gif" style="display: inline;"></a>
-      <a href="#"><img src="../images/gongl2.gif" data-original="/pics/gongl2.gif" style="display: inline;"></a>
+      <a href="#"><img src="../images/gongl1.gif" data-original="../images/gongl1.gif" style="display: inline;"></a>
+      <a href="#"><img src="../images/gongl2.gif" data-original="../images/gongl2.gif" style="display: inline;"></a>
     </div>
 
     <% @gonglues.each do |q| %>
@@ -140,6 +140,7 @@
 
 <div class="side_right fn-right">
 <img alt="巴厘岛6天4晚乐享休闲游" class="all_imgs" id="img_2" src="../images/1395648557.jpg">
+
 <div class="travel_sale" style="height:auto; padding-bottom:10px;">
   <h2 class="travel_Hd">
     <span class="travel_Hd_type travel_tj_type">特价旅游</span>

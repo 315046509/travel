@@ -1,4 +1,5 @@
 class Trave < ActiveRecord::Base
+  belongs_to :addcity
   scope :order_ct_desc, lambda { order("created_at DESC") }
 
   validates :title, :presence => {:message => "名称不能为空！"}
