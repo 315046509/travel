@@ -2,12 +2,12 @@
 <div class="center">
   <div class="channel_side fn-left">
     <div class="side_hot">
-      <h3 class="side_title">港澳游导航</h3>
+      <h3 class="side_title">出境游导航</h3>
 
       <div class="line_list">
         <dl class="long_name">
           <dt class="t">
-            <a target="_blank" href="#" title="当季热门景点">香港游</a>
+            <a target="_blank" href="#" title="东南亚">东南亚</a>
           </dt>
           <% @category_1_city.each do |q| %>
               <dd class="dd">
@@ -77,8 +77,8 @@
     <div class="crumbs">
       <a> 当前位置：</a>
       <a href="/">网站首页</a> &gt;
-      <a href="<%= destination_one_index_path %>">港澳旅游</a> &gt;
-      <a>香港游</a>
+      <a href="<%= destination_two_index_path %>">出境旅游</a> &gt;
+      <a>东南亚</a>
     </div>
 
     <div class="hk_hot travel_line">
@@ -87,7 +87,7 @@
       <div class="newChannel_Bd">
         <div class="newChannel_list visible" id="hk_div1">
           <ul id="change_li">
-            <% @travels.each do |q| %>
+            <% @travels_3.each do |q| %>
                 <li class="lineitem">
                   <div class="img fn-left">
                     <a title="<%= q.title %>" target="_blank" href="<%= city_path(q) %>">
