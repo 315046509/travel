@@ -42,30 +42,30 @@
       <li id="touristAttractions">
         <a class="">旅游景点</a>
         <ul class="subNav" style="display: none;">
-          <% @category_1_jingdian.each do |q| %>
-              <li>
-                <h6><a>港澳</a></h6>
+          <li>
+            <h6><a>港澳</a></h6>
+            <% @category_1_jingdian.each do |q| %>
                 <a href="<%= xianggang_cities_path %>" target="_blank" class=""><%= q.title %></a>
-              </li>
-          <% end %>
-          <% @category_9_jingdian.each do |q| %>
-              <li>
-                <h6><a>出境</a></h6>
+            <% end %>
+          </li>
+          <li>
+            <h6><a>出境</a></h6>
+            <% @category_9_jingdian.each do |q| %>
                 <a href="<%= remenchujing_cities_path %>" target="_blank" class=""><%= q.title %></a>
-              </li>
-          <% end %>
-          <% @category_10_jingdian.each do |q| %>
-              <li>
-                <h6><a>国内</a></h6>
+            <% end %>
+          </li>
+          <li>
+            <h6><a>国内</a></h6>
+            <% @category_10_jingdian.each do |q| %>
                 <a href="<%= remenchujing_cities_path %>" target="_blank" class=""><%= q.title %></a>
-              </li>
-          <% end %>
-          <% @category_11_jingdian.each do |q| %>
-              <li>
-                <h6><a>长春</a></h6>
+            <% end %>
+          </li>
+          <li>
+            <h6><a>长春</a></h6>
+            <% @category_11_jingdian.each do |q| %>
                 <a href="<%= changchun_cities_path %>" target="_blank" class=""><%= q.title %></a>
-              </li>
-          <% end %>
+            <% end %>
+          </li>
         </ul>
       </li>
       <li id="landscapePictures">

@@ -33,7 +33,7 @@ class MainController < ApplicationController
     @category_8_city = Addcity.where({:question_category_id => 9}, "title <> ''").page(params[:page]).per(30)
 
     # 景点
-    @category_1_jingdian = Addcity.question_category_name(1)
+    @category_1_jingdian = Addcity.question_category_name(8)
     @category_1_jingdian = Addcity.where({:question_category_id => 100}, "title <> ''").page(params[:page]).per(9)
 
     @category_9_jingdian = Addcity.question_category_name(9)
